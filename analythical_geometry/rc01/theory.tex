@@ -1,0 +1,363 @@
+\rc{Аналитическая геометрия}{1}
+
+\section{Теоретические вопросы}
+
+\subsection{Теоретические вопросы. Базовый уровень}
+
+\begin{question}
+  Дать определение равенства геометрических векторов.
+\end{question}
+\begin{answer}
+  Два векторы называются равными, если:
+  \begin{enumerate}
+    \item Они коллинеарны и сонаправлены
+    \item Их длины равны
+  \end{enumerate}
+\end{answer}
+
+\begin{question}
+  Дать определение суммы векторов и произведения вектора на число.
+\end{question}
+\begin{answer}
+  Суммой векторов $\vec{a}$ и $\vec{b}$ называется $\vec{c}$, который получается по правилу треугольника:
+  \begin{enumerate}
+    \item Конец вектора $\vec{a}$ совмещают с началом вектора $\vec{b}$
+    \item Тогда вектор, идущий из начала вектора $\vec{a}$ к концу вектора $\vec{b}$ и будет вектором $\vec{c}$.
+  \end{enumerate} 
+
+  Произведение вектора $\vec{a}$ на число $\lambda$ называется вектор $\vec{c}$, который будет коллинеарен вектору $\vec{a}$, длина которого будет или меньше в $|\lambda|$ раз и будет сонаправлен, если $\lambda > 0$, и противонаправлен, если $\lambda < 0$.
+\end{answer}
+
+\begin{question}
+  Дать определение коллинеарных и компланарных векторов.
+\end{question}
+\begin{answer}
+  Три вектора называются \textbf{компланарными}, если они лежат на прямых, параллельных некоторой плоскости.  
+\end{answer}
+
+\begin{question}
+  Дать определение линейно зависимой и линейно независимой системы векторов.
+\end{question}
+\begin{answer}
+  Система векторов называется \textit{линейно-зависимой}, если существует нетривиальная равная нулевому вектору линейной комбинация этих векторов:
+  \begin{gather*}
+    \lambda_1 \vec{a_1} + \lambda_2 \vec{a_2} + \ldots + \lambda \vec{a_n} = \vec{0} \\
+    \lambda_1^2 + \lambda_2^2 + \ldots + \lambda_n^2 = 0
+  \end{gather*}
+
+  Система векторо называется \textit{линейно-независимой}, если существует только тривиальная равная нулевому вектору линейная комбинация.
+  \[
+    \lambda_1 \vec{a_1} + \lambda_2 \vec{a_2} + \ldots + \lambda \vec{a_n} = \vec{0}
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулировать геометрические критерии линейной зависимости 2-х и 3-х векторов.
+\end{question}
+\begin{answer}
+  Два вектору \textit{линейно-зависимы} тогда и только тогда, когда они \textit{коллинеарны}.
+
+  Три вектора \textit{линейной зависимы} тогда и только тогда, когда они \textit{компланарны}. 
+\end{answer}
+
+\begin{question}
+  Дать определение базиса и координат вектора.
+\end{question}
+\begin{answer}
+  Базис - упорядоченный набор линейно-независмых векторов. 
+  Координаты - ? 
+\end{answer}
+
+\begin{question}
+  Сформулировать теорему о разложении вектора по базису. 
+\end{question}
+\begin{answer}
+  Любой вектор можно разложить по базису и при этом единственным образом.
+\end{answer}
+
+\begin{question}
+  Дать определение ортогональной скалярной проекции вектора на направление.
+\end{question}
+\begin{answer}
+  Что?
+\end{answer}
+ 
+\begin{question}
+  Дать определение скалярного произведения векторов.
+\end{question}
+\begin{answer}
+  Скалярным произведением векторов $\vec{a}, \vec{b}$ называется \textit{число}  равное произведению длин этих векторов на косинус угла между ними.\[
+  \vec{a} \cdot \vec{b} = |\vec{a}| \cdot |\vec{b}| \cdot \cos \varphi
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулировать свойство линейности скалярного произведения.
+\end{question}
+\begin{answer}
+  Дистрибутивность \[
+      (\vec{a} + \vec{b}) \cdot \vec{c} = \vec{a} \cdot \vec{c} + \vec{b} \cdot \vec{c}
+  \]
+
+  Ассоциативность \[
+    (\lambda \vec{a}) \cdot \vec{b} = \lambda (\vec{a} \cdot \vec{b}) 
+  \]
+\end{answer}
+
+\begin{question}
+  Записать формулу для вычисления скалярного произведения двух векторов, заданных в ортонормированном базисе.
+\end{question}
+\begin{answer}
+  \[
+    \vec{a} \cdot \vec{b} = x_a x_b + y_a y_b + z_a z_b  
+  \] 
+\end{answer}
+
+\begin{question}
+  Записать формулу для вычисления косинуса угла между векторами, заданными в ортонормированном базисе.
+\end{question}
+\begin{answer}
+  \[
+ \cos \varphi = \frac{x_a x_b + y_a y_b + z_a z_b}{\sqrt{x_a^2 + y_a^2 + z_a^2} \cdot \sqrt{x_b^2 + y_b^2 + z_b^2}}
+  \] 
+\end{answer}
+
+\begin{question}
+  Дать определение правой и левой тройки векторов.
+\end{question}
+\begin{answer}
+  Тройка векторов называется \textbf{правой}, если кратчайший поворот от вектора $\vec{a}$ к $\vec{b}$ осуществляется \textit{против часовой стрелки} (смотря из конца вектора $\vec{c}$).
+
+  Тройка векторов называется \textbf{левой}, если кратчайший поворот от вектора $\vec{a}$ к $\vec{b}$ осуществляется \textit{по часовой стрелки} (смотря из конца вектора $\vec{c}$).
+\end{answer}
+
+\begin{question}
+  Дать определение векторного произведения векторов.
+\end{question}
+\begin{answer}
+  Векторным произведением векторов $\vec{a}$ и $\vec{b}$ называется вектор $\vec{c}$, который удовлетворяет следующему условию:
+  \begin{enumerate}
+    \item $\vec{c}$ ортогонален векторам $\vec{a}$ и $\vec{b}$ (перпендикулярен плоскости, в которой лежат вектора $\vec{a}$ и $\vec{b}$);
+    \item $\vec{c} = |\vec{a}| |\vec{b}| \cdot \sin \phi$
+    \item Вектора $\vec{a}, \vec{b}, \vec{c}$ образуют \textit{правую} тройку векторов.
+  \end{enumerate}
+  Обозначение: \[
+    \vec{a} \times \vec{b} \text{ или } [\vec{a}, \vec{b}]
+  \]   
+\end{answer}
+
+\begin{question}
+  Сформулировать свойство коммутативности (симметричности) скалярного произведения и свойство антикоммутативности (антисимметричности) векторного произведения.
+\end{question}
+\begin{answer}
+  Коммунитативность скалярного произведения векторов: \[
+    \vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}
+  \] 
+
+  Антикоммунитативность векторного произведения векторов: \[
+    \vec{a} \times \vec{b} = - \vec{b} \times \vec{a}  
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулировать свойство линейности векторного произведения векторов.
+\end{question}
+\begin{answer}
+  Дистрибутивность \[
+    (\vec{a_1} + \vec{a_2}) \times \vec{b} = \vec{a_1} \times \vec{b} + \vec{a_2} \times  \vec{b} 
+  \]  
+
+  Ассоциативность \[
+    (\lambda \vec{a}) \times \vec{b} = \lambda (\vec{a} \times \vec{b})  
+  \]  
+\end{answer}
+
+\begin{question}
+  Записать формулу для вычисления векторного произведения в правом ортонормированном базисе.
+\end{question}
+\begin{answer}
+  \[
+  \vec{a} \times \vec{b} = 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    x_a & y_a & z_a \\
+    x_b & y_b & z_b 
+  \end{vmatrix}
+  \] 
+\end{answer}
+
+\begin{question}
+  Дать определение смешанного произведения векторов
+\end{question}
+\begin{answer}
+  Смешанное поизведение векторов $\vec{a}, \vec{b}, \vec{c}$ называется скалярное произведения первых двух векторов $\vec{a}$ и $\vec{b}$ на третий вектор $\vec{c}$. \[
+  \vec{a} \vec{b} \vec{c} = (\vec{a} \cdot \vec{b}) \times \vec{c}
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулировать свойство перестановки (кососимметричности) смешанного произведения.
+\end{question}
+\begin{answer}
+  \[
+  \vec{a} \vec{b} \vec{c} = \vec{c} \vec{a} \vec{b} = \vec{b} \vec{c} \vec{a} = -\vec{b} \vec{a} \vec{c} = - \vec{c} \vec{b} \vec{a} = - \vec{a} \vec{c} \vec{b}
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулировать свойство линейности смешанного произведения.
+\end{question}
+\begin{answer}
+  Свойство ассоциативности: \[
+    (\lambda \vec{a}) \vec{b} \vec{c} = \lambda (\vec{a} \vec{b} \vec{c})
+  \] 
+
+  Свойство дистрибутивности: \[
+      (\vec{a_1} + \vec{a_2}) \vec{b} \vec{c} = \vec{a_1} \vec{b} \vec{c} + \vec{a_2} \vec{b} \vec{c}
+\end{answer}
+
+
+\begin{question}
+  Записать формулу для вычисления смешанного произведения в правом ортонормированном базисе.
+\end{question}
+\begin{answer}
+  \[
+  \vec{a} \vec{b} \vec{c} =
+    \begin{vmatrix}
+      x_a & y_a & z_c \\
+      x_b & y_b & z_b \\
+      x_c & y_c & z_c \\
+    \end{vmatrix}
+  \]
+\end{answer}
+
+\begin{question}
+  Записать общее уравнение плоскости и уравнение «в отрезках». Объяснить геометрический смысл входящих в эти уравнения параметров.
+\end{question}
+\begin{answer}
+  Пусть плоскость $\alpha$ отсекает от координатного угла отрезки $a, b, c$ на осях  $x, y, z$ соответственно. Тогда: \[
+    \frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1
+  \] 
+\end{answer}
+
+\begin{question}
+  Записать уравнение плоскости, проходящей через 3 данные точки.
+\end{question}
+\begin{answer}
+  Пусть заданы точки:
+  \begin{gather*}
+    M_1(x_1, y_1, z_1) \in \alpha \\
+    M_2(x_2, y_2, z_2) \in \alpha \\
+    M_3(x_3, y_3, z_3) \in \alpha 
+  \end{gather*}
+  Тогда: \[
+    \begin{vmatrix}
+      x - x_1 & y - y_1 & z - z_1 \\
+      x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+      x_3 - x_1 & y_3 - y_1 & z_3 - z_1 \\
+    \end{vmatrix} = 0
+\]
+\end{answer}
+
+\begin{question}
+  Записать условия параллельности и перпендикулярности плоскостей.
+\end{question}
+\begin{answer}
+  Перпендикулярность: \[
+    \alpha_1 \perp \alpha_2 \quad \implies \quad
+    A_1 A_2 + B_1 B_2 + C_1 C_2 = 0
+  \] 
+  
+  Параллельность: \[
+    \alpha_1 \parallel \alpha_2 \quad \implies \quad
+    \frac{A_1}{A_2} = \frac{B_1}{B_2} = \frac{C_1}{C_2}
+  \]
+\end{answer}
+
+
+\begin{question}
+  Записать формулу для расстояния от точки до плоскости, заданной общим уравнением.
+\end{question}
+\begin{answer}
+  \[
+    \rho(M_0, \alpha) = \frac{|Ax_0 + By_0 + Cz_0 + D| }{\sqrt{A^2 + B^2 + C^2}} 
+  \] 
+\end{answer}
+
+
+\begin{question}
+  Записать канонические и параметрические уравнения прямой в пространстве. Объяснить геометрический смысл входящих в эти уравнения параметров.
+\end{question}
+\begin{answer}
+  Пусть прямая $l$ проходит через точку $M_0\left(x_0, y_0, z_0 \right)$ и имеет направляющий вектор $\vec{S} = \{m, n, p\}$.
+Возьмём на прямой $l$ произвольную точку $M(x, y, z)$.
+  \[
+  \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
+  \] 
+\end{answer}
+
+\begin{question}
+  Записать уравнение прямой, проходящей через две данные точки в пространстве.
+\end{question}
+\begin{answer}
+  \[
+    \frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0} = \frac{z - z_0}{z_1 - z_0}
+  \] 
+\end{answer}
+
+
+\begin{question}
+  Записать условие принадлежности двух прямых одной плоскости.
+\end{question}
+
+\begin{question}
+  Записать формулу для расстояния от точки до прямой в пространстве.
+\end{question}
+
+\begin{question}
+  Записать формулу для расстояния между скрещивающимися прямыми. 
+\end{question}
+
+
+\subsection{Теоретические вопросы. Повышенная сложность}
+
+\begin{question}
+  Доказать геометрический критерий линейной зависимости трёх векторов.
+\end{question}
+
+\begin{question}
+  Доказать теорему о разложении вектора по базису
+\end{question}
+
+\begin{question}
+  Доказать свойство линейности скалярного произведения.
+\end{question}
+
+\begin{question}
+  Вывести формулу для вычисления скалярного произведения векторов, заданных в ортонормированном базисе
+\end{question}
+
+\begin{question}
+  Вывести формулу для вычисления векторного произведения в правом ортонормированном базисе.
+\end{question}
+
+\begin{question}
+  Доказать свойство линейности смешанного произведения.
+\end{question}
+
+\begin{question}
+  Вывести формулу для вычисления смешанного произведения трёх векторов в правом ортонормированном базисе.
+\end{question}
+
+\begin{question}
+  Вывести формулу для расстояния от точки до плоскости, заданной общим уравнением.
+\end{question}
+
+\begin{question}
+  Вывести формулу для расстояния от точки до прямой в пространстве.
+\end{question}
+
+\begin{question}
+  Вывести формулу для расстояния между скрещивающимися прямыми.
+\end{question}
+

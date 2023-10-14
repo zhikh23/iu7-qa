@@ -148,19 +148,39 @@
 \begin{question}
   Сформулируйте определение бесконечно малых функций одного порядка.
 \end{question}
+\begin{answer}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются одного порядка малости, если: \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = const \neq 0
+  \] 
+\end{answer}
 
 \begin{question}
   Сформулируйте определение несравнимых бесконечно малых функций. 
 \end{question}
+\begin{answer}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются \textit{несравнимыми} , если: \[
+    \not \exists \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)}
+  \]   
+\end{answer}
 
 \begin{question}
   Сформулируйте определение эквивалентных бесконечно малых функций. 
 \end{question}
+\begin{answer}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются \textit{эквивалентными} , если: \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1
+  \]
+\end{answer}
 
 \begin{question}
   Сформулируйте определение порядка малости одной функции относительно
 другой.
 \end{question}
+\begin{answer}
+  Б.м.ф. $\alpha(x)$ имеет порядок малости $k$ относительно функции б.м.ф.  $\beta(x)$, если: \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{[\beta(x)]^k} = const \neq 0
+  \]
+\end{answer}
 
 \begin{question}
   Сформулируйте определение приращения функции. 
@@ -195,55 +215,124 @@
 \end{question}
 
 
-\subsection{Определние предела по Коши}
+\subsection{Определение предела по Коши}
 
 \begin{question}
   Сформулируйте определение по Коши $\lim_{x \to 0} f(x) = b$, где $b \in \R$.
 Приведите соответствующий пример (с геометрической иллюстрацией).
 \end{question}
+\begin{answer}
+  Определение:
+  \begin{gather*}
+    \lim_{x \to 0} f(x) = b \\
+    \iff \\
+    (\forall \varepsilon > 0)(\exists \delta(\varepsilon) > 0)(\forall x \in \mathring{S}(0, \delta) \implies |f(x) - b| < \varepsilon)
+  \end{gather*}
+
+  Пример: \[
+    \lim_{x \to 0} (x + b) = b  
+  \] 
+\end{answer}
 
 \begin{question}
   Сформулируйте определение по Коши $\lim_{x \to a} = +\infty$, где $a \in \R$.
 Приведите соответствующий пример (с геометрической иллюстрацией).
 \end{question}
+\begin{answer}
+  Определение:
+  \begin{gather*}
+    \lim_{x \to a} = +\infty \\
+    \iff \\
+    (\forall M > 0)(\exists \delta(\varepsilon) > 0)(\forall x \in S(a, \delta) \implies f(x) > M) 
+  \end{gather*}
+  Пример: \[
+  \lim_{x \to a} \frac{1}{|x - a|} = +\infty
+  \] 
+\end{answer}
 
 \begin{question}
-  СФормулируйте определние по Коши $\lim_{x \to \infty} f(x) = 0$.
+  Сформулируйте определние по Коши $\lim_{x \to \infty} f(x) = 0$.
 Приведите соответствующий пример (с геометрической иллюстрацией).
 \end{question}
+\begin{answer}
+  Определение:
+  \begin{gather*}
+    \lim_{x \to \infty} f(x) = 0 \\
+    \iff \\
+    (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall |x| > N \implies |f(x)| < \varepsilon)
+  \end{gather*}
+  Пример: \[
+    \lim_{x \to \infty} \frac{1}{x} = 0
+  \] 
+\end{answer}
   
 \begin{question}
-  СФормулируйте определние по Коши $\lim_{x \to a-0} f(x) = -\infty$, где $a \in \R$.
+  Сформулируйте определние по Коши $\lim_{x \to a-0} f(x) = -\infty$, где $a \in \R$.
 Приведите соответствующий пример (с геометрической иллюстрацией).
 \end{question}
+\begin{answer}
+  Определение:
+  \begin{gather*}
+    \lim_{x \to a - 0} f(x) = -\infty \\
+    \iff \\
+    (\forall M > 0)(\exists \delta(\varepsilon) > 0)(\forall x \in (a - \delta, a) \implies f(x) < -M)
+  \end{gather*}
+
+  Пример: \[
+    \lim_{x \to a - 0} \frac{1}{x - a} = -\infty
+  \] 
+\end{answer}
+
 
 \subsection{Формулировка теорем}
 
 \begin{question}
   Сформулируйте теорему об ограниченности сходящейся числовой последовательности.
 \end{question}
+\begin{answer}
+  Для того, чтобы последовательность была сходящейся, необходимо и достаточно, чтобы она была фундаментальной.
+\end{answer}
 
 \begin{question}
   Сформулируйте теорему о связи функции, ее предела и бесконечно малой.  
 \end{question}
+\begin{answer}
+  Функция $y = f(x)$ имеет конечный предел в точке  $x_0$ тогда и только тогда, когда её можно представить в виде суммы предела и некоторой бесконечно малой функции.
+\end{answer}
 
 \begin{question}
   Сформулируйте теорему о сумме конечного числа бесконечно малых функций.
 \end{question}
+\begin{answer}
+  Конечная сумма бесконечно малых функции есть бесконечно малая функция.
+\end{answer}
 
 \begin{question}
   Сформулируйте теорему о произведении бесконечно малой на ограниченную функцию.
 \end{question}
+\begin{answer}
+  Произведение бесконечно малой функции на ограниченную есть величина бесконечно малая.  
+\end{answer}
 
 \begin{question}
   Сформулируйте теорему о связи бесконечно малой и бесконечно большой функций.
 \end{question}
+\begin{answer}
+  Если $\alpha(x)$ - бесконечно большая функция при $x \to x_0$, то $\frac{1}{\alpha(x)}$ - бесконечно малая функция при $x \to x_0$.  
+\end{answer}
 
 \begin{question}
   Сформулируйте теорему о необходимом и достаточном условии эквивалентности бесконечно малых.
 \end{question}
+\begin{answer}
+  Две функции $\alpha(x)$ и $\beta(x)$ эквивалентны тогда и только тогда, когда их разность имеет более высокий порядок малости по сравнению с каждой из них.
+\end{answer}
 
 \begin{question}
   Сформулируйте теорему о сумме бесконечно малых разных порядков
 \end{question}
+\begin{answer}
+  Сумма бесконечно малых функций разных порядком малости эквивалентно слагаемому низшего порядка малости.
+\end{answer}
+
 

@@ -309,15 +309,69 @@
 \begin{question}
   Записать условие принадлежности двух прямых одной плоскости.
 \end{question}
+\begin{answer}
+  Прямая $a$ и прямая $b$ принадлежат одной плоскости $\iff a \parallel b$.
+  В таком случае выполняется условие: \[
+    \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2}  
+  \] 
+\end{answer}
 
 \begin{question}
   Записать формулу для расстояния от точки до прямой в пространстве.
 \end{question}
+\begin{answer}
+  \[
+  \rho(M, l) = 
+  \frac{\sqrt{
+  \begin{vmatrix}
+    y- y_0 & z - z_0 \\
+    n & p
+  \end{vmatrix}^2 +
+  \begin{vmatrix}
+    x - x_0 & z - z_0 \\
+    m & p
+  \end{vmatrix}^2 +
+  \begin{vmatrix}
+    x - x_0 & y - y_0 \\
+    m & n
+  \end{vmatrix}^2
+  }}{\sqrt{m^2 + n^2 + p^2}} 
+  \] 
+\end{answer}
+
 
 \begin{question}
   Записать формулу для расстояния между скрещивающимися прямыми. 
 \end{question}
-
+\begin{answer}
+  \begin{gather*}
+    \rho(l_2, l_1) = 
+    \frac{
+      \left|
+      \begin{vmatrix}
+        x_2 - x_1 & y_2 - y_1 & x_2 - x_1 \\
+        m_1 & n_1 & p_1 \\
+        m_2 & n_2 & p_2
+      \end{vmatrix}
+    \right| 
+    }{
+      \sqrt{
+        \begin{vmatrix}
+          n_1 & p_1 \\
+          n_2 & p_2
+        \end{vmatrix}^2 +
+        \begin{vmatrix}
+          m_1 & p_1 \\
+          m_2 & p_2
+        \end{vmatrix}^2 +  
+        \begin{vmatrix}
+          n_1 & p_1 \\
+          n_2 & p_2
+        \end{vmatrix}^2 
+      }
+    }
+  \end{gather*}
+\end{answer}
 
 \subsection{Теоретические вопросы. Повышенная сложность}
 

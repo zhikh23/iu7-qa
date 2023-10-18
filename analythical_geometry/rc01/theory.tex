@@ -291,9 +291,21 @@
 \begin{answer}
   Пусть прямая $l$ проходит через точку $M_0\left(x_0, y_0, z_0 \right)$ и имеет направляющий вектор $\vec{S} = \{m, n, p\}$.
 Возьмём на прямой $l$ произвольную точку $M(x, y, z)$.
-  \[
-  \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
-  \] 
+Тогда прямую можно записать уравнениями:
+  \begin{enumerate}
+    \item \textit{Каноническое} \\
+    \[
+      \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
+    \] 
+    \item \textit{Параметрическое}
+    \[
+    \begin{cases}
+      x = mt + x_0 \\
+      y = nt + y_0 \\
+      z = pt + z_0
+    \end{cases}  
+    \] 
+  \end{enumerate}
 \end{answer}
 
 \begin{question}
@@ -305,16 +317,9 @@
   \] 
 \end{answer}
 
-
 \begin{question}
   Записать условие принадлежности двух прямых одной плоскости.
 \end{question}
-\begin{answer}
-  Прямая $a$ и прямая $b$ принадлежат одной плоскости $\iff a \parallel b$.
-  В таком случае выполняется условие: \[
-    \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2}  
-  \] 
-\end{answer}
 
 \begin{question}
   Записать формулу для расстояния от точки до прямой в пространстве.
@@ -365,8 +370,8 @@
           m_2 & p_2
         \end{vmatrix}^2 +  
         \begin{vmatrix}
-          n_1 & p_1 \\
-          n_2 & p_2
+          m_1 & n_1 \\
+          m_2 & n_2
         \end{vmatrix}^2 
       }
     }
@@ -378,10 +383,61 @@
 \begin{question}
   Доказать геометрический критерий линейной зависимости трёх векторов.
 \end{question}
+\begin{answer}
+  \begin{center}
+  \textit{Три вектора линейной зависимы тогда и только тогда, когда они компланарны}. \\
+  \end{center}
+  Пусть $\vec{a_1}$, $\vec{a_2}$, $\vec{a_3}$ - линейная зависимость.
+  Тогда по определению существуют:
+  \[
+    \lambda_1 \vec{a_1} + \lambda_2 \vec{a_2} + \lambda_3 \vec{a_3} = \vec{0}
+  \] 
+  Тогда:
+  \begin{gather*}
+    \lambda_1 \neq 0 \\
+    \vec{a_1} = -\frac{\lambda_2}{\lambda_1} \vec{a_2} - \frac{\lambda_3}{\lambda_1} \vec{a_3}
+  \end{gather*}
+
+  Обозначим $\beta_i = -\frac{\lambda_i}{\lambda}$, где $i = 2, 3$. \\
+  \[
+    \vec{a_1} = \beta_2 \vec{a_2} + \beta_3 \vec{a_3}
+  \]
+  Совместим начала $\vec{a_2}$ и $\vec{a_3}$ и построим $\beta_2 \vec{a_2}$ и $\beta_3 \vec{a_3}$, где $\beta_2, \beta_3 > 0$. \\
+  Т.к. $\vec{a_3}$ лежит на диагонали параллелограмма (из правила сложения векторов параллелограммом), получается, что вектора $\vec{a_1}, \vec{a_2}, \vec{a_3}$ лежат в одной плоскости, а значит, компланарны.
+\end{answer}
 
 \begin{question}
   Доказать теорему о разложении вектора по базису
 \end{question}
+\begin{answer}
+  \begin{center}
+    \textit{Любой вектор можно разложить по базису и при этом единственным образом.} 
+  \end{center}  
+  Пусть в пространстве $V_3$ зафиксирован базис $\vec{e_1}, \vec{e_2}, \vec{e_3}$. Возьмём вектор $\vec{x}$. Тогда система векторов $\vec{x}, \vec{e_1}, \vec{e_2}, \vec{e_3}$ - линейно зависима, если вектор $\vec{x}$ можно представить в виде линейной комбинации векторов $\vec{e_1}, \vec{e_2}, \vec{e_3}$: \[
+  \vec{x} = \lambda_1 \vec{e_1} + \lambda_2 \vec{e_2} + \lambda_3 + \vec{e_3} \tag{1}
+\]
+  Предположим, что разложение вектора $\vec{x}$ - не единственное. \[
+  \vec{x} = \rho \vec{e_1} + \rho \vec{e_2} + \rho \vec{e_3} \tag{2}
+\]
+  Вычтем из (1) уранвение (2). Тогда: \[
+    \vec{0} = \left( \lambda_1 - \rho_1 \right) \vec{e_1} + \left( \lambda_2 - \rho_2 \right) \vec{e_2} + \left( \lambda_3 - \rho_3 \right) \vec{e_3} \tag{3}
+\]
+Поскольку базисные вектора $\vec{e_1}, \vec{e_2}, \vec{e_3}$ - линейно независимы, то выражение (3) представляет собой тривиальную линейную комбинацию векторов $\vec{e_1}, \vec{e_2}, \vec{e_3}$, равную нулю. Тогда получаем:
+  \begin{gather*}
+    \begin{matrix}  
+      \lambda_1 - \delta_1 = 0 \\
+      \lambda_2 - \delta_2 = 0 \\
+      \lambda_3 - \delta_3 = 0 \\
+    \end{matrix}
+    \quad \implies \quad
+    \begin{matrix}
+      \lambda_1 = \rho_1 \\
+      \lambda_2 = \rho_2 \\
+      \lambda_3 = \rho_3 \\
+    \end{matrix}
+  \end{gather*}
+  Коэффициенты равны, что и требовалось доказать.
+\end{answer}
 
 \begin{question}
   Доказать свойство линейности скалярного произведения.
@@ -390,10 +446,31 @@
 \begin{question}
   Вывести формулу для вычисления скалярного произведения векторов, заданных в ортонормированном базисе
 \end{question}
+\begin{answer}
+  Пусть даны:
+  \begin{gather*}
+    \vec{a} = x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \\
+    \vec{b} = x_b \vec{i} + y_b \vec{j} + z_b \vec{k}
+  \end{gather*}
+  Тогда:
+  \begin{gather*}
+    \vec{a} \cdot \vec{b} = \left( x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \right) \cdot \left( x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \right) = \\
+    = x_a x_b (\vec{i} \cdot \vec{i}) + x_a y_b (\vec{i} \cdot \vec{j}) + z_a z_b (\vec{i} \cdot \vec{k}) \\
+    + y_a x_b (\vec{j} \cdot \vec{i}) + y_a y_b (\vec{j} \cdot \vec{j}) + y_a z_b (\vec{j} \cdot \vec{k}) \\
+    + z_a x_b (\vec{k} \cdot \vec{i}) + z_a y_b (\vec{k} \cdot \vec{j}) + z_a z_b (\vec{k} \cdot \vec{k}) = \\
+    = x_a x_b + y_a y_b + z_a z_b
+  \end{gather*}
+\end{answer}
+
 
 \begin{question}
   Вывести формулу для вычисления векторного произведения в правом ортонормированном базисе.
 \end{question}
+\begin{answer}
+  \begin{gather*}
+    \vec{a} \cdot \vec{b} \cdot \vec{c} = \left( \vec{a} \cdot \vec{b} \right) \times \vec{c} =
+  \end{gather*}
+\end{answer}
 
 \begin{question}
   Доказать свойство линейности смешанного произведения.

@@ -65,7 +65,6 @@
 \end{question}
 \begin{answer}
   Базис - упорядоченный набор линейно-независмых векторов. 
-  Координаты - ? 
 \end{answer}
 
 \begin{question}
@@ -78,9 +77,6 @@
 \begin{question}
   Дать определение ортогональной скалярной проекции вектора на направление.
 \end{question}
-\begin{answer}
-  Что?
-\end{answer}
  
 \begin{question}
   Дать определение скалярного произведения векторов.
@@ -138,7 +134,7 @@
   Векторным произведением векторов $\vec{a}$ и $\vec{b}$ называется вектор $\vec{c}$, который удовлетворяет следующему условию:
   \begin{enumerate}
     \item $\vec{c}$ ортогонален векторам $\vec{a}$ и $\vec{b}$ (перпендикулярен плоскости, в которой лежат вектора $\vec{a}$ и $\vec{b}$);
-    \item $\vec{c} = |\vec{a}| |\vec{b}| \cdot \sin \phi$
+    \item $\vec{c} = |\vec{a}| |\vec{b}| \cdot \sin \varphi$
     \item Вектора $\vec{a}, \vec{b}, \vec{c}$ образуют \textit{правую} тройку векторов.
   \end{enumerate}
   Обозначение: \[
@@ -320,6 +316,21 @@
 \begin{question}
   Записать условие принадлежности двух прямых одной плоскости.
 \end{question}
+\begin{answer}
+  Если прямая $l_1$: \[
+    \frac{x - x_1}{m} = \frac{y - y_1}{n} = \frac{z - z_1}{p} 
+  \] 
+  и прямая $l_2$ : \[
+    \frac{x - x_2}{m} = \frac{y - y_2}{n} = \frac{z - z_2}{p} 
+  \] 
+  скрещеиваются, то: \[
+    \begin{vmatrix}
+      x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+      m_1 & n_1 & p_1 \\
+      m_2 & n_2 & p_2
+    \end{vmatrix} = 0
+  \]
+\end{answer}
 
 \begin{question}
   Записать формулу для расстояния от точки до прямой в пространстве.
@@ -479,16 +490,258 @@
 \begin{question}
   Вывести формулу для вычисления смешанного произведения трёх векторов в правом ортонормированном базисе.
 \end{question}
+\begin{answer}
+  Пусть $\vec{a}, \vec{b}, \vec{c}$ заданы координатами:
+\begin{gather*}
+  \vec{a} = \{x_a, y_a, x_a\} \\
+  \vec{b} = \{x_b, y_b,. z_b\} \\
+  \vec{c} = \{x_c, y_c, z_c\} 
+\end{gather*}
+
+Найдём смешанное произведение:
+\begin{gather*}
+  \vec{a} \vec{b} \vec{c} = (\vec{a} \times \vec{b}) \cdot \vec{c} = \left\{
+    \begin{vmatrix}
+      y_a & z_a \\
+      y_b & z_b 
+    \end{vmatrix},
+    - \begin{vmatrix}
+      x_a & z_a \\
+      x_b & z_b 
+    \end{vmatrix},
+    \begin{vmatrix}
+      x_a & y_a \\
+      x_b & y_b
+    \end{vmatrix}
+  \right\} \cdot \vec{c} = \\
+    = \begin{vmatrix}
+      y_a & z_a \\
+      y_b & z_b 
+    \end{vmatrix} \cdot x_c
+    - \begin{vmatrix}
+      x_a & z_a \\
+      x_b & z_b 
+    \end{vmatrix} \cdot y_c
+    + \begin{vmatrix}
+      x_a & y_a \\
+      x_b & y_b
+    \end{vmatrix} \cdot z_c = \\
+    =
+    \begin{vmatrix}
+      x_a & y_a & z_a \\
+      x_b & y_b & z_b \\
+      x_c & y_c & z_c 
+    \end{vmatrix}
+\end{gather*}
+
+А значит: \[
+\vec{a} \vec{b} \vec{c} =
+\begin{vmatrix}
+  x_a & y_a & z_c \\
+  x_b & y_b & z_b \\
+  x_c & y_c & z_c \\
+\end{vmatrix}
+\]
+\end{answer}
 
 \begin{question}
   Вывести формулу для расстояния от точки до плоскости, заданной общим уравнением.
 \end{question}
+\begin{answer}
+  Пусть плоскость $\alpha$ задана общим уравнением: \[
+    \alpha: Ax + By + Cx + D = 0, \text{ где } \vec{n} = \{A, B, C\} 
+\] 
+
+Пусть задана некоторая точка $M_0(x_0, y_0, z_0)$. 
+Возьмём некоторую точку $M(x, y, z) \in \alpha$. 
+Составим вектор $\overrightarrow{M_0M} = \{x_0 - x, y_0 - y, z_0 - z\}$. 
+Тогда модуль проекции $\overrightarrow{MM_0}$ на вектор на направление вектора нормали и есть искомое расстояние. 
+Найдем: 
+\begin{gather*}
+  \overrightarrow{M_0M} \cdot \vec{n} = |\overrightarrow{M_0M}|\underbrace
+  {|\vec{n}| \cdot \cos \varphi}_
+  {np_{\vec{n}}\overrightarrow{M_0M}}
+\end{gather*}
+\begin{align*}
+  \vec{n} \cdot \overrightarrow{M_0M} &= A(x_0 - x) + B(y_0 - y) + C(z_0 - z) \\
+                                 &= Ax_0 + By_0 + Cz_0 + (-Ax - By - Cz) \\
+                                 &= Ax_0 + By_0 + Cz_0  + D
+\end{align*}
+\begin{gather*}
+  |\vec{n}| = \sqrt{A^2 + B^2 + C^2} \\
+  \boxed{\rho(M_0, \alpha) = |np_{\vec{n}\overrightarrow{M_0M}}| = \frac{|Ax_0 + By_0 + Cz_0 + D| }{\sqrt{A^2 + B^2 + C^2} } }
+\end{gather*}   
+\end{answer}
 
 \begin{question}
   Вывести формулу для расстояния от точки до прямой в пространстве.
 \end{question}
+\begin{answer}
+  Пусть прямая $l$ задана каноническим уравнением:  \[
+l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
+\] \[
+\vec{S} = \{m, n, p\} 
+\] 
+Задана точка $M_1(x_1, y_1, z_1) \not \in l$.
+Составим вектор:  \[
+\overrightarrow{M_0M_1} = \{x_1 - x_0, y_1 - y_0, z_1 - z_0\} 
+\] 
+Построим на векторах $\vec{S}$ и $\overrightarrow{M_0M}$ параллелограмм.
+Тогда высота этого параллелограмма из точки $M_1$ и есть искомое расстояние от точки $M_1$ до прямой $l$.
+\begin{gather*}
+  S_{par} = h \cdot |\vec{S}| \\
+  h = \frac{S_{par}}{|\vec{S}|} \\
+  S_{par} = |\overrightarrow{M_0M_1} \times \vec{S}| 
+\end{gather*}
+Тогда:
+\begin{gather*}
+  \overrightarrow{M_0M_1} \times \vec{S} = 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    x_1 - x_0 & y_1 - y_0 & z_1 - z_0 \\
+    m & n & p
+  \end{vmatrix} = \\
+  = \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix} \cdot \vec{i} -
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix} \cdot \vec{j} + 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix} \cdot \vec{k} \implies \\
+  \\
+  \overrightarrow{M_0M_1 \times \vec{S}} = \\
+  \left\{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix},
+   - \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}, 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}
+  \right\} \implies \\
+  \\
+|\overrightarrow{M_0M_1} \times \vec{S}| = \\
+  \sqrt{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix}^2 +
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}^2 + 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}^2
+  } \implies \\
+  \rho(M_1, l) = 
+  \frac{|\overrightarrow{M_1M_0} \times \vec{S}|}{|\vec{S}|} = \\
+  \boxed{\frac{\sqrt{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix}^2 +
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}^2 +
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}^2
+  }}{\sqrt{m^2 + n^2 + p^2} }} 
+\end{gather*}
+\end{answer}
 
 \begin{question}
   Вывести формулу для расстояния между скрещивающимися прямыми.
 \end{question}
+\begin{answer}
+  Пусть прямые заданы каноническими уравнениями:
+\begin{gather*}
+  l_1: \frac{x - x_1}{m_1} = \frac{y - y_1}{n_1} = \frac{z - z_1}{p_1} \implies M_1(x_1, y_1, z_1), \quad \vec{S_1} = \{m_1, n_1, p_1\} \\
+  l_2: \frac{x - x_2}{m_2} = \frac{y - y_2}{n_2} = \frac{z - z_2}{p_2} \implies M_2(x_2, y_2, z_2), \quad \vec{S_2} = \{m_2, n_2, p_2\}
+\end{gather*}
+
+Составим вектор $\overrightarrow{M_1M_2}$: \[
+\overrightarrow{M_1M_2} = \{x_2 - x_1, y_2 - y_1, z_2 - z_1\} 
+\] 
+
+Вектора $\vec{S}$ и $\overrightarrow{M_1M_2}$ не компланарны. 
+Поэтому на этих векторах можно построить параллелепипед.
+Тогда расстояние между прямыми $l_1$ и $l_2$ будет равно высоте этого параллелепипеда.
+
+\begin{gather*}
+  V = |\overrightarrow{M_1M_2} \cdot \vec{s_1} \cdot \vec{s_2}| \\
+  V= h \cdot S
+\end{gather*}
+\begin{gather*}
+  \overrightarrow{M_1M_2} \cdot \vec{s_1} \cdot \vec{s_2} = 
+  \begin{vmatrix}
+    x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+    m_1 & n_1 & p_1 \\
+    m_2 & n_2 & p_2
+  \end{vmatrix}
+\end{gather*}
+\begin{align*}
+  S = |\vec{s_1} \times \vec{s_2}| &= 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    m_1 & n_1 & p_1 \\
+    m_2 & n_2 & p_2 \\
+  \end{vmatrix} \\
+  &=
+  \vec{i} \cdot 
+  \begin{vmatrix}
+    n_1 & p_1 \\
+    n_2 & p_2
+  \end{vmatrix} - \vec{j} \cdot 
+  \begin{vmatrix}
+    m_1 & p_1 \\
+    m_2 & p_2
+  \end{vmatrix} + \vec{k} \cdot 
+  \begin{vmatrix}
+    m_1 & n_1 \\
+    m_2 & n_2
+  \end{vmatrix} \\
+\end{align*}
+\begin{gather*}
+  \implies \boxed{\rho(l_2, l_1) = 
+  \frac{
+    \left|
+    \begin{vmatrix}
+      x_2 - x_1 & y_2 - y_1 & x_2 - x_1 \\
+      m_1 & n_1 & p_1 \\
+      m_2 & n_2 & p_2
+    \end{vmatrix}
+    \right| 
+  }{
+  \sqrt{
+    \begin{vmatrix}
+      n_1 & p_1 \\
+      n_2 & p_2
+    \end{vmatrix}^2 +
+    \begin{vmatrix}
+      m_1 & p_1 \\
+      m_2 & p_2
+    \end{vmatrix}^2 +  
+    \begin{vmatrix}
+      m_1 & n_1 \\
+      m_2 & n_2
+    \end{vmatrix}^2 
+  } 
+  }}
+\end{gather*}
+\end{answer}
 

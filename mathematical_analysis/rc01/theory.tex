@@ -16,7 +16,7 @@
 \end{question}
 \begin{answer}
   $\varepsilon$-окрестностью точки $x$ называется интервал с центром в точке $x$ и длиной $2\varepsilon$. \[
-    S(x, \varepsilon) \qquad \text{или} \qquad u_{\varepsilon}(x)
+    S(x, \varepsilon) \quad \text{или} \quad u_{\varepsilon}(x)
   \] 
 \end{answer}
 
@@ -25,7 +25,7 @@
 \end{question}
 \begin{answer}
   Окрестностью $+\infty$ называется любой интервал вида: \[
-  S(a, +\infty), a > 0
+  S(a, +\infty), \quad a > 0
   \] 
 \end{answer}
 
@@ -54,7 +54,7 @@
 \end{question}
 \begin{answer}
  Число $a$ называется пределом последовательности $\{x_{n}\}$, если для любого положительного числа $\varepsilon$ найдётся натуральное число $N(\varepsilon)$ такое, что если порядковый номер $n$ члена последовательности станет больше $N(\varepsilon)$, то имеет место неравенство $|x_{n} - a| < \varepsilon$.\[
- \lim_{n \to \infty} = a \iff (\forall \varepsilon > 0)(\exists N(\varepsilon) \in \N)(\forall  n > N(\varepsilon) \implies |x_{n} - a| < \varepsilon) 
+ \lim_{n \to \infty} x_{n} = a \iff (\forall \varepsilon > 0)(\exists N(\varepsilon) \in \N)(\forall  n > N(\varepsilon) \implies |x_{n} - a| < \varepsilon) 
  \] 
 \end{answer}
 
@@ -77,6 +77,9 @@
 \begin{question}
   Сформулируйте определение монотонной последовательности.
 \end{question}
+\begin{answer}
+  Последовательность называется монотонной, если она является неубывающей, либо невозрастающей.
+\end{answer}
 
 \begin{question}
   Сформулируйте определение возрастающей последовательности.
@@ -110,7 +113,10 @@
   Сформулируйте определение фундаментальной последовательности.
 \end{question}
 \begin{answer}
-  Последовательность $\{x_{n}\}$ называется фундаментальной, если для любого $\varepsilon > 0$ $\exists$ свой порядковый номер $N(\varepsilon)$ такой, что при всех $n \ge N(\varepsilon)$ и $m \ge N(\varepsilon)$ выполнено неравенство $|x_{n} - x_{m}| < \varepsilon$. 
+  Последовательность $\{x_{n}\}$ называется фундаментальной, если для любого $\varepsilon > 0$ существует свой порядковый номер $N(\varepsilon)$ такой, что при всех $n \ge N(\varepsilon)$ и $m \ge N(\varepsilon)$ выполнено неравенство $|x_{n} - x_{m}| < \varepsilon$. 
+  \begin{gather*}
+    (\forall \varepsilon > 0)(\exists N(\varepsilon) \in \N)(\forall n, m \ge N(\varepsilon) \implies |x_{n} - x_{m}| < \varepsilon)
+  \end{gather*}
 \end{answer}
 
 \begin{question}
@@ -187,34 +193,87 @@
 \begin{question}
   Сформулируйте определение приращения функции. 
 \end{question}
+\begin{answer}
+  \[
+  \Delta y = f(x) - f(x_0)
+  \] 
+\end{answer}
 
 \begin{question}
   Cформулируйте определение непрерывности функции в точке (любое). 
 \end{question}
+\begin{answer}
+  Любой ответ из:
+  \begin{enumerate}
+    \item Функция $f(x)$, определённая в некоторой окрестности точки $x_0$, называется непрерывной в этой точке если: \[
+        \exists \lim_{x \to x_0} f(x) = f(x_0)
+      \]
+  
+    \item Функция $y = f(x)$, определённая в некоторой окрестности точки $x_0$, называется непрерывной в этой точке, если в достаточно малой окрестности точки $x_0$ значение функции близки к $f(x_0)$.
+      \[
+        (\forall  \varepsilon > 0)(\exists \delta(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |f(x) - f(x_0)| < \varepsilon)
+      \]
+    
+    \item Функция $y = f(x)$ в некоторой окрестности точки $x_0$ называется непрерывной в этой точке, если выполняются условия:
+      \begin{align*}
+        &1. \quad \exists \lim_{x \to x_0+} f(x) \\
+        &2. \quad \exists \lim_{x \to x_0-} f(x) \\
+        &3. \quad \lim_{x \to x_0+} f(x) = \lim_{x \to x_0-} f(x) = f(x) \\
+      \end{align*}
+
+    \item Функция $y = f(x)$ называется непрерывной в точке $x_0$, если бесконечно малому приращению аргумента соответствует бесконечно малое приращение функции. \[
+      \lim_{\Delta x \to 0} \Delta y = 0
+    \] 
+  \end{enumerate}
+\end{answer}
 
 \begin{question}
   Сформулируйте определение непрерывности функции на интервале.
 \end{question}
+\begin{answer}
+  Функция $y = f(x)$ называется непрерывной на интервале $(a, b)$, если она непрерывна в каждой точке этого интервала.
+\end{answer}
 
 \begin{question}
   Сформулируйте определение непрерывности функции на отрезке.
 \end{question}
+\begin{answer}
+  Функция $y = f(x) $ называется непрерывной на отрезке $[a, b]$, если:
+  \begin{enumerate}
+    \item Непрерывна на интервале $(a, b)$
+    \item Непрерывна в точке $a$ справа
+    \item Непрерывна в точке $b$ слева
+  \end{enumerate}
+\end{answer}
 
 \begin{question}
   Сформулируйте опредление точки разрыва.
 \end{question}
+\begin{answer}
+  Пусть функция $y = f(x)$ определена в некоторой точке проколотой окрестности точки $x_0$ непрерывна в любой точке этой окрестности (за исключением самой точки $x_0$).
+  Тогда точка $x_0$ называется точкой разрыва функции.
+\end{answer}
 
 \begin{question}
   Сформулируйте определение точки устранимого разрыва.
 \end{question}
+\begin{answer}
+  Если точка $x_0$ -- точка разрыва первого рода функции $y = f(x)$, и предел  $\lim_{x \to x_0+} f(x) = \lim_{x \to x_0-} f(x)$, но $\not\exists f(x_0)$, то точка $x_0$ называется точкой устранимого разрыва.
+\end{answer}
 
 \begin{question}
   Сформулируйте определение точки разрыва I рода.
 \end{question}
+\begin{answer}
+  Если точка $x_0$ -- точка разрыва функции $y = f(x)$ и существуют конечные пределы $\lim_{x \to x_0+} f(x)$ и $\lim_{x \to x_0-} f(x)$, то $x_0$ называют точкой I-го рода.
+\end{answer}
 
 \begin{question}
   Сформулируйте определение точки разрыва II рода.
 \end{question}
+\begin{answer}
+  Если точка $x_0$ -- точка разрыва функции $y = f(x)$ и \textbf{не} существуют конечные пределы $\lim_{x \to x_0+} f(x)$ и $\lim_{x \to x_0-} f(x)$ или $\lim_{x \to x_0} f(x) = \infty$, то $x_0$ называется точкой разрыва II-го рода.
+\end{answer}
 
 
 \subsection{Определение предела по Коши}

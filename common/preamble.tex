@@ -163,8 +163,8 @@
 
 \declaretheorem[style=thmredbox, name=Вопрос]{question}
 
-\declaretheorem[style=thmexplanationbox, name=Ответ]{answer}
-\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+\declaretheorem[style=thmbluebox, numbered=no, name=Ответ]{replacementproof}
+\renewenvironment{answer}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
 
 
 \usepackage{etoolbox}

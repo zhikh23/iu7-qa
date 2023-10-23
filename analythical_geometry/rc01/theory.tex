@@ -42,7 +42,7 @@
   Система векторов называется \textit{линейно-зависимой}, если существует нетривиальная равная нулевому вектору линейной комбинация этих векторов:
   \begin{gather*}
     \lambda_1 \vec{a_1} + \lambda_2 \vec{a_2} + \ldots + \lambda \vec{a_n} = \vec{0} \\
-    \lambda_1^2 + \lambda_2^2 + \ldots + \lambda_n^2 = 0
+    \lambda_1^2 + \lambda_2^2 + \ldots + \lambda_n^2 \neq 0
   \end{gather*}
 
   Система векторо называется \textit{линейно-независимой}, если существует только тривиальная равная нулевому вектору линейная комбинация.
@@ -77,6 +77,9 @@
 \begin{question}
   Дать определение ортогональной скалярной проекции вектора на направление.
 \end{question}
+\begin{answer}
+  Ортогональной скалярной проекцией вектора $\vec{a}$ на направление вектора $\vec{b}$ называется величина $np_{\vec{b}}\vec{a} = |a|\cdot \cos \varphi$, где $\varphi$ - угол между векторами $\vec{a}$ и $\vec{b}$.
+\end{answer}
  
 \begin{question}
   Дать определение скалярного произведения векторов.
@@ -134,7 +137,7 @@
   Векторным произведением векторов $\vec{a}$ и $\vec{b}$ называется вектор $\vec{c}$, который удовлетворяет следующему условию:
   \begin{enumerate}
     \item $\vec{c}$ ортогонален векторам $\vec{a}$ и $\vec{b}$ (перпендикулярен плоскости, в которой лежат вектора $\vec{a}$ и $\vec{b}$);
-    \item $\vec{c} = |\vec{a}| |\vec{b}| \cdot \sin \varphi$
+    \item $|\vec{c}| = |\vec{a}| |\vec{b}| \cdot \sin \varphi$
     \item Вектора $\vec{a}, \vec{b}, \vec{c}$ образуют \textit{правую} тройку векторов.
   \end{enumerate}
   Обозначение: \[
@@ -187,7 +190,7 @@
 \end{question}
 \begin{answer}
   Смешанное поизведение векторов $\vec{a}, \vec{b}, \vec{c}$ называется скалярное произведения первых двух векторов $\vec{a}$ и $\vec{b}$ на третий вектор $\vec{c}$. \[
-  \vec{a} \vec{b} \vec{c} = (\vec{a} \cdot \vec{b}) \times \vec{c}
+  \vec{a} \vec{b} \vec{c} = (\vec{a} \times \vec{b}) \cdot \vec{c}
   \] 
 \end{answer}
 
@@ -210,6 +213,7 @@
 
   Свойство дистрибутивности: \[
       (\vec{a_1} + \vec{a_2}) \vec{b} \vec{c} = \vec{a_1} \vec{b} \vec{c} + \vec{a_2} \vec{b} \vec{c}
+  \]
 \end{answer}
 
 
@@ -453,6 +457,23 @@
 \begin{question}
   Доказать свойство линейности скалярного произведения.
 \end{question}
+\begin{answer}
+  1. Свойство дистрибутивности:
+  \begin{align*}
+    (\vec{a} + \vec{b}) \cdot \vec{c} &= |\vec{c}| \left(np_{\vec{c}}(\vec{a} + \vec{b}) \right) \\
+                                      &= |\vec{c}| (np_{\vec{c}} \vec{a} + np_{\vec{c}} \vec{a}) \\
+                                      &= |\vec{c}| np_{\vec{c}} \vec{a} + |\vec{c}| np_{\vec{c}} \vec{b} \\
+                                      &= \vec{a} \cdot \vec{c} + \vec{b} \cdot \vec{c}
+  \end{align*}
+
+  2. Свойство ассоциативности:
+  \begin{align*}
+    (\lambda \vec{a}) \vec{b} &= |\vec{b}| \cdot np_{\vec{b}} \lambda \vec{a} \\
+    &= |\vec{b}| \cdot \lambda \cdot np_{\vec{b}} \vec{a} \\
+    &= \lambda (|\vec{b} \cdot np_{\vec{b}} \vec{a}|)  \\
+    &= \lambda(\vec{a} \cdot \vec{b})
+  \end{align*}
+\end{answer}
 
 \begin{question}
   Вывести формулу для вычисления скалярного произведения векторов, заданных в ортонормированном базисе
@@ -464,28 +485,53 @@
     \vec{b} = x_b \vec{i} + y_b \vec{j} + z_b \vec{k}
   \end{gather*}
   Тогда:
-  \begin{gather*}
-    \vec{a} \cdot \vec{b} = \left( x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \right) \cdot \left( x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \right) = \\
-    = x_a x_b (\vec{i} \cdot \vec{i}) + x_a y_b (\vec{i} \cdot \vec{j}) + z_a z_b (\vec{i} \cdot \vec{k}) \\
-    + y_a x_b (\vec{j} \cdot \vec{i}) + y_a y_b (\vec{j} \cdot \vec{j}) + y_a z_b (\vec{j} \cdot \vec{k}) \\
-    + z_a x_b (\vec{k} \cdot \vec{i}) + z_a y_b (\vec{k} \cdot \vec{j}) + z_a z_b (\vec{k} \cdot \vec{k}) = \\
-    = x_a x_b + y_a y_b + z_a z_b
-  \end{gather*}
+  \begin{align*}
+    \vec{a} \cdot \vec{b} &= \left( x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \right) \cdot \left( x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \right) \\
+                          &= x_a x_b (\vec{i} \cdot \vec{i}) + x_a y_b (\vec{i} \cdot \vec{j}) + z_a z_b (\vec{i} \cdot \vec{k}) \\
+                          &+ y_a x_b (\vec{j} \cdot \vec{i}) + y_a y_b (\vec{j} \cdot \vec{j}) + y_a z_b (\vec{j} \cdot \vec{k}) \\
+                          &+ z_a x_b (\vec{k} \cdot \vec{i}) + z_a y_b (\vec{k} \cdot \vec{j}) + z_a z_b (\vec{k} \cdot \vec{k}) \\
+                          &= x_a x_b + y_a y_b + z_a z_b
+  \end{align*}
 \end{answer}
-
 
 \begin{question}
   Вывести формулу для вычисления векторного произведения в правом ортонормированном базисе.
 \end{question}
 \begin{answer}
-  \begin{gather*}
-    \vec{a} \cdot \vec{b} \cdot \vec{c} = \left( \vec{a} \cdot \vec{b} \right) \times \vec{c} =
-  \end{gather*}
+  \begin{align*}
+    \vec{a} \cdot \vec{b} &= \left( x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \right) \cdot \left( x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \right) \\
+                          &= x_a x_b (\vec{i} \times \vec{i}) + x_a y_b (\vec{i} \times \vec{j}) + z_a z_b (\vec{i} \times \vec{k}) \\
+                          &+ y_a x_b (\vec{j} \times \vec{i}) + y_a y_b (\vec{j} \times \vec{j}) + y_a z_b (\vec{j} \times \vec{k}) \\
+                          &+ z_a x_b (\vec{k} \times \vec{i}) + z_a y_b (\vec{k} \times \vec{j}) + z_a z_b (\vec{k} \times \vec{k}) \\
+                          &= x_a x_b \vec{k} - x_a z_b \vec{j} - y_a x_b \vec{k} + y_a z_b \vec{i} + z_a x_b \vec{j} - z_a y_b \vec{i} \\
+                          &= \vec{i}(y_a z_b - z_a y_b) - \vec{j}(x_a z_b - z_a x_b) + \vec{k}(x_a y_b - x_b y_a) \\
+                          &= \begin{vmatrix} 
+                            \vec{i} & \vec{j} & \vec{k} \\
+                            x_a & y_a & z_a \\
+                            x_b & y_b & z_b
+                          \end{vmatrix}  \\
+  \end{align*}
 \end{answer}
 
 \begin{question}
   Доказать свойство линейности смешанного произведения.
 \end{question}
+\begin{answer}
+  1. Дистрибутивность:
+  \begin{align*}
+    (\vec{a_1} + \vec{a_2}) \vec{b} \vec{c} &= (\vec{a_1} + \vec{a_2}) \times \vec{b} \cdot \vec{c} \\
+    &= (\vec{a_1} \times \vec{b} + \vec{a_2} \times \vec{b}) \cdot \vec{c} \\
+    &= (\vec{a_1} \times \vec{b}) \cdot \vec{c} + (\vec{a_2} \times \vec{b}) \cdot \vec{c} \\
+    &= \vec{a_1} \vec{b} \vec{c} + \vec{a_2} \vec{b} \vec{c} \\
+  \end{align*}
+
+  2. Ассоциативность:
+  \begin{align*}
+    (\lambda \vec{a}) \vec{b} \vec{c} &= (\lambda \vec{a} \times \vec{b}) \cdot \vec{c} \\
+    &= \lambda (\vec{a} \times \vec{b}) \cdot \vec{c} \\
+    &= \lambda \vec{a} \vec{b} \vec{c} \\
+  \end{align*}
+\end{answer} 
 
 \begin{question}
   Вывести формулу для вычисления смешанного произведения трёх векторов в правом ортонормированном базисе.

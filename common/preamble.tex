@@ -194,6 +194,14 @@
   \end{center}
 }
 
+\def\@header{}
+\newcommand{\exam}[1]{
+  \def\@header{#1. Подготовка к экзамену}
+  \begin{center}
+    \section*{#1. Подготовка к экзамену}
+  \end{center}
+}
+
 % fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}

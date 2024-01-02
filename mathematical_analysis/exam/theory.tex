@@ -1,0 +1,399 @@
+\rc{Математический анализ}{1}
+
+\section{Теоретические вопросы}
+
+\subsection{Определения}
+
+\begin{question}
+  Сформулируйте определение окрестности точки $x \in \R$. 
+\end{question}
+\begin{answer}
+  Окрестностью точки $x$ называется любой интервал, содержащий данную точку.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение $\varepsilon$-окрестности точки $x \in \R$.
+\end{question}
+\begin{answer}
+  $\varepsilon$-окрестностью точки $x$ называется интервал с центром в точке $x$ и длиной $2\varepsilon$. \[
+    S(x, \varepsilon) \quad \text{или} \quad u_{\varepsilon}(x)
+  \] 
+\end{answer}
+
+\begin{question}
+   Сформулируйте определение окрестности $+\infty$.
+\end{question}
+\begin{answer}
+  Окрестностью $+\infty$ называется любой интервал вида: \[
+  S(a, +\infty), \quad a > 0
+  \] 
+\end{answer}
+
+\begin{question}
+   Сформулируйте определение окрестности $-\infty$.
+\end{question}
+\begin{answer}
+  Окрестностью $-\infty$ называется любой интервал вида: \[
+  S(-\infty, -a), \quad a > 0
+  \] 
+\end{answer}
+
+\begin{question}
+   Сформулируйте определение окрестности $\infty$.
+\end{question}
+\begin{answer}
+  Окрестностью $\infty$ называется любой интервал вида:
+  \begin{align*}
+    S(\infty, a) &= S(-\infty, -a) \cup S(a, +\infty) \\
+            &= (-\infty, -a) \cup (a, +\infty), a > 0
+  \end{align*}
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение предела последовательности.
+\end{question}
+\begin{answer}
+ Число $a$ называется пределом последовательности $\{x_{n}\}$, если для любого положительного числа $\varepsilon$ найдётся натуральное число $N(\varepsilon)$ такое, что если порядковый номер $n$ члена последовательности станет больше $N(\varepsilon)$, то имеет место неравенство $|x_{n} - a| < \varepsilon$.\[
+ \lim_{n \to \infty} x_{n} = a \iff (\forall \varepsilon > 0)(\exists N(\varepsilon) \in \N)(\forall  n > N(\varepsilon) \implies |x_{n} - a| < \varepsilon) 
+ \] 
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение сходящейся последовательности.
+\end{question}
+\begin{answer}
+  Последовательность, имеющая предел, назыается сходящейся.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение ограниченной последовательности.
+\end{question}
+\begin{answer}
+  Последовательность $\{x_{n}\}$ называется ограниченной, если она ограничена и сверху, и снизу, т.е.: \[
+  \exists M, m : \forall n \in \N \implies m \le x_{n} \le M
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение монотонной последовательности.
+\end{question}
+\begin{answer}
+  Последовательность называется монотонной, если она является либо неубывающей, либо невозрастающей.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение возрастающей последовательности.
+\end{question}
+\begin{answer}
+  Последовательность чисел $\{x_n\}$ называется возрастающей, если $x_{n+1} > x_{n}$, $n \in \N$.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение убывающей последовательности.
+\end{question}
+\begin{answer}
+  Последовательность чисел $\{x_{n}\}$ называется убывающей, если $x_{n+1} < x_{n}$.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение невозрастающей последовательности.
+\end{question}
+\begin{answer}
+  Последовательность чисел $\{x_{n}\}$ называется невозрастающей, если $x_{n+1} \le x_{n}$.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение неубывающей последовательности.
+\end{question}
+\begin{answer}
+  Последовательность чисел $\{x_{n}\}$ называется неубывающей, если $x_{n+1} \ge x_{n}$.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение фундаментальной последовательности.
+\end{question}
+\begin{answer}
+  Последовательность $\{x_{n}\}$ называется фундаментальной, если для любого $\varepsilon > 0$ существует свой порядковый номер $N(\varepsilon)$ такой, что при всех $n \ge N(\varepsilon)$ и $m \ge N(\varepsilon)$ выполнено неравенство $|x_{n} - x_{m}| < \varepsilon$. 
+  \begin{gather*}
+    (\forall \varepsilon > 0)(\exists N(\varepsilon) \in \N)(\forall n, m \ge N(\varepsilon) \implies |x_{n} - x_{m}| < \varepsilon)
+  \end{gather*}
+\end{answer}
+
+\begin{question}
+  Сформулируйте критерий Коши существования предела последовательности.
+\end{question}
+\begin{answer}
+  Для того, чтобы последовательность была сходящейся, необходимо и достаточно чтобы она была фундаментальной.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение по Гейне предела функции.
+\end{question}
+\begin{answer}
+  Число a называется пределом $y=f(x)$ в точке $x_0$, если эта функция определена в окрестности точки $a$ и $\forall$ последовательнсти $\{x_n\}$ из области определения этой функции, сходящейся к $x_0$ соответствующая последовательность функций $\{f(x_{n})\}$ сходится к $a$. \[
+    \lim_{x \to x_0} f(x) = a \iff (\forall x_{n} \in D_f)(\lim_{n \to \infty} x_{n} = x_{0} \implies \lim_{n \to \infty} f(x_{n}) = a)
+\] 
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение бесконечно малой функции при $x \to x_0$. 
+\end{question}
+\begin{answer}
+  Функция называется бесконечно малой при $x \to x_0$, если: \[
+    \lim_{x \to x_0} f(x) = 0
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение бесконечно большой функции.
+\end{question}
+\begin{answer}
+  Функция называется бесконечно большой при $x \to x_0$, если: \[
+    \lim_{x \to x_0} f(x) = \infty
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение бесконечно малых функций одного порядка.
+\end{question}
+\begin{answer}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются одного порядка малости, если: \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = const \neq 0
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение несравнимых бесконечно малых функций. 
+\end{question}
+\begin{answer}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются \textit{несравнимыми} , если: \[
+    \not \exists \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)}
+  \]   
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение эквивалентных бесконечно малых функций. 
+\end{question}
+\begin{answer}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются \textit{эквивалентными} , если: \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1
+  \]
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение порядка малости одной функции относительно
+другой.
+\end{question}
+\begin{answer}
+  Б.м.ф. $\alpha(x)$ имеет порядок малости $k$ относительно функции б.м.ф.  $\beta(x)$, если: \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{[\beta(x)]^k} = const \neq 0
+  \]
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение приращения функции. 
+\end{question}
+\begin{answer}
+  \[
+  \Delta y = f(x) - f(x_0)
+  \] 
+\end{answer}
+
+\begin{question}
+  Cформулируйте определение непрерывности функции в точке (любое). 
+\end{question}
+\begin{answer}
+  Любой ответ из:
+  \begin{enumerate}
+    \item Функция $f(x)$, определённая в некоторой окрестности точки $x_0$, называется непрерывной в этой точке если: \[
+        \exists \lim_{x \to x_0} f(x) = f(x_0)
+      \]
+  
+    \item Функция $y = f(x)$, определённая в некоторой окрестности точки $x_0$, называется непрерывной в этой точке, если в достаточно малой окрестности точки $x_0$ значение функции близки к $f(x_0)$.
+      \[
+        (\forall  \varepsilon > 0)(\exists \delta(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |f(x) - f(x_0)| < \varepsilon)
+      \]
+    
+    \item Функция $y = f(x)$ в некоторой окрестности точки $x_0$ называется непрерывной в этой точке, если выполняются условия:
+      \begin{align*}
+        &1. \quad \exists \lim_{x \to x_0+} f(x) \\
+        &2. \quad \exists \lim_{x \to x_0-} f(x) \\
+        &3. \quad \lim_{x \to x_0+} f(x) = \lim_{x \to x_0-} f(x) = f(x_0) \\
+      \end{align*}
+
+    \item Функция $y = f(x)$ называется непрерывной в точке $x_0$, если бесконечно малому приращению аргумента соответствует бесконечно малое приращение функции. \[
+      \lim_{\Delta x \to 0} \Delta y = 0
+    \] 
+  \end{enumerate}
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение непрерывности функции на интервале.
+\end{question}
+\begin{answer}
+  Функция $y = f(x)$ называется непрерывной на интервале $(a, b)$, если она непрерывна в каждой точке этого интервала.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение непрерывности функции на отрезке.
+\end{question}
+\begin{answer}
+  Функция $y = f(x) $ называется непрерывной на отрезке $[a, b]$, если:
+  \begin{enumerate}
+    \item Непрерывна на интервале $(a, b)$
+    \item Непрерывна в точке $a$ справа
+    \item Непрерывна в точке $b$ слева
+  \end{enumerate}
+\end{answer}
+
+\begin{question}
+  Сформулируйте опредление точки разрыва.
+\end{question}
+\begin{answer}
+  Пусть функция $y = f(x)$ определена в некоторой точке проколотой окрестности точки $x_0$ непрерывна в любой точке этой окрестности (за исключением самой точки $x_0$).
+  Тогда точка $x_0$ называется точкой разрыва функции.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение точки устранимого разрыва.
+\end{question}
+\begin{answer}
+  Если точка $x_0$ -- точка разрыва первого рода функции $y = f(x)$, и предел  $\lim_{x \to x_0+} f(x) = \lim_{x \to x_0-} f(x)$, но $\neq f(x_0)$, то точка $x_0$ называется точкой устранимого разрыва.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение точки разрыва I рода.
+\end{question}
+\begin{answer}
+  Если точка $x_0$ -- точка разрыва функции $y = f(x)$ и существуют конечные пределы $\lim_{x \to x_0+} f(x)$ и $\lim_{x \to x_0-} f(x)$, то $x_0$ называют точкой I-го рода.
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение точки разрыва II рода.
+\end{question}
+\begin{answer}
+  Если точка $x_0$ -- точка разрыва функции $y = f(x)$ и \textbf{не} существуют конечные пределы $\lim_{x \to x_0+} f(x)$ и $\lim_{x \to x_0-} f(x)$ или $\lim_{x \to x_0} f(x) = \infty$, то $x_0$ называется точкой разрыва II-го рода.
+\end{answer}
+
+
+\subsection{Определение предела по Коши}
+
+\begin{question}
+  Сформулируйте определение по Коши $\lim_{x \to 0} f(x) = b$, где $b \in \R$.
+Приведите соответствующий пример (с геометрической иллюстрацией).
+\end{question}
+\begin{answer}
+  Определение:
+  \begin{gather*}
+    \lim_{x \to 0} f(x) = b \\
+    \iff \\
+    (\forall \varepsilon > 0)(\exists \delta(\varepsilon) > 0)(\forall x \in \mathring{S}(0, \delta) \implies |f(x) - b| < \varepsilon)
+  \end{gather*}
+
+  Пример: \[
+    \lim_{x \to 0} (x + b) = b  
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулируйте определение по Коши $\lim_{x \to a} = +\infty$, где $a \in \R$.
+Приведите соответствующий пример (с геометрической иллюстрацией).
+\end{question}
+\begin{answer}
+  Определение:
+  \begin{gather*}
+    \lim_{x \to a} = +\infty \\
+    \iff \\
+    (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in S(a, \delta) \implies f(x) > M) 
+  \end{gather*}
+  Пример: \[
+  \lim_{x \to a} \frac{1}{|x - a|} = +\infty
+  \] 
+\end{answer}
+
+\begin{question}
+  Сформулируйте определние по Коши $\lim_{x \to \infty} f(x) = 0$.
+Приведите соответствующий пример (с геометрической иллюстрацией).
+\end{question}
+\begin{answer}
+  Определение:
+  \begin{gather*}
+    \lim_{x \to \infty} f(x) = 0 \\
+    \iff \\
+    (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall |x| > N \implies |f(x)| < \varepsilon)
+  \end{gather*}
+  Пример: \[
+    \lim_{x \to \infty} \frac{1}{x} = 0
+  \] 
+\end{answer}
+  
+\begin{question}
+  Сформулируйте определние по Коши $\lim_{x \to a-0} f(x) = -\infty$, где $a \in \R$.
+Приведите соответствующий пример (с геометрической иллюстрацией).
+\end{question}
+\begin{answer}
+  Определение:
+  \begin{gather*}
+    \lim_{x \to a - 0} f(x) = -\infty \\
+    \iff \\
+    (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in (a - \delta, a) \implies f(x) < -M)
+  \end{gather*}
+
+  Пример: \[
+    \lim_{x \to a - 0} \frac{1}{x - a} = -\infty
+  \] 
+\end{answer}
+
+
+\subsection{Формулировка теорем}
+
+\begin{question}
+  Сформулируйте теорему об ограниченности сходящейся числовой последовательности.
+\end{question}
+\begin{answer}
+  Любая сходящаяся последовательность ограничена.
+\end{answer}
+
+\begin{question}
+  Сформулируйте теорему о связи функции, ее предела и бесконечно малой.  
+\end{question}
+\begin{answer}
+  Функция $y = f(x)$ имеет конечный предел в точке  $x_0$ тогда и только тогда, когда её можно представить в виде суммы предела и некоторой бесконечно малой функции.
+\end{answer}
+
+\begin{question}
+  Сформулируйте теорему о сумме конечного числа бесконечно малых функций.
+\end{question}
+\begin{answer}
+  Конечная сумма бесконечно малых функции есть бесконечно малая функция.
+\end{answer}
+
+\begin{question}
+  Сформулируйте теорему о произведении бесконечно малой на ограниченную функцию.
+\end{question}
+\begin{answer}
+  Произведение бесконечно малой функции на ограниченную есть величина бесконечно малая.  
+\end{answer}
+
+\begin{question}
+  Сформулируйте теорему о связи бесконечно малой и бесконечно большой функций.
+\end{question}
+\begin{answer}
+  Если $\alpha(x)$ - бесконечно большая функция при $x \to x_0$, то $\frac{1}{\alpha(x)}$ - бесконечно малая функция при $x \to x_0$.  
+\end{answer}
+
+\begin{question}
+  Сформулируйте теорему о необходимом и достаточном условии эквивалентности бесконечно малых.
+\end{question}
+\begin{answer}
+  Две функции $\alpha(x)$ и $\beta(x)$ эквивалентны тогда и только тогда, когда их разность имеет более высокий порядок малости по сравнению с каждой из них.
+\end{answer}
+
+\begin{question}
+  Сформулируйте теорему о сумме бесконечно малых разных порядков
+\end{question}
+\begin{answer}
+  Сумма бесконечно малых функций разных порядком малости эквивалентно слагаемому низшего порядка малости.
+\end{answer}
+
+

@@ -4,7 +4,7 @@
 
 Куда скидывать найденные очепятки и печенюшки Вы, думаю, уже знаете:
 - [t.me/zhikhkirill](https://t.me/zhikhkirill)
-- [vk.com//zhikh.localhost](https://vk.com/zhikh.localhost)
+- [vk.com/zhikh.localhost](https://vk.com/zhikh.localhost)
 - [github.com/zhikh23](https://github.com/zhikh23)
 
 ## Теоретические вопросы
@@ -652,8 +652,7 @@ else:
 
 #### Операторы break и continue
 
-`break` — переходит за пределы ближайшего заключающего цикла (после всего
-оператора цикла)
+`continue` — переходит в начало ближайшего заключающего цикла (в строку заголовка цикла)
 
 ```py
 while y < size:
@@ -663,7 +662,7 @@ while y < size:
         print(x, y)
 ```
 
-`conrinue` — переходит в начало ближайшего заключающего цикла (в строку заголовка цикла)
+`break` — переходит за пределы ближайшего заключающего цикла (после всего оператора цикла)
 
 ```py
 while y < size:  # <--------+
@@ -950,8 +949,7 @@ for i, it in enumerate(l):
     if it < min_:
         min_ = it
         index = i
-if min_ != inf:
-    print(f"Min: l[{index}] = {min_}")
+print(f"Min: l[{index}] = {min_}")
 ```
 
 Поиск максимального:
@@ -963,8 +961,7 @@ for i, it in enumerate(l):
     if it < max_:
         max_ = it
         index = i
-if max_ != inf:
-    print(f"Max: l[{index}] = {max_}")
+print(f"Max: l[{index}] = {max_}")
 ```
 
 Если нужно найти только само значение минимума/максимума (без индекса):
@@ -1543,7 +1540,7 @@ def create_console_output_channel() -> OutputChannel:
 
 ...
 
-out = create_terminal_output_channel()
+out = create_console_output_channel()
 out(very_long_text)
 ```
 Функция `console_output_channel` является _замыканием_, а переменная `size` — нелокальной.
@@ -1558,12 +1555,12 @@ out(very_long_text)
 lambda arg1, arg2...: expression
 ```
 
-Например, лямбда функция:
+Например, лямбда-функция:
 ```py
 lambda x, y: x + y
 ```
 
-Эквивалетна:
+Эквивалентна:
 ```py
 def sum_(x, y):
     return x + y
@@ -1584,7 +1581,7 @@ def div(a: 'the dividend',
     return a / b
 ```
 
-> От автора: аннотации на самом деле очень мощный механизм, который позволяет добавить типизацию в код Ваших программ на `Python`-е. Подробнее [на youtobe-канале Диджитализируй!](https://www.youtube.com/watch?v=dKxiHlZvULQ&t=638s&ab_channel=%D0%94%D0%B8%D0%B4%D0%B6%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D1%83%D0%B9%21)
+> От автора: аннотации на самом деле очень мощный механизм, который позволяет добавить типизацию в код Ваших программ на `Python`-е. Подробнее [на youtube-канале Диджитализируй!](https://www.youtube.com/watch?v=dKxiHlZvULQ&t=638s&ab_channel=%D0%94%D0%B8%D0%B4%D0%B6%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D1%83%D0%B9%21)
 
 ```py
 def sum(a: int, b: int) -> int:
@@ -2350,7 +2347,7 @@ b'hello!'
     </tr>
     <tr>
         <td><code>e</code></td>
-        <td>"половинный <strong>float</strong>"</td>
+        <td>"половинный <code>float</code>"</td>
         <td>float</td>
         <td>2</td>
     </tr>
@@ -2509,7 +2506,7 @@ def insertion_binary_sort(seq: MutableSequence) -> None:
 #### Сортировка пузырьком
 
 ```py
-def bubble_sort(seq: MutableSequence):
+def bubble_sort(seq: MutableSequence) -> None:
     for i in range(len(seq)):
         for j in range(len(seq)-i-1):
             if seq[j] > seq[j+1]:
@@ -2518,12 +2515,22 @@ def bubble_sort(seq: MutableSequence):
 
 #### Сортировка пузырьком с флагом
 
-> Это как?
+```py
+def bubble_with_flag_sort(seq: MutableSequence) -> None:
+    for i in range(len(seq)):
+        swapped = False
+        for j in range(len(seq)-i-1):
+            if seq[j] > seq[j+1]:
+                seq[j], seq[j+1] = seq[j+1], seq[j]
+                swapped = True
+        if not swapped:
+            break
+```
 
 #### Метод шейкер-сортировки
 
 ```py
-def shaker_sort(seq: MutableSequence)
+def shaker_sort(seq: MutableSequence) -> None:
     swapped = True
     start = 0
     end = len(seq) - 1
@@ -2557,13 +2564,13 @@ def shaker_sort(seq: MutableSequence)
 ```py
 import random
 
-def quicksort(seq: Sequence):
+def quicksort(seq: Sequence) -> Sequence:
    if len(seq) <= 1:
-       return nums
+       return seq
    else:
-       q = random.choice(nums)
-   l_nums = [n for n in nums if n < q]
-   e_nums = [q] * nums.count(q)
-   b_nums = [n for n in nums if n > q]
+       q = random.choice(seq)
+   l_nums = [n for n in seq if n < q]
+   e_nums = [q] * seq.count(q)
+   b_nums = [n for n in seq if n > q]
    return quicksort(l_nums) + e_nums + quicksort(b_nums)
 ```

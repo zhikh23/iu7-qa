@@ -844,7 +844,7 @@ _Списки_ — упорядоченные изменяемые коллек�
 
 - `append(x)` — добавление элемента x в конец списка
 - `extend(iterable)` — расширение списка с помощью итерируемого объекта
-- `insert(i, x)` — вставка x в i-ю позицию. Если i за границами списка, то вставка происходит в конец/начало списка
+- `insert(i, x)` — вставка x в i-ю позицию. Если i — отрицательный то вставляет _перед_ i-ым элементом. Если i за границами списка, то вставка происходит в конец/начало списка.
 - `remove(x)` — удаляет первый элемент со значением x
 - `pop([i])` — удаляет элемент в позиции i. Если аргумент не указан, удаляется
 последний элемент списка, возвращает удалённый элемент
@@ -990,9 +990,9 @@ l = [ i**2 for i in range(5) ]  # [0, 1, 4, 9, 16]
 
 Поиск минимального:
 ```py
-from math import inf
 l = [ ... ]
-min_ = inf
+min_ = l[0]
+index = 0
 for i, it in enumerate(l):
     if it < min_:
         min_ = it
@@ -1002,9 +1002,9 @@ print(f"Min: l[{index}] = {min_}")
 
 Поиск максимального:
 ```py
-from math import inf
 l = [ ... ]
-max_ = -inf
+min_ = l[0]
+index = 0
 for i, it in enumerate(l):
     if it < max_:
         max_ = it
@@ -1047,7 +1047,7 @@ for it in l:
 print(prod)
 ```
 
-Или через модуль `functools` (не очень законно, зато красиво)
+Или через модуль `functools`:
 ```py
 >>> import functools
 >>> l = [1, 2, 3]
@@ -1707,7 +1707,7 @@ functools.reduce(function, iterable[, initializer])
 ```py
 >>> from functools import reduct
 >>> l = [1, 2, 3]
->>> reduce(lambda res, current: res * current)
+>>> reduce(lambda res, current: res * current, l)
 6
 ```
 
@@ -2752,7 +2752,7 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 #### Сортировка вставками
 
 ```py
-def insertion_sort(seq: MutableSequence) -> None:
+def insertion_sort(seq):
     for i in range(1, len(seq)):
         key = seq[i]
         j = i-1
@@ -2765,7 +2765,7 @@ def insertion_sort(seq: MutableSequence) -> None:
 #### Сортировка выбором
 
 ```py
-def selection_sort(seq: MutableSequence) -> None:
+def selection_sort(seq):
     n = len(seq)
     for i in range(n-1):
         m = i
@@ -2786,7 +2786,7 @@ def selection_sort(seq: MutableSequence) -> None:
 #### Метод простых вставок
 
 ```py
-def insertion_sort(seq: MutableSequence) -> None:
+def insertion_sort(seq):
     for i in range(1, len(seq)):
         key = seq[i]
         j = i-1
@@ -2799,7 +2799,7 @@ def insertion_sort(seq: MutableSequence) -> None:
 #### Метод вставок с бинарным поиском
 
 ```py
-def insertion_binary_sort(seq: MutableSequence) -> None:
+def insertion_binary_sort(seq):
     for i in range(1, len(seq) - 1):
         key = seq[i]
         lo, hi = 0, i - 1
@@ -2825,7 +2825,7 @@ def insertion_binary_sort(seq: MutableSequence) -> None:
 #### Сортировка пузырьком
 
 ```py
-def bubble_sort(seq: MutableSequence) -> None:
+def bubble_sort(seq):
     for i in range(len(seq)):
         for j in range(len(seq)-i-1):
             if seq[j] > seq[j+1]:
@@ -2835,7 +2835,7 @@ def bubble_sort(seq: MutableSequence) -> None:
 #### Сортировка пузырьком с флагом
 
 ```py
-def bubble_with_flag_sort(seq: MutableSequence) -> None:
+def bubble_with_flag_sort(seq):
     for i in range(len(seq)):
         swapped = False
         for j in range(len(seq)-i-1):
@@ -2849,7 +2849,7 @@ def bubble_with_flag_sort(seq: MutableSequence) -> None:
 #### Метод шейкер-сортировки
 
 ```py
-def shaker_sort(seq: MutableSequence) -> None:
+def shaker_sort(seq):
     swapped = True
     start = 0
     end = len(seq) - 1
@@ -2875,25 +2875,25 @@ def shaker_sort(seq: MutableSequence) -> None:
 > Комментарий: На экзамене, скорее всего, не предвидится.
 
 ```py
-def heapify(arr, n, i):
+def heapify(seq, n, i):
     largest = i
-    l = 2 * i + 1  # left = 2 * i + 1
-    r = 2 * i + 2  # right = 2 * i + 2
-    if l < n and arr[i] < arr[l]:
+    l = 2 * i + 1
+    r = 2 * i + 2
+    if l < n and seq[i] < seq[l]:
         largest = l
-    if r < n and arr[largest] < arr[r]:
+    if r < n and seq[largest] < seq[r]:
         largest = r
     if largest != i:
-        arr[i], arr[largest] = arr[largest], arr[i]
-        heapify(arr, n, largest)
+        seq[i], seq[largest] = seq[largest], seq[i]
+        heapify(seq, n, largest)
 
-def heapSort(arr):
-    n = len(arr)
+def heapSort(seq):
+    n = len(seq)
     for i in range(n // 2 - 1, -1, -1):
-        heapify(arr, n, i)
+        heapify(seq, n, i)
     for i in range(n - 1, 0, -1):
-        arr[i], arr[0] = arr[0], arr[i]
-        heapify(arr, i, 0)
+        seq[i], seq[0] = seq[0], seq[i]
+        heapify(seq, i, 0)
 ```
 
 ---
@@ -2909,7 +2909,7 @@ def heapSort(arr):
 ```py
 import random
 
-def quicksort(seq: Sequence) -> Sequence:
+def quicksort(seq):
    if len(seq) <= 1:
        return seq
    else:

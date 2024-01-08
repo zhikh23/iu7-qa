@@ -207,6 +207,8 @@
       - [Списки](#списки-5)
       - [Метод простых вставок](#метод-простых-вставок)
       - [Метод вставок с бинарным поиском](#метод-вставок-с-бинарным-поиском)
+      - [Метод вставки с барьером](#метод-вставки-с-барьером)
+      - [Метод Шелла](#метод-шелла)
     - [59. Списки. Сортировка. Обменные методы сортировки. Сортировка пузырьком. Сортировка пузырьком с флагом. Метод шейкер-сортировки](#59-списки-сортировка-обменные-методы-сортировки-сортировка-пузырьком-сортировка-пузырьком-с-флагом-метод-шейкер-сортировки)
       - [Списки](#списки-6)
       - [Сортировка пузырьком](#сортировка-пузырьком)
@@ -2932,19 +2934,51 @@ def insertion_sort(seq):
 #### Метод вставок с бинарным поиском
 
 ```py
-def insertion_binary_sort(seq):
-    for i in range(1, len(seq) - 1):
+def insertion_bin_sort(seq):
+    n = len(seq)
+    for i in range(1, n):
         key = seq[i]
-        lo, hi = 0, i - 1
+        lo, hi = 0, i
         while lo < hi:
-            mid = lo + (hi - lo) // 2
-            if key < seq[mid]:
-                hi = mid
+            m = lo + (hi - lo) // 2
+            if key < seq[m]:
+                hi = m
             else:
-                lo = mid + 1
-        for j in range(i, lo + 1, -1):
+                lo = m + 1
+        for j in range(i, lo, -1):
             seq[j] = seq[j-1]
         seq[lo] = key
+    return seq
+```
+
+#### Метод вставки с барьером
+
+```py
+def insertion_sort_with_barrier(seq):
+    seq = [0] + seq
+    for i in range(1, len(seq)):
+        seq[0] = seq[i]
+        j = i - 1
+        while seq[0] < seq[j]:
+            seq[j+1] = seq[j]
+            j -= 1
+        seq[j+1] = seq[0]
+    return seq[1:]
+```
+
+#### Метод Шелла
+
+```py
+def shell_sort(seq):
+    inc = len(seq) // 2
+    while inc > 0:
+        for i, elem in enumerate(seq):
+            while i >= inc and elem < seq[i - inc]:
+                seq[i] = seq[i - inc]
+                i -= inc
+            seq[i] = elem
+        inc //= 2
+    return seq
 ```
 
 ---

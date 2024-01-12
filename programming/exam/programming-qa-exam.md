@@ -2201,7 +2201,17 @@ with open("text.txt", "at") as file:
 
 #### Поиск в файле
 
-А что искать-то?
+Поиск смысла жизни:
+
+```py
+with open("life.txt", "rt") as file:
+    for line in file:
+        if "смысл жизни" in line:
+            print("Смысл жизни найден!")
+            break
+    else:
+        print("Смысл жизни не найден :(")
+```
 
 ---
 
@@ -3031,24 +3041,19 @@ def bubble_with_flag_sort(seq):
 
 ```py
 def shaker_sort(seq):
-    swapped = True
-    start = 0
-    end = len(seq) - 1
-    while swapped: 
-        swapped = False
-        for i in range(start, end): 
-            if seq[i] > seq[i+1]: 
-                seq[i], seq[i+1] = seq[i+1], seq[i] 
-                swapped = True
-        if not swapped: 
-            break
-        swapped = False
-        end -= 1
-        for i in range(end - 1, start - 1, -1): 
-            if seq[i] > seq[i+1]:
-                seq[i], seq[i+1] = seq[i+1], seq[i] 
-                swapped = True
-        start += 1
+    left = 0
+    right = len(seq) - 1
+    while left <= right:
+        for i in range(left, right, 1):
+            if seq[i] > seq[i + 1]:
+                seq[i], seq[i + 1] = seq[i + 1], seq[i]
+        right -= 1
+ 
+        for i in range(right, left, -1):
+            if seq[i - 1] > seq[i]:
+                seq[i], seq[i - 1] = seq[i - 1], seq[i]
+        left += 1
+    return seq
 ```
 
 #### Сортировка кучей (пирамидальная)
@@ -3088,15 +3093,20 @@ def heapSort(seq):
 #### Быстрая сортировка
 
 ```py
-import random
+def partition(seq, low, high):
+    pivot = seq[high]
+    i = low - 1
+    for j in range(low, high):
+        if seq[j] <= pivot:
+            i = i + 1
+            seq[i], seq[j] = seq[j], seq[i]
+    seq[i + 1], seq[high] = seq[high], seq[i + 1]
+    return i + 1
 
-def quicksort(seq):
-   if len(seq) <= 1:
-       return seq
-   else:
-       q = random.choice(seq)
-   l_nums = [n for n in seq if n < q]
-   e_nums = [q] * seq.count(q)
-   b_nums = [n for n in seq if n > q]
-   return quicksort(l_nums) + e_nums + quicksort(b_nums)
+def quick_sort(seq, low, high):
+    if low < high:
+        pi = partition(seq, low, high)
+        quick_sort(seq, low, pi - 1)
+        quick_sort(seq, pi + 1, high)
+    return seq
 ```

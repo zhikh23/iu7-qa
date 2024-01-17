@@ -3,6 +3,10 @@
 \usepackage{cancel}
 \usepackage[none]{hyphenat}
 
+% IGNORE USELESS WARNINGS ===========================================
+\usepackage{silence}
+\WarningFilter{mdframed}{You got a bad break}
+
 % HEADER AND FOOTER =================================================
 \def\@header{}
 \newcommand{\rc}[1]{

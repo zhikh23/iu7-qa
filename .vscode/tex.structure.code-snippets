@@ -1,0 +1,158 @@
+{
+	"begin{} / eng{}": {
+		"prefix": "beg",
+		"body": [
+			"\\begin{$1}",
+				"\t$0"
+			"\\eng{$1}"
+		],
+	},
+
+	"Section*": {
+		"prefix": "sec*",
+		"body": [
+			"\\section*{$1}",
+			"$0",
+		],
+	},
+
+	"Subsection*": {
+		"prefix": "ssec*",
+		"body": [
+			"\\subsection*{$1}",
+			"$0",
+		],
+	},
+
+	"Subsubsection*": {
+		"prefix": "sssec*",
+		"body": [
+			"\\subsubsection*{$1}",
+			"$0",
+		],
+	},
+
+	"Section": {
+		"prefix": "sec",
+		"body": [
+			"\\section{$1}",
+			"$0",
+		],
+	},
+
+	"Subsection": {
+		"prefix": "ssec",
+		"body": [
+			"\\subsection{$1}",
+			"$0",
+		],
+	},
+
+	"Subsubsection": {
+		"prefix": "sssec",
+		"body": [
+			"\\subsection{$1}",
+			"$0",
+		],
+	},
+
+	"List": {
+		"prefix": "list",
+		"body": [
+			"\\begin{itemize}",
+				"\t\\item $0",
+			"\\eng{itemize}",
+		],
+	},
+
+	"Enumerate": {
+		"prefix": "enum",
+		"body": [
+			"\\begin{enumerate}",
+				"\t\\item $0",
+			"\\eng{enumerate}",
+		],
+	},
+
+	"Item": {
+		"prefix": "item",
+		"body": [
+			"\\item",
+		],
+	},
+
+	"Definition": {
+		"prefix": "def",
+		"body": [
+			"\\begin{definition}",
+				"\t$0",
+			"\\end{definition}",
+		],
+	},
+
+	"QA": {
+		"prefix": "qa",
+		"body": [
+			"\\begin{question}",
+				"\t$1",
+			"\\end{question}",
+			"\\begin{asnwer}",
+				"\t$2",
+			"\\end{asnwer}",
+			"$0",
+		],
+	},
+
+	"Question": {
+		"prefix": "question",
+		"body": [
+			"\\begin{question}",
+				"\t$0",
+			"\\end{question}",
+		],
+	},
+
+	"Answer": {
+		"prefix": "answer",
+		"body": [
+			"\\begin{asnwer}",
+				"\t$0",
+			"\\end{asnwer}",
+		],
+	},
+
+	"Inline math": {
+		"prefix": "mk",
+		"body": [
+			"\$$1\$ $0"
+		],
+	},
+
+	"Signle-line math": {
+		"prefix": "dm",
+		"body": [
+			"\\[",
+			"\t$1".
+			"\\]",
+			"$0".
+		],
+	},
+
+	"Gather": {
+		"prefix": "gat",
+		"body": [
+			"\\begin{gather*}",
+				"\t$0",
+			"\\end{gather*}",
+		],
+	},
+
+	"Align": {
+		"prefix": "ali",
+		"body": [
+			"\\begin{align*}",
+				"\t$0",
+			"\\end{align*}",
+		],
+	},
+}

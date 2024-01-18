@@ -4,7 +4,7 @@
 		"body": [
 			"\\begin{$1}",
 				"\t$0"
-			"\\eng{$1}"
+			"\\end{$1}"
 		],
 	},
 
@@ -84,22 +84,9 @@
 	"Definition": {
 		"prefix": "def",
 		"body": [
-			"\\begin{definition}",
-				"\t$0",
+			"\\begin{definition}[$1] \\label{${2}}",
+				"\t$3",
 			"\\end{definition}",
-		],
-	},
-
-	"QA": {
-		"prefix": "qa",
-		"body": [
-			"\\begin{question}",
-				"\t$1",
-			"\\end{question}",
-			"\\begin{asnwer}",
-				"\t$2",
-			"\\end{asnwer}",
-			"$0",
 		],
 	},
 
@@ -107,7 +94,7 @@
 		"prefix": "question",
 		"body": [
 			"\\begin{question}",
-				"\t$0",
+				"\t$1",
 			"\\end{question}",
 		],
 	},
@@ -115,16 +102,43 @@
 	"Answer": {
 		"prefix": "answer",
 		"body": [
-			"\\begin{asnwer}",
+			"\\begin{answer}",
 				"\t$0",
-			"\\end{asnwer}",
+			"\\end{answer}",
+		],
+	},
+
+	"Theorem": {
+		"prefix": "theorem",
+		"body": [
+			"\\begin{theorem}[$1]",
+				"\t$2",
+			"\\end{theorem}",
+		],
+	},
+
+	"Proof": {
+		"prefix": "proof",
+		"body": [
+			"\\begin{proof}",
+				"\t$1",
+			"\\end{proof}",
+		],
+	},
+
+	"Used": {
+		"prefix": "used",
+		"body": [
+			"\\begin{used}",
+				"\tИспользуются определения $1",
+			"\\end{used}",
 		],
 	},
 
 	"Inline math": {
 		"prefix": "mk",
 		"body": [
-			"\$$1\$ $0"
+			"$$1$ $0"
 		],
 	},
 
@@ -155,4 +169,12 @@
 			"\\end{align*}",
 		],
 	},
+
+	"Label": {
+		"prefix": "label",
+		"body": [
+			"\\label{$1}"
+		],
+	},
+	
 }

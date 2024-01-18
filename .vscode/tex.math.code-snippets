@@ -1,6 +1,6 @@
 {
 	"Fraction": {
-		"prefix": "//",
+		"prefix": "fr",
 		"body": [
 			"\\frac{$1}{$2}$0"
 		],
@@ -193,14 +193,14 @@
 	"in": {
 		"prefix": "in",
 		"body": [
-			"\\in"
+			"\\in $0"
 		],
 	},
 	
 	"Q": {
 		"prefix": "QQ",
 		"body": [
-			"\Q"
+			"\\Q"
 		],
 	},
 
@@ -215,6 +215,13 @@
 		"prefix": "ZZ",
 		"body": [
 			"\\Z"
+		],
+	},
+
+	"N": {
+		"prefix": "NN",
+		"body": [
+			"\\N"
 		],
 	},
 
@@ -245,4 +252,19 @@
 			"\\mathring{S}"
 		],
 	},
+
+	"Union": {
+		"prefix": "uu",
+		"body": [
+			"\\cup $0"
+		],
+	},
+	
+	"Intersection": {
+		"prefix": "nn",
+		"body": [
+			"\\cap $0"
+		],
+	},
+	
 }

@@ -126,6 +126,24 @@
 		],
 	},
 
+	"Necessity": {
+		"prefix": "necessity",
+		"body": [
+			"\\begin{necessity}"
+				"\t$1"
+			"\\end{necessity}"
+		],
+	},
+	
+	"Sufficiency": {
+		"prefix": "sufficiency",
+		"body": [
+			"\\begin{sufficiency}"
+				"\1"
+			"\\end{sufficiency}"
+		],
+	},
+
 	"Used": {
 		"prefix": "used",
 		"body": [

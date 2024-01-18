@@ -3,4 +3,4 @@
 *.fls
 *.log
 *.synctex.gz
-
+.vscode/settings.json

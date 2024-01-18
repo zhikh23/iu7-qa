@@ -6,7 +6,7 @@
     Сформулируйте и докажите теорему о единственности предела сходящейся последовательности.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:15}, №\ref{def:25}, №\ref{def:26}
+    Используются определения №\ref{def:15}, №\ref{def:25}, №\ref{def:26}.
 \end{used}
 \begin{theorem}[О существовании единственности предела
 последовательности]
@@ -35,12 +35,14 @@
     \end{gather*}
     Противоречие. Значит, предоположение не является верным $\implies$ последовательность $x_{n}$ имеет единственный предел.
 \end{proof}
+\pagebreak
+
 
 \begin{question}
     Сформулируйте и докажите теорему об ограниченности сходящейся последовательности.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:15}, №\ref{def:24}, №\ref{def:25}, №\ref{def:26}
+    Используются определения №\ref{def:15}, №\ref{def:24}, №\ref{def:25}, №\ref{def:26}.
 \end{used}
 \begin{theorem}
   \textit{Об ограниченности сходящейся последовательности}. \\ 
@@ -54,6 +56,7 @@
     Выберем в качестве $M = max \{|x_{1}|, |x_2|, \ldots |x_n|, |a - \epsilon|, |a + \epsilon|\}$. \\
     Тогда для $\forall n \in \N$ будет верно $|x_{n}| \le M$ -- это и ознaчает, что последовательность $x_{n}$ -- ограниченная.
 \end{proof}
+\pagebreak
 
 
 
@@ -61,7 +64,7 @@
     Сформулируйте и докажите теорему о локальной ограниченности функции, имеющей конечный предел.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:28}, №\ref{def:34}
+    Используются определения №\ref{def:28}, №\ref{def:34}.
 \end{used}
 \begin{theorem}[О локальной ограниченности функции, имеющей конечный предел]
     Функция, имеющая конечный предел, локально ограничена.
@@ -86,6 +89,7 @@
     \end{gather*}
     Что и требовалось доказать.
 \end{proof}
+\pagebreak
 
 
 
@@ -93,7 +97,7 @@
     Сформулируйте и докажите теорему о сохранении функцией знака своего предела.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:28}
+    Используются определения №\ref{def:28}.
 \end{used}
 \begin{theorem}[О сохранении функцией знака своего предела]
     Если $\lim_{x \to x_0} = a \neq 0$, то $\exists \mathring{S}(x_0, \delta)$ такая, что функция в ней сохраняет знак своего предела. \[
@@ -140,6 +144,7 @@
     \\
     Значит, $f(x)$ сохраняет знак своего предела  $\forall x \in \mathring{S}(x_0, \delta)$ 
 \end{proof}
+\pagebreak
 
 
 
@@ -147,7 +152,7 @@
     Сформулируйте и докажите теорему о предельном переходе в неравенстве.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:28}
+    Используются определения №\ref{def:28}.
 \end{used}
 \begin{theorem}[О предельном переходе в неравенстве]
     Пусть существуют конечные пределы функций $f(x)$ и  $g(x)$ в точке $x_0$ и $\forall x \in \mathring{S}(x_0, \delta)$ верно $f(x) < g(x)$. Тогда $\forall x \in \mathring{S}(x_0, \delta)$ имеет место неравенство $\lim_{x \to x_0} f(x) \le \lim_{x \to x_0} g(x)$.
@@ -166,6 +171,7 @@
         \lim_{x \to x_0} f(x) \le \lim_{x \to x_0} g(x) 
     \end{gather*}
 \end{proof}
+\pagebreak
 
 
 
@@ -173,7 +179,7 @@
     Сформулируйте и докажите теорему о пределе промежуточной функции.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:28}
+    Используются определения №\ref{def:28}.
 \end{used}
 \begin{theorem}[О пределе промежуточной функции] 
     Пусть существуют конечные пределы функций $f(x)$ и $g(x)$ в точке  $x_0$ и $\lim_{x \to x_0} f(x) = a$ и $\lim_{x \to x_0} g(x) = a$, $\forall x \in \mathring{S}(x_0, \delta)$ верно неравенство $f(x) \le h(x) \le g(x)$. Тогда $\lim_{x \to x_0} h(x) = a$.
@@ -196,10 +202,11 @@
     \end{gather*}
     В итоге:
     \begin{gather*}
-        (\forall \varepsilon > 0)(\exists \delta_0(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta_0 \implies |h(x) - a| < \varepsilon) \\
+        (\forall \varepsilon > 0)(\exists \delta_0(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta_0) \implies |h(x) - a| < \varepsilon) \\
         \implies \text{по определению предела} \quad \lim_{x \to x_0} h(x) = a
     \end{gather*}
 \end{proof}
+\pagebreak
 
 
 
@@ -207,7 +214,7 @@
     Сформулируйте и докажите теорему о пределе произведения функций.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:28}, №\ref{def:35}, теорема ``О произведении бесконечно малой функций на локально ограниченную''
+    Используются определения №\ref{def:28}, №\ref{def:35}, теорема ``О произведении бесконечно малой функций на локально ограниченную''.
 \end{used}
 \begin{theorem}[О пределе произведения функций]
     \textit{О пределе произведения функций}. \\
@@ -220,7 +227,7 @@
     Пусть:
     \begin{gather*}
         \lim_{x \to x_0} f(x) = a \tag{1} \\
-        \lim_{x \to x_0} f(x) = b \tag{2} \\
+        \lim_{x \to x_0} f(x) = b \tag{2}
     \end{gather*}
 
     По теореме о связи функции, её предела и бесконечно малой функции:
@@ -247,7 +254,7 @@
 
     По теореме о сумме конечного числа с б.м.ф.:
     \begin{gather*}
-        \gamma(x) = \text{б.м.ф. при } x \to 0 \\ 
+        \gamma(x) = \text{б.м.ф. при } x \to 0
     \end{gather*}
 
     Далее расписываем предел:
@@ -256,10 +263,11 @@
             \lim_{x \to x_0} f(x) \cdot g(x) &= \lim_{x \to x_0} (f(x) \cdot g(x)) \\
                 &= \lim_{x \to x_0} ab + \lim_{x \to x_0} \gamma(x) \\
                 &= ab + 0 \\
-                &= ab \\
+                &= ab
         \end{align*}
     \end{gather*}
 \end{proof}
+\pagebreak
 
 
 
@@ -267,7 +275,7 @@
     Сформулируйте и докажите теорему о пределе сложной функции.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:25}, №\ref{def:29}
+    Используются определения №\ref{def:25}, №\ref{def:29}.
 \end{used}
 \begin{theorem}[О пределе сложной функции]
     Если функция $y = f(x)$ имеет предел в точке  $x_0$ равный $a$, то функция  $\varphi(y)$ имеет предел в точке $a$, равный $C$, тода сложная функция  $\varphi(f(x))$ имеет предел в точке $x_0$, равный $C$.
@@ -296,6 +304,7 @@
         \lim_{x \to x_0} \varphi(f(x)) = c
     \] 
 \end{proof}
+\pagebreak
 
 
 
@@ -341,8 +350,8 @@
         \implies \lim_{x \to 0} \frac{\sin(x)}{x} = 1
     \end{gather*}
     по теореме ``О пределе промежуточной функции''.
-
 \end{proof}
+\pagebreak
 
 
 
@@ -350,10 +359,9 @@
     Сформулируйте и докажите теорему о связи функции, ее предела и бесконечно малой.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:28}, №\ref{def:35}
+    Используются определения №\ref{def:28}, №\ref{def:35}.
 \end{used}
 \begin{theorem}[О связи функции, её предела и бесконечно малой]
-    \textit{О связи функции, её предела и бесконечно малой}. \\
     Функция $y = f(x)$ имеет конечный предел в точке  $x_0$ тогда и только тогда, когда её можно представить в виде суммы предела и некоторой бесконечно малой функции.
     \begin{gather*}
         \lim_{x \to x_0} f(x) = a \iff f(x) = a + \alpha(x), \text{где } \alpha(x) - \text{б.м.ф при } x \to x_0
@@ -378,10 +386,10 @@
     где $\alpha(x)$ - бесконечно малая функция при $x \to x_0$.
 \end{necessity}
 \begin{sufficiency}
-    \textit{Дано}: \[
+    Дано: \[
         f(x) = a + \alpha(x), \text{где } \alpha(x) \text{ - б.м.ф. при } x \to x_0
     \]
-    \textit{Доказать}: \[
+    Доказать: \[
         \lim_{x \to x_0} f(x) = a
     \]
     По определению б.м.ф.: \[
@@ -391,3 +399,327 @@
         (\forall \varepsilon > 0)(\exists \delta > 0)(\mathring{S}(x_0, \delta) \implies |f(x) - a| < \varepsilon \iff \lim_{x \to x_0} f(x) = a)
     \]
 \end{sufficiency}
+\pagebreak
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о произведении бесконечно малой функции на ограниченную.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:34}, №\ref{def:35}.
+\end{used}
+\begin{theorem}[О произведении бесконечно малой функции на ограниченную]
+    Произведение бесконечно малой функции на локальной ограниченную есть величина бесконечно малая.
+\end{theorem}
+\begin{proof}
+    Пусть $\alpha(x)$ - бесконечно малая функция при $x \to x_0$, а функция $f(x)$ при $x \to  x_0$ является локально ограниченной. Доказываем, что: \[
+        \alpha(x) \cdot f(x) = 0
+    \] 
+
+    Распишем:
+    \begin{gather*}
+        \lim_{x \to x_0} \alpha(x) = 0 \\
+        \iff (\forall \varepsilon_1 = \frac{\varepsilon}{M} > 0)(\exists \delta_1 > 0)(\forall x \in \mathring{S}(x_0, \delta_1) \implies |\alpha(x)| < \varepsilon_1 = \frac{\varepsilon}{M}) \tag{1}\\
+        M \in \R, M > 0 \\
+        \forall x \in  \mathring{S}(x_0, \delta_2) \implies |f(x)| < M \tag{2} \\ 
+    \end{gather*}
+
+    Выберем $\delta = min \{\delta_1, \delta_2\} $, тогда (1) и (2) верны одновременно. В итоге получаем:
+    \begin{gather*}
+        (\forall \varepsilon > 0)(\exists \delta > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies \\
+        |\alpha(x) \cdot f(x)| = |\alpha(x)| \cdot |f(x)| < \frac{\varepsilon}{M} \cdot M < \varepsilon)  
+    \end{gather*}
+
+    Тогда по определению бесконечно малой функции: \[
+        \lim_{x \to x_0} \alpha(x) \cdot f(x) = 0
+    \] 
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о связи между бесконечно большой и бесконечно малой.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:28}, №\ref{def:35}, №\ref{def:36}.
+\end{used}
+\begin{theorem}[О связи между бесконечно большой и бесконечно малой]
+    Если $\alpha(x)$ - бесконечно большая функция при $x \to x_0$, то $\frac{1}{\alpha(x)}$ - бесконечно малая функция при $x \to x_0$.
+\end{theorem}
+\begin{proof}
+    По условию $\alpha(x)$ - б.б.ф при $x \to x_0$. По определению:
+    \begin{gather*}
+        \lim_{x \to x_0} \alpha(x) = \infty \iff \\
+        (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |f(x)| > M)
+    \end{gather*}
+
+    Рассмотрим неравенство: \[
+        |\alpha(x)| > M, \forall x \in \mathring{S}(x_0, \delta)
+    \]
+
+    Обозначим $\varepsilon = \frac{1}{M}$.
+    \begin{gather*}
+        |\alpha(x) > M| \implies \frac{1}{|\alpha(x)|} < \frac{1}{M} \\
+        \implies |\frac{1}{\alpha(x)}| < \frac{1}{M} < \varepsilon
+    \end{gather*}
+
+    В итоге получаем:
+    \begin{gather*}
+        \forall x \in \mathring{s}(x_0, \delta) \implies |\frac{1}{\alpha(x)}| < \varepsilon 
+    \end{gather*}
+
+    Что по определению является бесконечно малой функцией.
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о замене бесконечно малой на эквивалентную под знаком предела.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:35}, №\ref{def:44}.
+\end{used}
+\begin{theorem}[О замене бесконечно малой на эквивалентную под знаком предела]
+    Предел \textbf{отношения} двух б.м.ф. (б.б.ф) не изменится, если заменить эти функции на эквивалентные. \[
+        \begin{rcases}
+            \alpha(x), \beta(x) \text{ - б.м.ф. при } x \to x_0 \\
+            \alpha(x) \sim \alpha_0(x) \\
+            \beta(x) \sim \beta_0(x)
+        \end{rcases} \implies 
+        \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = \frac{\alpha_0(x)}{\beta_0(x)} 
+    \] 
+\end{theorem}
+\begin{proof}
+    Рассмотрим предел:
+    \begin{align*}
+        \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} &= \lim_{x \to x_0} \frac{\alpha(x) \cdot \alpha_0(x) \cdot \beta_0(x)}{\beta(x) \cdot \alpha_0(x) \cdot \beta_0(x)} \\
+            &= \lim_{x \to x_0} \frac{\alpha(x)}{\alpha_0(x)} \cdot \lim_{x \to x_0} \frac{\beta_0(x)}{\beta(x)} \cdot \lim_{x \to x_0} \frac{\alpha_0(x)}{\beta_0(x)} \\
+            &= 1 \cdot  1 \cdot 1 \cdot \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} \\
+    \end{align*}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о необходимом и достаточном условии эквивалентности бесконечно малых.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:35}, №\ref{def:42}, №\ref{def:44}.
+\end{used}
+\begin{theorem}[Необходимое и достаточное условие эквивалентности бесконечно малых]
+    Две функции $\alpha(x)$ и $\beta(x)$ эквивалентны тогда и только тогда, когда их разность имеет более высокий порядок малости по сравнению с каждой из них.
+    \begin{gather*}
+        \alpha(x), \beta(x) \text{ - б.м.ф при } x \to x_0 \\
+        \alpha(x) \sim \beta(x) \iff 
+        \begin{matrix}
+            \alpha(x) - \beta(x) = o(\alpha(x)) \\
+            \alpha(x) - \beta(x) = o(\beta(x))
+        \end{matrix}
+        \quad \text{при } x \to x_0
+    \end{gather*}
+\end{theorem}
+\begin{necessity}
+    Дано: \[
+        \alpha(x), \beta(x) \text{ - б.м.ф при } x \to x_0
+    \] 
+    Доказать: \[
+        \alpha(x) - \beta(x) = o(\alpha(x)) \text{, при } x \to x_0
+    \] 
+    Доказательство:
+    \begin{align*}
+        \lim_{x \to x_0} \frac{\alpha(x) - \beta(x)}{\alpha(x)} &= \lim_{x \to x_0} \left( 1 - \frac{\beta(x)}{\alpha(x)} \right) \\
+            &= 1 - \lim_{x \to x_0} \frac{\beta(x)}{\alpha(x)} = 1 - \frac{1}{1} = 0
+    \end{align*}
+\end{necessity}
+\begin{sufficiency}
+    Дано: \[
+        \alpha(x) - \beta(x) = o(\beta(x)) \text{, при } x \to x_0
+    \]
+    Доказать: \[
+        \alpha(x) \sim \beta(x) \text{, при } x \to x_0
+    \] 
+    Доказательство:
+    \begin{align*}
+        \lim_{x \to x_0} \frac{\alpha(x) - \beta(x)}{\beta(x)} &= \lim_{x \to x_0} \left( \frac{\alpha(x)}{\beta(x)} - 1 \right)  \\
+            &= \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} - 1 = 0
+    \end{align*}
+    \begin{gather*}
+        \implies \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1 \\
+        \implies \alpha(x) \sim \beta(x) \text{, при } x \to x_0 
+    \end{gather*}
+\end{sufficiency}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о сумме конечного числа бесконечно малых разных порядков.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:35}, №\ref{def:44}.
+\end{used}
+\begin{theorem}[О сумме конечного числа бесконечно малых разных порядков]
+    Сумма бесконечно малых функций разных порядком малости эквивалентно слагаемому низшего порядка малости.
+    \begin{gather*}
+        \begin{rcases}
+            \alpha(x), \beta(x) \text{ - б.м.ф при } x \to x_0 \\
+            \alpha(x) = o(\beta(x)) \text{, при } x \to x_0
+        \end{rcases} 
+        \implies \alpha(x) + \beta(x) \sim \beta(x) \text{, при } x \to x_0
+    \end{gather*}
+\end{theorem}
+\begin{proof}
+    Рассмотрим предел: 
+    \begin{align*}
+        \lim_{x \to x_0} \frac{\alpha(x) + \beta(x)}{\beta(x)} &= \lim_{x \to x_0} \left( \frac{\alpha(x)}{\beta(x)} + 1 \right)  \\
+            &= \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} + 1 \\
+            &= 0 + 1 = 1
+    \end{align*}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о непрерывности суммы, произведения и частного непрерывных функций.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:50}.
+\end{used}
+\begin{theorem}[О непрерывности суммы, произведения и частного непрерывных функций]
+  Если функции $f(x)$ и $g(x)$ непрерывны в точке $x_0$, то функции (последняя с учётом $g(x) \neq 0$):   
+  \begin{gather*}
+    f(x) + g(x) \\
+    (f \cdot g)(x) \\
+    \frac{f(x)}{g(x)}
+  \end{gather*}
+  также непрерывны в точке $x_0$. 
+\end{theorem}
+\begin{proof}
+    По определению непрерывной функции: 
+    \begin{gather*}
+        \lim_{x \to x_0} f(x) = f(x_0) \\
+        \lim_{x \to x_0} g(x) = g(x_0) \\
+    \end{gather*}
+    Рассмотрим:
+    \begin{gather*}
+        \lim_{x \to x_0} (f(x) + g(x)) = \lim_{x \to x_0} f(x) + \lim_{x \to x_0} g(x) + f(x_0) = g(x_0) \\
+        \implies f(x) + g(x) \in C(x_0) 
+        \\
+        \lim_{x \to x_0} (f \cdot g)(x) = \lim_{x \to x_0} f(x) \cdot g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x) = f(x_0) \cdot g(x_0) 
+        \\
+        \implies (f \cdot g)(x) \in C(x_0)
+        \\
+        \lim_{x \to 0} \frac{f(x)}{g(x)} = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x_0)}
+    \end{gather*}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о непрерывности сложной функции.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:50}, теорема ``О пределе сложной функции''.
+\end{used}
+\begin{theorem}[О непрерывности сложной функции]
+    Если функция $y = f(x)$ непрерывна в точке $x_0$, а функция $g(y)$ непрерывна в соответствующей точке $y_0 = f(x_0)$, то сложная функция $g(f(x))$ непрерывна в точке $x_0$.
+\end{theorem}
+\begin{proof}
+    Т.к. функция $g\left( y \right) \in C(y_0)$, то $\lim_{y \to y_0} g(y) = g(y_0)$.
+    С другой стороны, по условию $\lim_{x \to x_0} f(x) = y_0$.
+    По теореме ``О пределе сложной функции'' $\exists \lim_{x \to x_0} g(f(x))$.
+    Подставим в последнее равенство $y_0 = \lim_{x \to x_0} f(x)$: \[
+        \lim_{x \to x_0} g(f(x)) = g(\lim_{x \to x_0} f(x))
+    \]  
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о сохранении знака непрерывной функции в окрестности точки.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:50}, теорема ``О сохранении функции знака своего предела''.
+\end{used}
+\begin{theorem}[О сохранении знака непрерывной функции в окрестности точки]
+    Если функция $f(x) \in C(x_0)$ и $f(x_0) \neq 0$, то $\exists S(x_0)$, в которой знак значения функции совпадает со знаком $f(x_0)$.
+\end{theorem}
+\begin{proof}
+    Т.к. функция $y = f(x) \in C(x_0)$, то $\lim_{x \to x_0} f(x) = f(x_0)$. 
+    По теореме о сохранении функции знака своего предела $\implies \exists S(x_0)$, в которой знак значений функции совпадает со знаком $f(x_0)$.
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Дайте определение функции, непрерывной в точке. Сформулируйте теорему о непрерывности элементарных функций. Докажите непрерывность функций y = sin x, y = cos x
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:50}, теорема ``Об произведении ограниченной функции на бесконечно малую''
+\end{used}
+\begin{theorem}[О непрерывности элементарных функций]
+    Основные элементарные функции непрерывны в области определения.
+\end{theorem}
+\begin{proof}[Для $y=sin(x)$ и $y=cos(x)$]
+    Докажем её для функций $y = \sin(x), y = \cos(x)$:
+    \begin{gather*}
+        y = \sin(x), D_y = \R \\
+        x_0 = 0, \lim_{x \to x_0} \sin(x) = \sin(0) \implies y = \sin(x) \in C(0) \\
+        \forall x \in D_y= \R, \quad \Delta x \text{ -- приращение функции} \\ 
+        x = x_0 + \Delta x, \quad x \in D_f = \R \\
+        \Delta y = y(x) - y(x_0) = y(x_0 + \Delta x) - y(x_0) \\
+        = \sin(x_0 + \Delta x) - \sin(x_0) = 2\sin\left( \frac{x_0 + \Delta x - x_0}{2} \right) \cos\left( \frac{x_0 + \Delta x + x_0}{2} \right) \\
+        = 2\sin\left( \frac{\Delta x}{2} \right) \cos\left(x_0 + \frac{\Delta x}{2} \right) \\
+        \lim_{\Delta x \to 0} \Delta y = \lim_{\Delta x \to 0} 2\sin\left( \frac{\Delta x}{2} \right) \cos\left(x_0 + \frac{\Delta x}{2}\right) = 0 \\
+        \text{ -- по т. об произв. огр. на б.м.ф.}
+    \end{gather*}
+    Т.к. $\lim_{\Delta x \to 0} \Delta y = 0$ по опр. непр. функции $\implies y =\sin(x)$ непрерывна в точке $x_0$. 
+    Т.к. $x_0$ -- произвольная точка из области определения, то $y = \sin(x)$ непрерывна на всей области произведения.
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте свойства функций, непрерывных на отрезке.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:55}
+\end{used}
+\begin{theorem}[Первая теорема Вейерштрасса]
+    Если функция $y = f(x)$ непрерывна на отрезке $ab$, то она на этом отрезке ограниченна. \[
+        f(x) \in C[a, b] \implies \exists M \in \R, M > 0, \forall x \in [a, b] : |f(x)| \le  M
+    \] 
+\end{theorem}
+\begin{theorem}[Вторая теорема Вейерштрасса]
+    Если функция $y = f(x) \in C[a, b]$, то она достигает на этом отрезке своего наибольшего и наименьшего значения.
+    \begin{gather*}
+        f(x) \in C[a, b] \\
+        \implies \\
+        \exists x_*, x^* \in [a, b] : \forall x \in [a, b] \implies m = f(x_*) \le f(x) \le f(x^*) = M
+    \end{gather*}
+\end{theorem}
+\begin{theorem}[Первая теорема Больцано-Коши]
+    Если функция $y = f(x) \in C[a, b]$, и на концах отрезка принимает значения разных знаков, то $\exists c \in (a, b) : f(c) = 0$. \[
+        f(x) \in S[a, b] \land f(a) \cdot f(b) < 0 \implies \exists  c \in (a, b) : f(c) = 0
+    \] 
+\end{theorem}
+\begin{theorem}[Вторая теорема Больцано-Коши]
+    Если функция $y = f(x) \in C[a, b]$ и принимает на границах отрезка различные значения $f(a) = A \neq f(b) = B$, то $\forall C \in [A, B] \exists c \in (a, b)$, в которой $f(c) = C$.
+    \begin{gather*}
+        f(x) \in C[a, b] \land f(a) = A \neq f(b) = B \\
+        \implies \\
+        \exists C \in (A, B) \implies \exists c \in (a, b) : f(c) = C
+    \end{gather*}
+\end{theorem}
+\begin{theorem}[Теорема о непрерывности обратной функции]
+    Пусть $y = f(x) \in C(a, b)$ и строго монотонна на этом интервале. Тогда в соответствующем $(a, b)$ интервале значений функции существует обратная функция $x = f^{-1}(y)$, которая так же строго монотонна и непрерывна.
+\end{theorem}
+\pagebreak

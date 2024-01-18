@@ -96,9 +96,52 @@
     Функция называется локально ограниченной при $x \to x_0$, если существует проколотая окрестность с центром в точке $x_0$, в которой данная функция ограничена.
 \end{definition}
 
-\begin{definition}[Бесконечно малая функция] \label{def:35}
+\begin{definition}[Бесконечно малые функции] \label{def:35}
     Функция называется бесконечно малой при $x \to x_0$, если предел функции в этой точке равен $0$.
     \begin{gather*}
         \lim_{x \to x_0} f(x) = 0 \iff (\forall \varepsilon > 0)(\exists \delta(\varepsilon)) (\forall x \in \mathring{S}(x_0, \delta) \implies |f(x)| < \varepsilon )
     \end{gather*}
+\end{definition}
+
+\begin{definition}[Бесконечно большие функции] \label{def:36}
+    Функция называется бесконечно большой при $x \to x_0$, если предел функции в этой точке равен $\infty$.
+\end{definition}
+
+\begin{definition}[Бесконечно малые более высокого порядка] \label{def:42}
+    Функцию $\alpha(x)$ называют бесконечно малой более высокого порядка малости по сравнению с $\beta(x)$ при $x \to x_0$ и записывают $\alpha(x) = o(\beta(x))$, если существует и равен нулю предел отношения $\alpha(x)/\beta(x)$, при $x \to x_0$. \[
+        \alpha(x) = o(\beta(x)) x \to x_0 \iff \exists \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 0
+    \]
+\end{definition}
+
+\begin{definition}[Эквивалентные бесконечно малые функции] \label{def:44}
+    Функции $\alpha(x)$ и $\beta(x)$ называют эквивалентными бесконечно малыми при $x \to x_0$ , если предел их отношения при $x \to x_0$ равен 1. \[
+        \alpha(x) \sim \beta(x) x \to x_0 \iff \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1
+    \]
+\end{definition}
+
+\begin{definition}[Непрерывность функции в точке] \label{def:50}
+    Функция $f(x)$, определённая в некоторой окрестности точки $x_0$, называется непрерывной в этой точке если: \[
+        \exists \lim_{x \to x_0} f(x) = f(x_0)
+    \]
+\end{definition}
+
+\begin{definition}
+    Функция $y = f(x)$ определённая в правосторонней окрестности точки $x_0$ ($[x_0, x_0 + \delta)$) называется непрерывной справа в этой точке, если: \[
+        \exists \lim_{x \to x_0+} = f(x_0)
+    \] 
+\end{definition}
+
+\begin{definition}
+    Функция $y = f(x)$ определённая в левосторонней окрестности точки $x_0$ ($(x_0 - \delta, x_0]$) называется непрерывной справа в этой точке, если: \[
+        \exists \lim_{x \to x_0-} = f(x_0)
+    \] 
+\end{definition}
+
+\begin{definition}[Непрерывность функции на отрезке] \label{def:55}
+    Функция $y = f(x) $ называется непрерывной на отрезке $[a, b]$, если:
+    \begin{enumerate}
+        \item Непрерывна на интервале $(a, b)$
+        \item Непрерывна в точке $a$ справа
+        \item Непрерывна в точке $b$ слева
+    \end{enumerate}
 \end{definition}

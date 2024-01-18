@@ -695,7 +695,7 @@
 \end{used}
 \begin{theorem}[Первая теорема Вейерштрасса]
     Если функция $y = f(x)$ непрерывна на отрезке $ab$, то она на этом отрезке ограниченна. \[
-        f(x) \in C[a, b] \implies \exists M \in \R, M > 0, \forall x \in [a, b] : |f(x)| \le  M
+        f(x) \in C[a, b] \implies \exists M \in \R, M > 0, \forall x \in : |f(x)| \le  M
     \] 
 \end{theorem}
 \begin{theorem}[Вторая теорема Вейерштрасса]
@@ -703,7 +703,7 @@
     \begin{gather*}
         f(x) \in C[a, b] \\
         \implies \\
-        \exists x_*, x^* \in [a, b] : \forall x \in [a, b] \implies m = f(x_*) \le f(x) \le f(x^*) = M
+        \exists x_*, x^* \in \implies m = f(x_*) \le f(x) \le f(x^*) = M
     \end{gather*}
 \end{theorem}
 \begin{theorem}[Первая теорема Больцано-Коши]
@@ -712,7 +712,7 @@
     \] 
 \end{theorem}
 \begin{theorem}[Вторая теорема Больцано-Коши]
-    Если функция $y = f(x) \in C[a, b]$ и принимает на границах отрезка различные значения $f(a) = A \neq f(b) = B$, то $\forall C \in [A, B] \exists c \in (a, b)$, в которой $f(c) = C$.
+    Если функция $y = f(x) \in C[a, b]$ и принимает на границах отрезка различные значения $f(a) = A \neq f(b) = B$, то $\forall C \in \exists c \in (a, b)$, в которой $f(c) = C$.
     \begin{gather*}
         f(x) \in C[a, b] \land f(a) = A \neq f(b) = B \\
         \implies \\
@@ -1042,4 +1042,419 @@
         \boxed{dy = f'(x) dx}
     \] 
 \end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему Ферма.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:61}, №\ref{def:62}, №\ref{def:63}, №\ref{def:64}, №\ref{def:75}, теорема ``О существовании производной функции в точке''
+\end{used}
+\begin{theorem}[Теорема Ферма о нулях производной функции]
+    Пусть функция $y = f(x)$ определена на промежутке $X$ и во внутренней точке $C$ этого промежутка достигает наибольшего или наименьшего значения. Если в этой точке существует $f'(c)$, то $f'(c) = 0$.
+\end{theorem}
+\begin{proof}
+    Пусть функция $y = f(x)$ в точке  $x = c$ принимает наибольшее значение на промежутке X. Тогда $\forall x \in X \implies f(x) \le f(c)$. Дадим приращение $\Delta x$ точке $x = c$. Тогда $f(c + \Delta x) \le f(c)$. Пусть \[
+        \exists f'(c) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{y(c + \Delta x) - y(c)}{\Delta x}
+    \]
+    Рассмоотрим два случая:
+    \begin{align*}
+        1) &\Delta x > 0, \Delta x \to 0+, x \to c+ \\
+        &f'_+(c) = \lim_{\Delta x \to 0+} \frac{y(c + \Delta x) - y(c)}{\Delta x} = \left( \frac{-}{+} \right) \le 0 \\
+        2) &\Delta x < 0, \Delta x \to 0-, x \to c- \\
+        &f'_-(c) = \lim_{\Delta x \to 0-} \frac{y(c + \Delta x) - y(c)}{\Delta x} = \left( \frac{-}{-} \right) \ge 0
+    \end{align*}
+    По теореме о существовании производной функции в точке: \[
+        f'_+(c) = -f'_-(c) = 0
+    \] 
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему Ролля.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:55}, №\ref{def:64}, №\ref{def:75}, №\ref{def:75}, теорема Ферма
+\end{used}
+\begin{theorem}[Теорема Ролля]
+    Пусть функция $y = f(x)$:
+     \begin{enumerate}
+      \item Непрерывна на отрезке $(a, b)$ 
+      \item Дифференцируема на интервале  $(a, b)$
+      \item $f(a) = f(b)$
+    \end{enumerate}
+    Тогда $\exists c \in (a, b) : f'(c) = 0$
+\end{theorem}
+\begin{proof}
+    Т.к. функция $y = f(x)$ непрерывна на отрезке $(a,b)$, то по теореме Вейерштрасса она достигает на этом отрезке своего наибольшего и наименьшего значения. Возможны два случая:
+    \begin{enumerate}
+        \item Наибольше и наименьшее значение достигаются на границе, т.е. в точке $a$ и в точке  $b$. Это означает, что  $m = M$, где  $m$ -- наименьшее значение, а  $M$ -- наибольшее. Из этого следует, что функция  $y = f(x) = const$ на $(a, b)$. Соответственно  $\forall x \in (a, b), f'(x) = 0$
+        \item Когда наибольшее или наименьшее значение достигаются во внутренней точке $(a, b)$. Тогда для функции $y = f(x)$ справедлива теорема Ферма, согласно которой $\exists c \in (a, b), f'(c) = 0$.
+    \end{enumerate}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему Лагранжа.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:55}, №\ref{def:64}, теорема Ролля
+\end{used}
+\begin{theorem}[Теорема Лагранжа]
+    Пусть функция $y = f(x)$:
+    \begin{enumerate}
+        \item Непрерывна на отрезке $[a, b]$
+        \item Дифференцируема на интервале  $(a, b)$
+    \end{enumerate}
+    Тогда $\exists  c \in (a, b)$, в которой выполняется равенство: \[
+        f(b) - f(a) = f'(c)(b - a)
+    \] 
+\end{theorem}
+\begin{proof}
+    Рассмотрим вспомогательную функция $F(x) = f(x) - f(a) - \frac{f(b) - f(a)}{b - a} \cdot (x - a)$. 
+    $F(x)$ непрерывна на отрезке $[a, b]$ как сумма непрерывных функций. Существует конечная проивзодная функции $F(x)$: \[
+        F'(x) = f'(x) - \frac{f(b) - f(a)}{b - a}
+    \]
+    следовательно по необходимому и достаточному условию дифференцируемости будет верно $F(x)$ -- дифференцируема на $(a, b)$.
+    Покажем, что $F(a) = F(b)$:
+    \begin{align*}
+        F(a) &= f(a) - f(a) - \frac{f(b) - f(a)}{b - a}(a - a) = 0 \\
+        F(b) &= f(b) - f(a) - \frac{f(b) - f(a)}{b - a}(b - a) \\
+             &= f(b) - f(b) + f(a) - f(a) = 0
+    \end{align*}
+    Значит функция $F(x)$ удовлетворяет условиям теоремы Ролля. Тогда по теореме Ролля  $\exists c \in (a, b), F'(c) = 0$.
+    \begin{align*}
+        & F'(x) = f'(x) - \frac{f(b) - f(a)}{b - a} \\
+        & F'(c) = f'(c) - \frac{f(b) - f(a)}{b - a} = 0 \\
+        & f'(c) = \frac{f(b) - f(a)}{b - a} \\
+        & f(b) - f(a) = f'(c) (b - a)
+    \end{align*}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему Коши.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:55}, №\ref{def:64}, теорема Ролля
+\end{used}
+\begin{theorem}[Теорема Коши]
+    Пусть функции $f(x)$ и  $\varphi(x)$ удовлетворяют условиям: 
+  \begin{enumerate}
+    \item Непрерывны на отрезке $[a, b]$
+    \item Дифференцируемы на интервале  $(a, b)$ 
+    \item  $\forall x \in (a, b) f'(x) \neq 0$
+  \end{enumerate}
+  Тогда $\exists  c \in (a, b)$, такое что: \[
+    \boxed{\frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} = \frac{f'(c)}{\varphi'(c)}}
+  \] 
+\end{theorem}
+\begin{proof}
+    Рассмотрим вспомогательную функцию: \[
+        F(x) = f(x) - f(a) - \frac{f(b) - f(a)}{\varphi(a) - \varphi(b)}(\varphi(x) - \varphi(a))
+    \]
+    Докажем применимость Теоремы Ролля:
+    \begin{enumerate}
+        \item $F(x)$ непрервына на $[a, b]$ как линейная комбинация непрерывных функций.
+        \item  $F(x)$ дифференцируема на $[a, b]$ как линейная комбинация дифференцируемых функций.
+        \item  $F(a) = F(b)$:
+        \begin{align*}
+            F(a) &= f(a) - f(a) - \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)}\left( \varphi(a) - \varphi(a) \right) = 0 \\ 
+            F(b) &= f(b) - f(a) - \frac{f(b) - f(a)}{\cancel{\varphi(b) - \varphi(a)}}\cancel{\left( \varphi(b) - \varphi(a) \right)} = 0
+        \end{align*}
+        Значит, функция $F(x)$ удовлетворяет условию теоремы Ролля, $\implies \exists  c \in (a, b) : F'(c) = 0$. Вычислим:
+        \begin{gather*}
+            F'(x) = f'(x) - \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} \varphi'(x) \\ 
+            F'(c) = f'(c) - \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} \varphi'(c) = 0 \\
+            \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} \varphi'(c) = f'(c) \quad 
+            \boxed{\frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} = \frac{f'(c)}{\varphi'(c)}}
+        \end{gather*}
+    \end{enumerate}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему Лопиталя – Бернулли для предела отношения двух бесконечно малых функций.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:35}, №\ref{def:36}, №\ref{def:64}, теорема ``О связи дифференцируемости и непрерывности'', теорема Коши
+\end{used}
+\begin{theorem}[Теорема Лопиталя-Бернулли]
+    Пусть $f(x)$ и  $\varphi(x)$ удовлетворяют условиям:
+    \begin{itemize}
+        \item Определены и дифференцируемы в $\mathring{S}(x_0)$
+        \item $\lim_{x \to x_0} f(x) = 0, \lim_{x \to x_0} \varphi(x) = 0$
+        \item $\forall x \in \mathring{S}(x_0) \quad \varphi'(x) \neq 0$
+        \item $\exists \lim_{x \to x_0} \frac{f'(x)}{\varphi'(x)} = A$
+    \end{itemize}
+    Тогда $\exists \lim_{x \to x_0} \frac{f(x)}{\varphi(x)} = \lim_{x \to x_0} \frac{f'(x)}{\varphi'(x)} = A$.
+\end{theorem}
+\begin{proof}
+    Доопределим функции $f(x)$ и $\varphi(x)$ в точке $x_0$ нулём: \[
+        f(x_0) = 0 \quad \varphi(x_0) = 0
+    \] 
+    По условию:
+    \begin{align*}
+        &\lim_{x \to x_0} f(x) = 0 = f(x_0)
+        &\lim_{x \to x_0} \varphi(x) = 0 = \varphi(x_0)
+    \end{align*}
+  
+    $f(x)$ и  $\varphi(x)$ непрерывны в точке $x_0$.\\
+    По условию функция $f(x)$ и  $\varphi(x)$ дифференцируемы в точке $\mathring{s}(x_0)$ $\implies$ по теореме о связи дифференцируемости и непрерывности $\implies f(x)$ и $\varphi(x)$ непрерывны в $\mathring{s}(x_0)$. Таким образом $f(x)$ и  $\varphi(x)$ непрерывны в $S(x_0)$.
+
+    Функции $f(x)$ и  $\varphi(x)$ удовлетворяют условию т.Коши на $[x_0, x]$. Тогда по теореме Коши $\implies$ 
+    \begin{gather*}
+        \exists c \in [x_0, x] : \frac{f(x) - f(x_0)}{\varphi(x) - \varphi(x_0)} = \frac{f'(c)}{\varphi'(c)} \tag{*} 
+    \end{gather*}
+
+    Т.к. $f(x_0) = 0$ и $\varphi(x_0) = 0$ $\implies$ \[
+        (*) \quad \boxed{\frac{f(x)}{\varphi(x)} = \frac{f'(c)}{\varphi(c)}}
+    \] 
+
+    Т.к. $\exists \lim_{x \to x_0} \frac{f'(x)}{\varphi'(x)} = A \implies$ правая часть (*): \[
+        \lim_{c \to x_0} \frac{f'(c)}{\varphi'(c)} = A
+    \] 
+    Левая часть (*): \[
+        \lim_{x \to x_0} \frac{f(x)}{\varphi(x)} = \lim_{x \to x_0} \frac{f'(c)}{\varphi'(c)} = A
+    \] 
+
+    Получаем: \[
+        \lim_{x \to x_0} \frac{f(x)}{\varphi(x)} = \lim_{x \to x_0} \frac{f'(x)}{\varphi'(x)} = A
+    \] 
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сравните рост показательной, степенной и логарифмической функций на бесконечности.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:36}
+\end{used}
+\begin{answer}
+    Пусть:
+    \begin{align*}
+        f(x) &= x^n \\
+        g(x) &= a^x \\
+        h(x) &= \ln x \\
+    \end{align*}
+
+    Найдём предел при стремлении к бесконечности:
+    \begin{align*}
+        \lim_{x \to +\infty} \frac{f(x)}{g(x)} &= \lim_{x \to +\infty} \frac{x^n}{a^x} = \left( \frac{\infty}{\infty} \right) = \lim_{x \to +\infty} \frac{n \cdot x ^ {n-1}}{a^x \ln a} \\
+            &= \left( \frac{\infty}{\infty} \right) = \ldots = \lim_{x \to +\infty} \frac{n(n-1)(n-2)\ldots \cdot 1}{a^x(\ln a)^n} = \\
+            &= \frac{n!}{\ln^n a} \lim_{x \to +\infty} \frac{1}{a^x} = \frac{n!}{\ln^n a} = 0.
+    \end{align*}
+
+    Значит $a^x$ растёт быстрее, чем  $x^n$ при $x \to \infty$ или $x^n = o(a^x)$ при $x \to +\infty$.
+
+    Найдём предел при стремлении к бесконечности:
+    \begin{align*}
+        \lim_{x \to +\infty} \frac{h(x)}{f(x)} = \lim_{x \to +\infty} \frac{\ln x}{x^n} = \left( \frac{\infty}{\infty} \right) \\
+            &= \lim_{x \to +\infty}  \frac{\frac{1}{x}}{n \cdot x^{n-1}} = \frac{1}{n} \lim_{x \to +\infty} \frac{1}{x^n} = \frac{1}{n} \cdot 0 = 0
+    \end{align*}
+
+    Значит, $x^n$ растёт быстрее, чем  $\ln x$ при $x\to +\infty$ $\ln x = o(x^n)$ при $x \to  +\infty$.
+
+    Вывод: на бесконечности функции расположены в таком порядке:
+    \begin{enumerate}
+        \item $g(x) = a^x$ -- самая быстрорастущая функция \\
+        \item $f(x) = x^n$ \\
+        \item $h(x) = \ln x$
+    \end{enumerate}
+\end{answer}
+\pagebreak
+
+
+
+\begin{question}
+    Выведите формулу Тейлора с остаточным членом в форме Лагранжа.
+\end{question}
+\begin{theorem}[Остаточный член формулы Тейлора в форме Лагранжа]
+    Пусть функция $y=f(x)$  $(n+1)$ дифференцируема в $\mathring{S}(x_0)$, $\forall x \in \mathring{S}(x_0)$ $f^{(n+1)}(x_0) \neq 0$.
+    Тогда: \[
+        R_n(c) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}
+    \]
+    где $c \in \mathring{S}(x_0)$.
+\end{theorem}
+\pagebreak
+
+
+
+\begin{question}
+    Выведите формулу Тейлора с остаточным членом в форме Пеано.
+\end{question}
+\begin{theorem}[Остаточный член формулы Тейлора в форме Пеано]
+    Пусть функция $y = f(x)$ дифференцируема $n$ раз в точке $x_0$, тогда $x \to x_0$: \[
+        R_n(x) = o((x - x_0)^n)
+    \] 
+\end{theorem}
+\pagebreak
+
+
+\begin{question}
+    Выведите формулу Маклорена для функции $y = e^x$ с остаточным членом в форме Лагранжа.
+\end{question}
+\begin{answer}
+    Найдём производные для функции $y = e^x$ до $n$-ого порядка:
+    \begin{gather*}
+        f'(x) = f''(x) = \ldots = f ^{(n)} = e ^{x}
+    \end{gather*}
+    Подставим $x = 0$:
+    \begin{gather*}
+        f(0) = f'(0) = f''(0) = \ldots = f ^{(n)} = e^0 = 1
+    \end{gather*}
+    Получаем:
+    \begin{gather*}
+        e ^{x} = 1 + \frac{x}{1!} + \frac{x ^2}{2!} + \ldots + \frac{x^n}{n!} + \frac{e ^{\theta x}}{(n+1)!} x ^{n+1}
+    \end{gather*}
+\end{answer}
+\pagebreak
+
+
+
+\begin{question}
+    Выведите формулу Маклорена для функции $y = \sin(x)$ с остаточным членом в форме Лагранжа.
+\end{question}
+\begin{answer}
+    Найдём производные для функции $y = \sin(x)$ до $2n+2$-ого порядка:
+    \begin{align*}
+        &f'(x) = \cos(x) = \sin(x + \frac{\pi}{2}) \\
+        &f''(x) = -\sin(x) = \sin(x + 2 \cdot \frac{\pi}{2}) \\
+        &f'''(x) = -\cos(x) = \sin(x + 3 \cdot \frac{\pi}{2}) \\
+        &f''''(x) = \sin(x) = \sin(x + 4 \cdot \frac{\pi}{2}) \\
+        &\ldots \\
+        &f ^{(2n+1)}(x) = (-1) ^{n} \cos(x) \\
+        &f ^{(2n+1)}(x) = (-1) ^{n+1} \sin(x)
+    \end{align*}
+    Подставим $x = 0$:
+    \begin{align*}
+        &f(0) = 0 \\
+        &f'(0) = 0 \\
+        &f''(0) = -1 \\
+        &f'''(0) = 0 \\
+        &f''''(0) = 1 \\
+        &\ldots \\
+        &f ^{(2n+1)} = (-1)^{n} \\
+        &f ^{(2n+2)} = 0
+    \end{align*}
+    Получаем:
+    \begin{gather*}
+        \sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots + (-1)^{n} \frac{x ^{2n+1}}{(2n+1)!} + \frac{\sin\left(\theta x + (2n+2) \frac{\pi}{2}\right)}{(2n+2)!} x ^{2n+2} \\
+        \theta \in (0, 1)
+    \end{gather*}
+\end{answer}
+\pagebreak
+
+
+
+\begin{question}
+    Выведите формулу Маклорена для функции $y = \cos(x)$ с остаточным членом в форме Лагранжа.
+\end{question}
+\begin{answer}
+    Найдём производные для функции $y = \cos(x)$ до $2n + 1$-ого порядка:
+    \begin{align*}
+        &f'(x) = -\sin(x) = \cos(x + 2 \cdot \frac{\pi}{2}) \\
+        &f''(x) = -\cos(x) = \cos(x + 3 \cdot \frac{\pi}{2}) \\
+        &f'''(x) = \sin(x) = \cos(x + 4 \cdot \frac{\pi}{2}) \\
+        &f''''(x) = \cos(x) = \cos(x + 4 \cdot \frac{\pi}{2}) \\
+        &\ldots \\
+        &f ^{(2n)}(x) = (-1) ^{n} \cos(x) \\
+        &f ^{(2n+1)}(x) = (-1) ^{n+1} \sin(x)
+    \end{align*}
+    Подставим $x = 0$:
+    \begin{align*}
+        &f(0) = 1 \\
+        &f'(0) = 0 \\
+        &f''(0) = -1 \\
+        &f'''(0) = 0 \\
+        &f''''(0) = 1 \\
+        &\ldots \\
+        &f ^{(2n)} = (-1)^{n} \\
+        &f ^{(2n+1)} = 0
+    \end{align*}
+    Получаем:
+    \begin{gather*}
+        \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \ldots + (-1)^{n} \frac{x ^{2n}}{(2n)!} + \frac{\cos\left(\theta x + (2n+1) \frac{\pi}{2}\right)}{(2n+1)!} x ^{2n+1} \\
+        \theta \in (0, 1)
+    \end{gather*}
+\end{answer}
+\pagebreak
+
+
+
+\begin{question}
+    Выведите формулу Маклорена для функции $y = \ln(1 + x)$ с остаточным членом в форме Лагранжа.
+\end{question}
+\begin{answer}
+    Найдём производные для функции $y = \ln(1 + x)$ до $n + 1$-ого порядка:
+    \begin{align*}
+        &f'(x) = \frac{1}{1+x} \\
+        &f''(x) = -\frac{1}{(1+x)^2} \\
+        &f'''(x) = \frac{2}{(1+x)^3} \\
+        &f''''(x) = -\frac{6}{(1+x)^4} \\
+        &\ldots \\
+        &f^{(n)}(x) = (-1)^{n-1} \frac{(n-1)!}{(1+x)^n} \\
+        &f^{(n+1)}(x) = (-1)^{n} \frac{n!}{(1+x)^{n+1}} \\
+    \end{align*}
+    Подставим $x = 0$:
+    \begin{align*}
+        &f(0) = 0 \\
+        &f'(0) = 1 = 1! \\
+        &f''(0) = -1 = -1! \\
+        &f'''(0) = 2 = 2! \\
+        &f''''(0) = -3 \cdot 2 = -6! \\
+        &\ldots \\
+        &f^{(n)}(x) = (-1)^{n-1}(n-1)! \\
+        &f^{(n+1)}(x) = (-1)^{n} n! \\
+    \end{align*}
+    Получаем:
+    \begin{gather*}
+        \ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} + ... + \frac{(-1)^{n-1} x^n}{n} + (-1)^n \frac{x ^{n+1}}{(n+1)(1 + \theta x) ^{n+1}} \\
+        \theta \in (0, 1)
+    \end{gather*}
+\end{answer}
+\pagebreak
+
+
+
+\begin{question}
+    Выведите формулу Маклорена для функции $y = (1 + x)^\alpha$ с остаточным членом в форме Лагранжа.
+\end{question}
+\begin{answer}
+    Найдём производные для функции $y = (1 + x)^\alpha$ до $n$-ого порядка:
+    \begin{align*}
+        &f'(x) = \alpha(1 + x)^{\alpha-1} \\
+        &f''(x) = \alpha(\alpha - 1)(1 + x)^{\alpha - 2} \\
+        &f'''(x) = \alpha(\alpha - 1)(\alpha - 2)(1 + x)^{\alpha - 3} \\
+        &\ldots \\
+        &f ^{(n)}(x) = \alpha(\alpha - 1)\ldots(\alpha - n + 1)(1 + x) ^{\alpha - n}
+    \end{align*}
+    Подставим $x = 0$:
+    \begin{align*}
+        &f(0) = 1 \\
+        &f'(0) = \alpha \\
+        &f''(0) = \alpha(\alpha - 1) \\
+        &f'''(0) = \alpha(\alpha - 1)(\alpha - 2) \\
+        &\ldots \\
+        &f ^{(n)}(x) = \alpha(\alpha - 1)\ldots(\alpha - n + 1)
+    \end{align*}
+    Получаем:
+    \begin{gather*}
+        (1 + x)^\alpha = 1 + \frac{\alpha}{1!} x + \frac{\alpha(\alpha - 1)}{2!} x ^2 + \ldots + \frac{\alpha(\alpha-1)\ldots(\alpha - n + 1)}{n!} + \\
+        + \frac{\alpha(\alpha - 1)\ldots(\alpha - n)}{(n+1)!} \cdot (1 + \theta x) ^{\alpha - n - 1} \cdot x ^{n + 1} \\
+        \theta \in (0, 1)
+    \end{gather*}
+\end{answer}
 \pagebreak

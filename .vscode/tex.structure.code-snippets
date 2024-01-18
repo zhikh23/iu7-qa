@@ -1,5 +1,5 @@
 {
-	"begin{} / eng{}": {
+	"begin{} / end{}": {
 		"prefix": "beg",
 		"body": [
 			"\\begin{$1}",
@@ -61,7 +61,7 @@
 		"body": [
 			"\\begin{itemize}",
 				"\t\\item $0",
-			"\\eng{itemize}",
+			"\\end{itemize}",
 		],
 	},
 
@@ -70,7 +70,7 @@
 		"body": [
 			"\\begin{enumerate}",
 				"\t\\item $0",
-			"\\eng{enumerate}",
+			"\\end{enumerate}",
 		],
 	},
 
@@ -139,7 +139,7 @@
 		"prefix": "sufficiency",
 		"body": [
 			"\\begin{sufficiency}"
-				"\1"
+				"\t$1"
 			"\\end{sufficiency}"
 		],
 	},

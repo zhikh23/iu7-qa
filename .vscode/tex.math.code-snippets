@@ -28,11 +28,20 @@
 	},
 
 	"Cases": {
-		"prefix": "case",
+		"prefix": "cases",
 		"body": [
-			"\\begin{case*}",
-				"\t$0",
-			"\\end{case*}",
+			"\\begin{cases*}",
+				"\t$1",
+			"\\end{cases*}",
+		],
+	},
+
+	"Rcases": {
+		"prefix": "rcases",
+		"body": [
+			"\\begin{rcases*}",
+				"\t$1",
+			"\\end{rcases*}",
 		],
 	},
 
@@ -102,7 +111,7 @@
 	"Delta": {
 		"prefix": "dd",
 		"body": [
-			"\Delta $0"
+			"\\Delta $0"
 		],
 	},
 	

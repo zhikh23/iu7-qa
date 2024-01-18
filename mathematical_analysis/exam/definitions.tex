@@ -1,0 +1,104 @@
+\section{Определения}
+
+\begin{definition}[Множество натуральных чисел]
+    $\N$ -- множество натуральных чисел.
+    Состоит \\ из чисел, возникающих при счёте. 
+\end{definition}
+
+\begin{definition}[Множество целых чисел]
+    $\Z$ -- множество целых чисел.
+    Состоит из натуральных чисел, нуля и чисел, противоположных натуральным.
+\end{definition}
+
+\begin{definition}[Множество рациональных чисел]
+    $\Q$ -- множество рациональных чисел. 
+    Состоит из \\ чисел, представимых в виде $\frac{z}{n}, z \in \Z, n \in \N$.
+\end{definition}
+
+\begin{definition}[Множество иррациональных чисел]
+    $\mathbb{I}$ -- множество иррациональных чисел.
+    Состоит из чисел, которые не представимы в виде $\frac{z}{n}, z \in \Z, n \in \N$. 
+\end{definition}
+
+\begin{definition}[Множество действительных чисел]
+    $\R$ -- множество действительных чисел.
+    Состоит из \\ рациональных и иррациональных чисел.
+\end{definition}
+
+\begin{definition}[Окрестность точки]
+    Окрестностью $S(x)$ точки $x$ называется любой интервал, содержащий эту точку. 
+\end{definition}
+
+\begin{definition}[$\epsilon$-окрестность точки]
+    $\epsilon$-окрестностью точки $x$ называется интервал с центром в точке $x$ и длиной $2 \epsilon$. \[
+        S(x, \epsilon) = (x-\epsilon, x+\epsilon)
+    \]
+\end{definition}
+
+\begin{definition}[$\delta$-окрестность точки]
+    $\delta$-окрестностью точки $x$ называется интервал с центром в точке $x$ и длиной $2 \delta$.  \[
+        S(x, \delta) = (x-\delta, x+\delta)
+    \]
+\end{definition}
+
+\begin{definition}[Окрестность $+\infty$]
+    Окрестностью $+\infty$ называется любой интервал вида: \[
+        S(+\infty) = (a, +\infty), \quad a \in \R, \quad a > 0
+    \]
+\end{definition}
+
+\begin{definition}[Окрестность $-\infty$]
+    Окрестностью $-\infty$ называется любой интервал вида: \[
+        S(-\infty) = (-\infty, -a), \quad a \in \R, \quad a > 0
+    \]
+\end{definition}
+
+\begin{definition}[Окрестность $\infty$]
+    Окрестностью $\infty$ называется любой интервал вида: \[
+        S(\infty) = (-\infty, -a) \cup (a, +\infty), \quad a \in \R, \quad a > 0
+    \]
+\end{definition}
+
+\begin{definition}[Числовая последовательность]\label{def:15}
+    Числовой последовательностью называется бесконечное множество числовых значений, которое можно упорядочить (перенумеровать)
+\end{definition}
+
+\begin{definition}[Ограниченная последовательность]\label{def:24}
+    Последовательность $x_{n}$ называется \textit{ограниченной}, если она ограничена и сверху, и снизу, т.е. \[
+        \forall n \in \N, m \le x_{n} \le M \quad \text{ или } \quad |x_{n}| \le M
+    \]
+\end{definition}
+
+\begin{definition}[Предел последовательности]\label{def:25}
+    Число $a$ называется пределом последовательности $\{x_{n}\} $, если для любого положительного числа $\epsilon$ найдется натуральное число  $N\left(\epsilon  \right) $, такое, что если порядковый номер $n$ члена последовательности станет больше $N(\epsilon)$, то имеет место неравенство  $|x_{n} - a| < \epsilon$. \[
+        \lim_{x \to \infty} x_{n} = a \iff (\forall \epsilon > 0)(\exists N(\epsilon) \in \N) : (\forall n > N(\epsilon)) \implies |x_{n}-a| < \epsilon
+    \]
+\end{definition}
+
+\begin{definition}[Сходящаяся последовательность]\label{def:26}
+    Числовая последовательность называется сходящейся, если существует предел это последовательности, и он конечен.
+\end{definition}
+
+\begin{definition}[Предел функции по Коши] \label{def:28}
+    Число $a$ называется пределом функции $y = f\left( x \right) $ в точке $x_0$, если $\forall \epsilon > 0$ найдется $\delta$, зависящее от  $\epsilon$ такое что $\forall x \in \mathring{S}(x_0; \delta)$ будет верно неравенство $|f\left( x \right) - a| < \epsilon$.
+    \[
+        \lim_{x \to x_0} f(x) = a \iff (\forall \epsilon > 0)(\exists  \delta(\epsilon) > 0)(\forall  x \in \mathring{S}(x_0; \delta) \implies |f(x) - a| < \epsilon)
+    \]
+\end{definition}
+
+\begin{definition}[Предел функции по Гейне] \label{def:29}
+    Число $a$ называется пределом $y = f\left( x \right) $ в точке $x_0$, если эта функция определена в окрестности точки $a$ и $\forall$ последовательнсти $x_{n}$ из области определения этой функции, сходящейся к $x_0$ соответствующая последовательность функций $\{f(x_{n})\}$ сходится к $a$. \[
+        \lim_{x \to x_0} = a \iff (\forall x_{n}\in D_f)(\lim_{n \to \infty} x_{n} = x_0 \implies \lim_{n \to \infty} f(x_{n}) = a) 
+    \] 
+\end{definition}
+
+\begin{definition}[Локальная ограниченность функции] \label{def:34}
+    Функция называется локально ограниченной при $x \to x_0$, если существует проколотая окрестность с центром в точке $x_0$, в которой данная функция ограничена.
+\end{definition}
+
+\begin{definition}[Бесконечно малая функция] \label{def:35}
+    Функция называется бесконечно малой при $x \to x_0$, если предел функции в этой точке равен $0$.
+    \begin{gather*}
+        \lim_{x \to x_0} f(x) = 0 \iff (\forall \varepsilon > 0)(\exists \delta(\varepsilon)) (\forall x \in \mathring{S}(x_0, \delta) \implies |f(x)| < \varepsilon )
+    \end{gather*}
+\end{definition}

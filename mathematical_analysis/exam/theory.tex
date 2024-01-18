@@ -723,3 +723,323 @@
     Пусть $y = f(x) \in C(a, b)$ и строго монотонна на этом интервале. Тогда в соответствующем $(a, b)$ интервале значений функции существует обратная функция $x = f^{-1}(y)$, которая так же строго монотонна и непрерывна.
 \end{theorem}
 \pagebreak
+
+
+\begin{question}
+    Сформулируйте определение точки разрыва функции и дайте классификацию точек разрыва. На каждый случай приведите примеры.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:56}
+\end{used}
+\begin{answer}
+    Классификация точек разрыва:
+    \begin{itemize}
+        \item Первого рода
+        \begin{itemize}
+            \item Устранимого разрыва \[
+                \lim_{x \to x_0+} = \lim_{x \to x_0-} \neq f(x_0) 
+            \]
+            \item Неустранимого разрыва \[
+                \lim_{x \to x_0+} \neq \lim_{x \to x_0-} \text{ или } \not\exists f(x_0)
+            \]
+        \end{itemize}
+        \item Второго рода \[
+            \not \exists \lim_{x \to x_0 \pm} 
+        \]
+    \end{itemize}
+
+    Примеры точек разрыва:
+    \begin{itemize}
+        \item Устранимого разрыва: \[
+            y = \frac{sin(x)}{x} \quad x_0 = 0
+        \] 
+        \item Неустранимого разрыва: \[
+            \begin{cases*}
+                y = x, x > 0 \\
+                y = x - 1, x < 0
+            \end{cases*} \quad x_0 = 0
+        \]
+        \item Второго рода: \[
+            y = \frac{1}{x} \quad x_0 = 0
+        \]
+    \end{itemize}
+\end{answer}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите необходимое и достаточное условие существования наклонной асимптоты.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:35}, №\ref{def:84}
+\end{used}
+\begin{theorem}[Необходимое и достаточное условие существования наклонной асимптоты]
+    График функции $y = f(x)$ имеет при  $x \to \pm\infty$ наклонную ассимптоту тогда и только тогда, когда существуют два конечных предела:
+    \begin{align*}
+        \begin{cases}
+            &\lim_{x \to \pm\infty} \frac{f(x)}{x} \\
+            &\lim_{x \to \pm\infty} (f(x) - kx)
+        \end{cases} \tag{*} 
+    \end{align*}
+\end{theorem}
+\begin{necessity}
+    Дано $y = kx + b$ наклонная ассимптота. \\
+    Доказать  $\exists $ пределов.\\
+    По условию $y = kx + b$ -- наклонная ассимптота  $\implies $ по определению $f(x) = kx + b + \alpha(x)$, где $\alpha(x)$ -- б.м.ф. при $x \to  \pm \infty$.
+    Рассмотрим:
+    \begin{align*}
+        \lim_{x \to \pm\infty} \frac{f(x)}{x} &= \lim_{x \to \pm\infty} \frac{kx + b + \alpha(x)}{x} = \\
+            &= \lim_{x \to \pm\infty} (k + b \cdot \frac{1}{x} + \frac{1}{x} \alpha(x)) \\
+            &= k + b \lim_{x \to \pm\infty} \frac{1}{x} + \lim_{x \to \pm\infty}\frac{1}{x} \alpha(x) \\
+            &= k + b\cdot 0 + 0 = k \\
+    \end{align*}
+    Рассмотрим выражение:
+    \begin{align*}
+        f(x) - kx = kx + b + \alpha(x) - kx = b + \alpha(x) \\
+        \lim_{x \to \pm\infty} (f(x) - kx) = \lim_{x \to \pm\infty} (b + \alpha(x)) = b 
+    \end{align*}
+\end{necessity}
+\begin{sufficiency}
+    Дано $\exists $ конечные пределы (*). Доказать $y = kx + b$ -- наклонная ассимптота. \\
+    $\exists $ конечный предел $\lim_{x \to \pm\infty} (f(x) - kx) = b$
+    По теореме о связи функции, её предела и б.м.ф. $\implies$ \[
+        f(x) - kx = b + \alpha(x)
+    \]  при $x \to \pm\infty$. Выразим $f(x)$:  \[
+        f(x) = kx + b + \alpha(x)
+    \] где $\alpha(x)$ б.м.ф при $x \to \pm\infty$.
+    По определению $\implies y = kx + b$ -- наклонная ассимптота к графику функции $y = f(x)$
+\end{sufficiency}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите необходимое и достаточное условие дифференцируемости функции в точке.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:61}, №\ref{def:64}
+\end{used}
+\begin{theorem}[Необходимое и достаточное условие дифференцируемости функции в точке]
+    Функция $y = f(x)$ в точке  $x_0$ тогда и только тогда, когда она имеет в этой точке конечную производную.
+\end{theorem}
+\begin{necessity}
+    Дано: $y = f(x)$ -- дифференцируема в точке  $x_0$. \\
+    Доказать: $\exists  y'(x)$ -- конечное число \\
+    Т.к. $y = f(x)$, то  $\Delta y = A \cdot \Delta x + \alpha(\Delta x) \cdot \Delta x$, где $\alpha(\Delta x)$ -- бесконечно малая функция при $\Delta x \to 0$. \\
+    Вычислим предел: 
+    \begin{gather*}
+        \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{A \Delta x + \alpha(\Delta x) \cdot \Delta x}{\Delta x} = \lim_{\Delta x \to 0} \left( A + \alpha(\Delta x) \right)  = \\
+        A + \lim_{\Delta x \to 0} \alpha(\Delta x) = A + 0 = A \\
+        \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = y'(x_0) \text{ -- по определению} \\
+        \implies y'(x_0) = A = const \implies \exists  y'(x_0) \text{ -- конечное число}.
+    \end{gather*}
+\end{necessity}
+\begin{sufficiency}
+    Дано: $\exists y'(x_0)$ -- конечное число. \\
+    Доказать: $y = f(x)$ -- дифференцируема в этой точке. \\
+    Доказательство: \\
+    Т.к. $\exists y'(x)$, то по определению производной  \[
+        y'(x_{0}) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+    \]
+    По теореме "О связи функции, её предела и некоторой бесконечно малой функции": \[
+    \frac{\Delta y}{\Delta x} = y'(x_0) + \alpha(\Delta x)
+    \] 
+    где $\alpha(x)$ -- бесконечно малая функция при $\Delta x \to 0$.
+    \begin{gather*}
+        \Delta y = y'(x_0) \Delta x + \alpha(\Delta x) \Delta x
+    \end{gather*}
+    где $A = y'(x_0) \implies y = f(x)$ дифференцируема в данной точке.
+\end{sufficiency}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о связи дифференцируемости и непрерывности функции.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:51}, №\ref{def:64}
+\end{used}
+\begin{theorem}[О связи дифференцируемости и непрерывности функции]
+    Если функция дифференцируема в точке $x_0$, то она в этой точке непрерывна.
+\end{theorem}
+\begin{proof}
+    Т.к. $y = f(x)$ дифференцируема в точке $x_0$, то $\Delta y = y'(x_0) \Delta x + \alpha(\Delta x) \Delta x$, где $y'(x_0) = const$, $\alpha(\Delta x)$ -- бесконечно малая функция при  $\Delta x \to 0$. \\
+    Вычислим:
+    \begin{align*}
+        \lim_{\Delta x \to 0} \Delta y &= \lim_{\Delta x \to 0} (y'(x) \Delta x + \alpha(\Delta x) \Delta x) \\
+            &= y'(x_0) \lim_{\Delta x \to 0} \Delta x + \lim_{\Delta x \to 0} \alpha(\Delta x) \lim_{\Delta x \to 0} \Delta x \\
+            &= y'(x_0) \cdot 0 + 0 \cdot 0 = 0 \\
+    \end{align*}
+    По определению непрерывной функции $y = f(x)$ является непрерывной в точке $x_0$.
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о производной произведения двух дифференцируемых функций.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:61}, №\ref{def:64}
+\end{used}
+\begin{theorem}[О производной произведения двух дифференцируемых функций]
+    Если функции $u(x)$ и $v(x)$ дифференцируемы в точке $x_0$, то функция $u(x) \cdot v(x)$ также дифференцируема в точке $x_0$: \[
+        (u(x) \cdot v(x))' = u'(x) \cdot v(x) + u(x) \cdot v'(x)
+    \]
+\end{theorem}
+\begin{proof}
+    Пусть $y = uv$, тогда:
+    \begin{gather*}
+        \Delta  y = y(x + \Delta x) - y(x) = u(x + \Delta x) v(x + \Delta x) - u(x) v(x) = \\
+        = (\Delta u + u(x))(\Delta v + v(x)) - u(x) v(x) = \Delta u \Delta v + \Delta u v(x) + \\
+        + \Delta v u(x) + u(x) v (x) = \\
+        \Delta u \Delta v + \Delta u v(x) + \Delta v u(x).
+    \end{gather*}
+    Вычислим предел:
+    \begin{align*}
+        y'(x) &= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} 
+           = \lim_{\Delta x \to 0}  \frac{ \Delta u \Delta v + \Delta  u v(x) + \Delta v u(x)}{\Delta x} = \\
+          &= \lim_{\Delta x \to 0} \left( \Delta u \frac{\Delta v}{\Delta x} + v(x) \frac{\Delta u}{\Delta x} + u(x) \frac{\Delta v}{\Delta x} \right) = \\
+          &= \underbrace{\lim_{\Delta x \to 0} \Delta u}_{0} \underbrace{\lim_{\Delta x \to 0} \frac{\Delta v}{\Delta x}}_{v'(x)} + v(x) \underbrace{\lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x}}_{u'(x)} + u(x)\underbrace{\lim_{\Delta x \to 0} \frac{\Delta v}{\Delta x}}_{v'(x)} = \\
+          &= v(x) u'(x) + v'(x) u(x) + v'(x) \cdot 0 = \\
+          &= \boxed{v(x) u'(x) + u(x) v('x)}
+    \end{align*}
+    Т.к. функции $u = u(x)$, $v = v(x)$ дифференцируемы в точке $x$, то по теореме о связи дифференцируемости и непрерывности функции  $\implies u = u(x)$ и $v = v(x)$ непрерывны в точке  $x \implies$ по определению непрерывности функции: \[
+        \begin{cases}
+            \lim_{\Delta x \to 0} \Delta u = 0 \\
+            \lim_{\Delta x \to 0} \Delta v = 0 \\
+        \end{cases}
+    \] 
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о производной частного двух дифференцируемых функций.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:61}, №\ref{def:64}
+\end{used}
+\begin{theorem}[О производной частного двух дифференцируемых функций]
+    Если функции $u(x)$ и $v(x)$ дифференцируемы в точке $x_0$ и $v(x_0) \neq 0$, то функция $\frac{u(x)}{v(x)}$ также дифференцируема в точке $x_0$: \[
+        \left(\frac{u(x)}{v(x)}\right)' = \frac{u'(x) \cdot v(x) - u(x) \cdot v'(x)}{v^2(x)}
+    \]
+\end{theorem}
+\begin{proof}
+    Пусть $y = \frac{u}{v}$, тогда:
+    \begin{align*}
+        \Delta y &= y(x + \Delta x) - y(x) = \\
+                 &= \frac{u(x + \Delta x)}{v(x + \Delta x)} - \frac{u(x)}{v(x)} = \\
+                 &= \frac{u(x + \Delta x)v(x) - u(x)v(x + \Delta x)}{v(x + \Delta x)v(x)} = \\
+                 &= \frac{(u(x) + \Delta u)v(x) - u(x)(v(x) + \Delta v)}{(\Delta v + v(x))v(x)} = \\
+                 &= \frac{u(x) + \Delta u v(x) - u(x)v(x) - u(x)\Delta v}{v^2(x) + v(x) \Delta v} = \\
+                 &= \frac{\Delta u v(x) - \Delta v u(x)}{v^2(x) + v(x) \Delta v}
+    \end{align*}
+    Вычислим предел:
+    \begin{align*}
+        y'(x) &= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \\
+              &= \lim_{\Delta x \to 0} \frac{\frac{\Delta u v(x) - \Delta v u(x)}{v^2(x) + v(x) \Delta v}}{\Delta x} = \\
+              &= \lim_{\Delta x \to 0} \frac{v(x) \frac{\Delta u}{\Delta x} - v(x_0) \frac{\Delta v}{\Delta x}}{v^2(x) + v(x) \Delta v} = \\
+              &= \frac{v(x) \lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x} - u(x) \lim_{\Delta x \to 0}  \frac{\Delta v}{\Delta x}}{v^2(x) - v(x) \lim_{\Delta x \to 0} \Delta v} = \\
+              &= \boxed{\frac{v(x) u'(x) - u(x) v'(x)}{v^2(x)}}
+    \end{align*}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о производной сложной функции.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:51} №\ref{def:61}, №\ref{def:64}
+\end{used}
+\begin{theorem}[О производной сложной функции]
+    Пусть функция $u = g(x)$ дифференцируема в точке $x = a$, а функция $y = f(u)$ дифференцируема в соответствующей точке  $b = g(a)$.
+    Тогда сложная функция $F(x) = f(g(x))$ дифференцируема в точке $x = a$. \[
+        F'(x) |_{x = a} = \left(f(g(x))'\right)_{x = a} = f'_u(b) \cdot g'_x(a)
+    \]
+\end{theorem}
+\begin{proof}
+    Т.к. функция $u = g(x)$ дифференцируема в точке $x = a$, то по определению $\implies$\[
+    \Delta u = g'(a) \cdot \Delta x + \alpha(\Delta x) \cdot \Delta \tag{1}
+    \] 
+    где $\alpha(\Delta x)$ -- б.м.ф при $\Delta x \to 0$.
+    Т.к. функция $y = f(x)$ дифференцируема в точке  $b$, то по определению дифференцируемости  $\implies$ \[
+        \Delta y = f'(b) \cdot \Delta u + \beta(\Delta u) \cdot \Delta u \tag{2}
+    \] 
+    где $\beta(\Delta x)$ -- б.м.ф при $\Delta x \to 0$. \\
+    Подставим (1) в (2). Тогда:
+    \begin{gather*}
+        \Delta y = f'(b) \cdot \left( g'(a) \Delta x + \alpha(\Delta x) \Delta x \right) + \beta(\Delta u)\left( g'(a) \Delta x + \alpha(\Delta x) \Delta x \right) = \\
+        = f'(b) \cdot  g'(a) \Delta x + \Delta x\left(f'(b) \alpha(\Delta x) + g'(a) \beta(\Delta u) + \beta(\Delta u) \alpha(\Delta x)\right) = \Delta F
+    \end{gather*}
+    Обозначим: $\gamma(\Delta x) = f'(b) \alpha(\Delta x) + g'(a) \beta(\Delta u) + \beta(\Delta u) \alpha(x)$. В итоге получаем $\Delta F = f'(b)g'(a)\Delta x + \gamma(\Delta x)\Delta x$. \\
+    $f(b) \alpha(\Delta x)$ -- б.м.ф при $\Delta x \to 0$ (как производная постоянной на б.м.ф.). 
+    Т.к. $u = g(x)$ дифференцируема в точке $x = a$, то по теореме о связи дифференцируемости и непрерывности функции $u = g(x)$ непрерывна в точке $x = a$  $\implies$ по определению непрерывности $\lim_{\Delta x \to 0} \Delta u = 0$ или при $\Delta x \to 0$, $\Delta u \to 0$. $g'(a) \beta(\Delta u)$ -- б.м.ф при $\Delta x \to  0$ как производная на б.м.ф. $\beta(\Delta u) \alpha(\Delta x)$ -- б.м.ф при $\Delta x \to  0$ (как производная двую б.м.ф).
+    Следовательно, $\gamma(x)$ -- б.м.ф при $x \to 0$ как сумма конечного числа б.м.ф. \\
+    Вычислим предел:
+    \begin{gather*}
+        \lim_{\Delta x \to 0} \frac{\Delta F}{\Delta x} = \lim_{\Delta x \to 0} \left( f'(b) g'(a) + \gamma(\Delta x) \right) = f(b)g'(a) + 0 = f'(b) g'(a).
+    \end{gather*}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите теорему о производной обратной функции.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:61}, №\ref{def:61}
+\end{used}
+\begin{theorem}[О производной обратной функции]
+    Пусть функция $y = f(x)$ в точке $x = 0$ имеет конечную и отличную от нуля производную  $f'(a)$ и пусть для неё существует однозначная обратная функция $x = g(y)$, непрерывная в соответствующей точке $b = f(a)$.
+    Тогда существует производная обратной функции и она равна:  \[
+        g'(b) = \frac{1}{f'(a)}
+    \] 
+\end{theorem}
+\begin{proof}
+    Т.к. функция $x = g(y)$ однозначно определена, то соответственно при  $\Delta y \neq 0$, $\Delta x \neq 0$.
+    Т.к. функция $x = g(y)$ непрерывна в соответствующей точке $b$, то  $\lim_{\Delta y \to 0} \Delta x = 0$ или $\Delta x \to 0$ при $\Delta y \to 0$.
+    \begin{gather*}
+        g'(b) = \lim_{\Delta y \to 0} \frac{\Delta x}{\Delta y} = \lim_{\Delta y \to 0} \frac{1}{\frac{\Delta y}{\Delta x}} = \frac{1}{\lim_{\Delta y \to 0} \frac{\Delta y}{\Delta x}} = \\
+        = \frac{1}{\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}} = \frac{1}{f'(a)}
+    \end{gather*}
+\end{proof}
+\pagebreak
+
+
+
+\begin{question}
+    Сформулируйте и докажите свойство инвариантности формы записи дифференциала первого порядка.
+\end{question}
+\begin{used}
+    Используются определения №\ref{def:65}
+\end{used}
+\begin{theorem}[Инвариантность формы записи дифференциала первого порядка]
+    Форма записи первого дифференциала не зависит от того, является ли $x$ независимой переменной или функцией другого аргумента.
+\end{theorem}
+\begin{proof}
+    Пусть $y = f(x)$,  $x = \varphi(t)$. Тогда можно задать сложную функцию: \[
+        F(t) = y = f(\varphi(t))
+    \] 
+    По определению дифференциала функции: \[
+        dy = F'(t)dt \tag{6}
+    \] 
+    По теореме о производной сложной функции: \[
+        F'(t) = f'(x) \cdot \varphi'(t) \tag{7}
+    \] 
+    Подставим (7) в (6): \[
+        dy = f'(x) \varphi'(t) dt \tag{8} 
+    \] 
+
+    По определению дифференциала функции $dx = \varphi'(t)dt$ \quad (9).
+    Подставим (9) в (8): \[
+        \boxed{dy = f'(x) dx}
+    \] 
+\end{proof}
+\pagebreak

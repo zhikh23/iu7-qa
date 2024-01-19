@@ -27,6 +27,7 @@
     Пусть \[
         \epsilon_1 = \epsilon_2 = \epsilon = \frac{|b - a|}{3}
     \]
+    Тогда:
     \begin{gather*}
         3 \epsilon = |b - a| = |b - a + x_{n} - x_{n}| = \\
         = |(x_{n} - a) - (x_{n} - b)| \le |x_{n} - a| + |x_{n} - b| < \epsilon_1 + \epsilon_2 = 2 \epsilon \\
@@ -151,18 +152,22 @@
     Сформулируйте и докажите теорему о предельном переходе в неравенстве.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:28}.
+    Используются определения №\ref{def:28}, ``О сохранении функцией знака своего предела''.
 \end{used}
 \begin{theorem}[О предельном переходе в неравенстве]
-    Пусть существуют конечные пределы функций $f(x)$ и  $g(x)$ в точке $x_0$ и $\forall x \in \mathring{S}(x_0, \delta)$ верно $f(x) < g(x)$. Тогда $\forall x \in \mathring{S}(x_0, \delta)$ имеет место неравенство $\lim_{x \to x_0} f(x) \le \lim_{x \to x_0} g(x)$.
+    Пусть существуют конечные пределы функций $f(x)$ и  $g(x)$ в точке $x_0$ и $\forall x \in \mathring{S}(x_0, \delta)$ верно: \[
+        f(x) < g(x)
+    \]
+    Тогда $\forall x \in \mathring{S}(x_0, \delta)$ имеет место неравенство: \[
+        \lim_{x \to x_0} f(x) \le \lim_{x \to x_0} g(x)
+    \]
 \end{theorem}
 \begin{proof}
     По условию $f(x) < g(x), \forall x \in \mathring{S}(x_0, \delta)$. \\
     Введём функцию $F(x) = f(x) - g(x) < 0, \forall x \in \mathring{S}(x_0, \delta)$. 
     Т.к. $f(x)$ и $g(x)$ имеют конечные пределы в точке $x_0$, соответственно и функция $F(X)$ имеет конечный предел в точке $x_0$ (как разность $f(x)$ и $g(x)$).
   
-    По следствию из предыдущей теоремы
-    $\implies \lim_{x \to x_0} F(x) $ 
+    По следствию из теорема ``О сохранении функцией знака своего предела'' $\implies \lim_{x \to x_0} F(x) \le 0$ 
   
     Подставим $F(x) = f(x) - g(x)$:
     \begin{gather*}
@@ -186,17 +191,17 @@
 \begin{proof}
     По условию: 
     \begin{gather*}
-        \lim_{x \to x_0} f(x) = a \iff (\forall \varepsilon > 0)(\exists \delta_1(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |f(x) - a| < \varepsilon) \tag{1} \\
-        \lim_{x \to x_0} g(x) = a \iff (\forall \varepsilon > 0)(\exists \delta_2(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |g(x) - a| < \varepsilon) \tag{2}
+        \lim_{x \to x_0} f(x) = a \iff (\forall \varepsilon > 0)(\exists \delta_1(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta_1) \implies |f(x) - a| < \varepsilon) \tag{1} \\
+        \lim_{x \to x_0} g(x) = a \iff (\forall \varepsilon > 0)(\exists \delta_2(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta_2) \implies |g(x) - a| < \varepsilon) \tag{2}
     \end{gather*}
-    Выберем $\delta_0 = min \{\delta, \delta_1, \delta_2\}$, тогда (1), (2) и $f(x) \le h(x) \le g(x)$ верны одновременно $\forall x \in \mathring{S}(x_0, \delta_0)$.
+    Выберем $\delta_0 = min \{\delta_1, \delta_2\}$, тогда (1), (2) и $f(x) \le h(x) \le g(x)$ верны одновременно $\forall x \in \mathring{S}(x_0, \delta_0)$.
     \begin{align*}
         (1) \quad a - \varepsilon < f(x) < a + \varepsilon \\
         (2) \quad a - \varepsilon < g(x) < a + \varepsilon
     \end{align*}
     \begin{gather*}
         f(x) \le h(x) \le g(x) \\
-        \implies a - \varepsilon_1 < f(x) \le h(x) \le g(x) < a + \varepsilon_2 \\
+        \implies a - \varepsilon < f(x) \le h(x) \le g(x) < a + \varepsilon \\
         \implies \forall x \in \mathring{S}(x_0, \delta_0) \qquad a - \varepsilon < h(x) < a + \varepsilon
     \end{gather*}
     В итоге:
@@ -213,7 +218,7 @@
     Сформулируйте и докажите теорему о пределе произведения функций.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:28}, №\ref{def:35}, теорема ``О произведении бесконечно малой функций на локально ограниченную''.
+    Используются определения №\ref{def:28}, №\ref{def:35}, теорема ``О произведении бесконечно малой функций на локально ограниченную'', теорема ``О свящи функции, её предела и бесконечно малой функции'', теорема ``О сумме конечного числа с бесконечно малой функцией''.
 \end{used}
 \begin{theorem}[О пределе произведения функций]
     \textit{О пределе произведения функций}. \\
@@ -257,13 +262,13 @@
     \end{gather*}
 
     Далее расписываем предел:
+    \begin{align*}
+        \lim_{x \to x_0} f(x) \cdot g(x) &= \lim_{x \to x_0} (f(x) \cdot g(x)) \\
+            &= \lim_{x \to x_0} ab + \lim_{x \to x_0} \gamma(x) \\
+            &= ab + 0 = ab
+    \end{align*}
     \begin{gather*}
-        \begin{align*}
-            \lim_{x \to x_0} f(x) \cdot g(x) &= \lim_{x \to x_0} (f(x) \cdot g(x)) \\
-                &= \lim_{x \to x_0} ab + \lim_{x \to x_0} \gamma(x) \\
-                &= ab + 0 \\
-                &= ab
-        \end{align*}
+        \lim_{x \to x_0} f(x) \cdot g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x)
     \end{gather*}
 \end{proof}
 \pagebreak
@@ -274,7 +279,7 @@
     Сформулируйте и докажите теорему о пределе сложной функции.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:25}, №\ref{def:29}.
+    Используются определения №\ref{def:25}.
 \end{used}
 \begin{theorem}[О пределе сложной функции]
     Если функция $y = f(x)$ имеет предел в точке  $x_0$ равный $a$, то функция  $\varphi(y)$ имеет предел в точке $a$, равный $C$, тода сложная функция  $\varphi(f(x))$ имеет предел в точке $x_0$, равный $C$.
@@ -367,10 +372,10 @@
     \end{gather*}
 \end{theorem}
 \begin{necessity}
-    \textit{Дано}: \[
+    Дано: \[
         \lim_{x \to x_0} f(x) = a
     \]
-    \textit{Доказать}: \[
+    Доказать: \[
         f(x) = a + \alpha(x), \text{где } \alpha(x) \text{ - б.м.ф. при } x \to  x_0
     \]
     Распишем: \[
@@ -395,7 +400,7 @@
         \lim_{x \to x_0} \alpha(x) = 0 \iff (\forall \varepsilon > 0)(\exists \delta > 0)(\mathring{S}(x_0, \delta) \implies |\alpha(x)| < \varepsilon)
     \]
     С учётом введённого обозначения: \[
-        (\forall \varepsilon > 0)(\exists \delta > 0)(\mathring{S}(x_0, \delta) \implies |f(x) - a| < \varepsilon \iff \lim_{x \to x_0} f(x) = a)
+        (\forall \varepsilon > 0)(\exists \delta > 0)(\mathring{S}(x_0, \delta) \implies |f(x) - a| < \varepsilon) \iff \lim_{x \to x_0} f(x) = a
     \]
 \end{sufficiency}
 \pagebreak
@@ -426,7 +431,7 @@
     Выберем $\delta = min \{\delta_1, \delta_2\} $, тогда (1) и (2) верны одновременно. В итоге получаем:
     \begin{gather*}
         (\forall \varepsilon > 0)(\exists \delta > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies \\
-        |\alpha(x) \cdot f(x)| = |\alpha(x)| \cdot |f(x)| < \frac{\varepsilon}{M} \cdot M < \varepsilon)  
+        |\alpha(x) \cdot f(x)| = |\alpha(x)| \cdot |f(x)| < \frac{\varepsilon}{M} \cdot M = \varepsilon)  
     \end{gather*}
 
     Тогда по определению бесконечно малой функции: \[
@@ -460,12 +465,12 @@
     Обозначим $\varepsilon = \frac{1}{M}$.
     \begin{gather*}
         |\alpha(x) > M| \implies \frac{1}{|\alpha(x)|} < \frac{1}{M} \\
-        \implies |\frac{1}{\alpha(x)}| < \frac{1}{M} < \varepsilon
+        \implies \left|\frac{1}{\alpha(x)}\right| < \frac{1}{M} < \varepsilon
     \end{gather*}
 
     В итоге получаем:
     \begin{gather*}
-        \forall x \in \mathring{s}(x_0, \delta) \implies |\frac{1}{\alpha(x)}| < \varepsilon 
+        \forall x \in \mathring{s}(x_0, \delta) \implies \left|\frac{1}{\alpha(x)}\right| < \varepsilon 
     \end{gather*}
 
     Что по определению является бесконечно малой функцией.
@@ -481,13 +486,13 @@
     Используются определения №\ref{def:35}, №\ref{def:44}.
 \end{used}
 \begin{theorem}[О замене бесконечно малой на эквивалентную под знаком предела]
-    Предел \textbf{отношения} двух б.м.ф. (б.б.ф) не изменится, если заменить эти функции на эквивалентные. \[
+    Предел \textbf{отношения} двух б.м.ф. не изменится, если заменить эти функции на эквивалентные. \[
         \begin{rcases}
             \alpha(x), \beta(x) \text{ - б.м.ф. при } x \to x_0 \\
             \alpha(x) \sim \alpha_0(x) \\
             \beta(x) \sim \beta_0(x)
         \end{rcases} \implies 
-        \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = \frac{\alpha_0(x)}{\beta_0(x)} 
+        \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = \lim_{x \to x_0} \frac{\alpha_0(x)}{\beta_0(x)} 
     \] 
 \end{theorem}
 \begin{proof}
@@ -495,7 +500,7 @@
     \begin{align*}
         \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} &= \lim_{x \to x_0} \frac{\alpha(x) \cdot \alpha_0(x) \cdot \beta_0(x)}{\beta(x) \cdot \alpha_0(x) \cdot \beta_0(x)} \\
             &= \lim_{x \to x_0} \frac{\alpha(x)}{\alpha_0(x)} \cdot \lim_{x \to x_0} \frac{\beta_0(x)}{\beta(x)} \cdot \lim_{x \to x_0} \frac{\alpha_0(x)}{\beta_0(x)} \\
-            &= 1 \cdot  1 \cdot 1 \cdot \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} \\
+            &= 1 \cdot  1 \cdot \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} \\
     \end{align*}
 \end{proof}
 \pagebreak
@@ -527,11 +532,13 @@
     Доказать: \[
         \alpha(x) - \beta(x) = o(\alpha(x)) \text{, при } x \to x_0
     \] 
-    Доказательство:
+    Доказательство: \\
+    Рассмотрим отношение разности функций к $\alpha(x)$:
     \begin{align*}
         \lim_{x \to x_0} \frac{\alpha(x) - \beta(x)}{\alpha(x)} &= \lim_{x \to x_0} \left( 1 - \frac{\beta(x)}{\alpha(x)} \right) \\
             &= 1 - \lim_{x \to x_0} \frac{\beta(x)}{\alpha(x)} = 1 - \frac{1}{1} = 0
     \end{align*}
+    По определению получаем, что разность б.м.ф. большего порядка, чем $\alpha(x)$.
 \end{necessity}
 \begin{sufficiency}
     Дано: \[
@@ -540,14 +547,11 @@
     Доказать: \[
         \alpha(x) \sim \beta(x) \text{, при } x \to x_0
     \] 
-    Доказательство:
-    \begin{align*}
-        \lim_{x \to x_0} \frac{\alpha(x) - \beta(x)}{\beta(x)} &= \lim_{x \to x_0} \left( \frac{\alpha(x)}{\beta(x)} - 1 \right)  \\
-            &= \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} - 1 = 0
-    \end{align*}
+    Доказательство: \\
+    Рассмотрим отношение разности функций к $\alpha(x)$:
     \begin{gather*}
-        \implies \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1 \\
-        \implies \alpha(x) \sim \beta(x) \text{, при } x \to x_0 
+        \lim_{x \to x_0} \frac{\alpha(x) - \beta(x)}{\beta(x)} = \lim_{x \to x_0} \left( \frac{\alpha(x)}{\beta(x)} - 1 \right) = \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} - 1 = 0 \\
+        \implies \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1 \implies \alpha(x) \sim \beta(x) \text{, при } x \to x_0 
     \end{gather*}
 \end{sufficiency}
 \pagebreak
@@ -592,7 +596,7 @@
   Если функции $f(x)$ и $g(x)$ непрерывны в точке $x_0$, то функции (последняя с учётом $g(x) \neq 0$):   
   \begin{gather*}
     f(x) + g(x) \\
-    (f \cdot g)(x) \\
+    f(x) \cdot g(x) \\
     \frac{f(x)}{g(x)}
   \end{gather*}
   также непрерывны в точке $x_0$. 
@@ -601,18 +605,21 @@
     По определению непрерывной функции: 
     \begin{gather*}
         \lim_{x \to x_0} f(x) = f(x_0) \\
-        \lim_{x \to x_0} g(x) = g(x_0) \\
+        \lim_{x \to x_0} g(x) = g(x_0)
     \end{gather*}
     Рассмотрим:
     \begin{gather*}
-        \lim_{x \to x_0} (f(x) + g(x)) = \lim_{x \to x_0} f(x) + \lim_{x \to x_0} g(x) + f(x_0) = g(x_0) \\
+        \lim_{x \to x_0} (f(x) + g(x)) = \lim_{x \to x_0} f(x) + \lim_{x \to x_0} g(x) = f(x_0) + g(x_0)
+        \\
         \implies f(x) + g(x) \in C(x_0) 
         \\
-        \lim_{x \to x_0} (f \cdot g)(x) = \lim_{x \to x_0} f(x) \cdot g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x) = f(x_0) \cdot g(x_0) 
+        \lim_{x \to x_0} f(x) \cdot g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x) = f(x_0) \cdot g(x_0) 
         \\
-        \implies (f \cdot g)(x) \in C(x_0)
+        \implies f(x) \cdot g(x) \in C(x_0)
         \\
-        \lim_{x \to 0} \frac{f(x)}{g(x)} = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x_0)}
+        \lim_{x \to 0} \frac{f(x)}{g(x)} = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x)} = \frac{f(x_0)}{g(x_0)}
+        \\
+        \implies \frac{f(x)}{g(x)} \in C(x_0)
     \end{gather*}
 \end{proof}
 \pagebreak
@@ -623,18 +630,22 @@
     Сформулируйте и докажите теорему о непрерывности сложной функции.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:50}, теорема ``О пределе сложной функции''.
+    Используются определения №\ref{def:51}, теорема ``О пределе сложной функции''.
 \end{used}
 \begin{theorem}[О непрерывности сложной функции]
     Если функция $y = f(x)$ непрерывна в точке $x_0$, а функция $g(y)$ непрерывна в соответствующей точке $y_0 = f(x_0)$, то сложная функция $g(f(x))$ непрерывна в точке $x_0$.
 \end{theorem}
 \begin{proof}
-    Т.к. функция $g\left( y \right) \in C(y_0)$, то $\lim_{y \to y_0} g(y) = g(y_0)$.
-    С другой стороны, по условию $\lim_{x \to x_0} f(x) = y_0$.
-    По теореме ``О пределе сложной функции'' $\exists \lim_{x \to x_0} g(f(x))$.
-    Подставим в последнее равенство $y_0 = \lim_{x \to x_0} f(x)$: \[
-        \lim_{x \to x_0} g(f(x)) = g(\lim_{x \to x_0} f(x))
-    \]  
+    По условию функция $y = f(x)$ непрерывна в точке $x_0$, а функция $g(y)$ непрерывна в точке $y_0 = f(x_0)$. Тогда по определению:
+    \begin{gather*}
+        \exists \lim_{x \to x_0} f(x) = f(x_0) = b \\
+        \exists \lim_{x \to x_0} g(y) = g(y_0)
+    \end{gather*}
+    Тогда:
+    \begin{gather*}
+        \lim_{x \to x_0} g(f(x)) = \lim_{y \to y_0} g(y) = g(y_0) = g(f(x_0))
+    \end{gather*}
+    Следовательно, по определению функция $g(f(x))$ непрерывна в точке $x = a$. Теорема доказана.  
 \end{proof}
 \pagebreak
 
@@ -666,13 +677,12 @@
 \begin{theorem}[О непрерывности элементарных функций]
     Основные элементарные функции непрерывны в области определения.
 \end{theorem}
-\begin{proof}[Для $y=sin(x)$ и $y=cos(x)$]
-    Докажем её для функций $y = \sin(x), y = \cos(x)$:
+\begin{proof}[Для $y=sin(x)$]
     \begin{gather*}
         y = \sin(x), D_y = \R \\
-        x_0 = 0, \lim_{x \to x_0} \sin(x) = \sin(0) \implies y = \sin(x) \in C(0) \\
+        x_0 = 0, \quad \lim_{x \to x_0} \sin(x) = \sin(0) \implies y = \sin(x) \in C(0) \\
         \forall x \in D_y= \R, \quad \Delta x \text{ -- приращение функции} \\ 
-        x = x_0 + \Delta x, \quad x \in D_f = \R \\
+        x = x_0 + \Delta x, \quad x \in D_y = \R \\
         \Delta y = y(x) - y(x_0) = y(x_0 + \Delta x) - y(x_0) \\
         = \sin(x_0 + \Delta x) - \sin(x_0) = 2\sin\left( \frac{x_0 + \Delta x - x_0}{2} \right) \cos\left( \frac{x_0 + \Delta x + x_0}{2} \right) \\
         = 2\sin\left( \frac{\Delta x}{2} \right) \cos\left(x_0 + \frac{\Delta x}{2} \right) \\
@@ -681,6 +691,9 @@
     \end{gather*}
     Т.к. $\lim_{\Delta x \to 0} \Delta y = 0$ по опр. непр. функции $\implies y =\sin(x)$ непрерывна в точке $x_0$. 
     Т.к. $x_0$ -- произвольная точка из области определения, то $y = \sin(x)$ непрерывна на всей области произведения.
+\end{proof}
+\begin{proof}[Для $y=cos(x)$]
+    Аналогично для $\cos(x)$.
 \end{proof}
 \pagebreak
 
@@ -693,8 +706,8 @@
     Используются определения №\ref{def:55}.
 \end{used}
 \begin{theorem}[Первая теорема Вейерштрасса]
-    Если функция $y = f(x)$ непрерывна на отрезке $ab$, то она на этом отрезке ограниченна. \[
-        f(x) \in C[a, b] \implies \exists M \in \R, M > 0, \forall x \in : |f(x)| \le  M
+    Если функция $y = f(x)$ непрерывна на отрезке $[a, b]$, то она на этом отрезке ограниченна. \[
+        f(x) \in C[a, b] \implies \exists M \in \R, M > 0, \forall x \in [a, b] : |f(x)| \le  M
     \] 
 \end{theorem}
 \begin{theorem}[Вторая теорема Вейерштрасса]
@@ -702,7 +715,7 @@
     \begin{gather*}
         f(x) \in C[a, b] \\
         \implies \\
-        \exists x_*, x^* \in \implies m = f(x_*) \le f(x) \le f(x^*) = M
+        \exists x_*, x^* \in [a, b] \implies m = f(x_*) \le f(x) \le f(x^*) = M
     \end{gather*}
 \end{theorem}
 \begin{theorem}[Первая теорема Больцано-Коши]
@@ -711,7 +724,7 @@
     \] 
 \end{theorem}
 \begin{theorem}[Вторая теорема Больцано-Коши]
-    Если функция $y = f(x) \in C[a, b]$ и принимает на границах отрезка различные значения $f(a) = A \neq f(b) = B$, то $\forall C \in \exists c \in (a, b)$, в которой $f(c) = C$.
+    Если функция $y = f(x) \in C[a, b]$ и принимает на границах отрезка различные значения $f(a) = A \neq f(b) = B$, то $\forall C \in [a, b] \quad \exists c \in (a, b)$, в которой $f(c) = C$.
     \begin{gather*}
         f(x) \in C[a, b] \land f(a) = A \neq f(b) = B \\
         \implies \\
@@ -749,17 +762,17 @@
 
     Примеры точек разрыва:
     \begin{itemize}
-        \item Устранимого разрыва: \[
-            y = \frac{sin(x)}{x} \quad x_0 = 0
+        \item Устранимого разрыва ($x = 0$): \[
+            y = \frac{sin(x)}{x}
         \] 
-        \item Неустранимого разрыва: \[
+        \item Неустранимого разрыва ($x = 0$): \[
             \begin{cases*}
                 y = x, x > 0 \\
                 y = x - 1, x < 0
-            \end{cases*} \quad x_0 = 0
+            \end{cases*}
         \]
-        \item Второго рода: \[
-            y = \frac{1}{x} \quad x_0 = 0
+        \item Второго рода ($x = 0$): \[
+            y = \frac{1}{x}
         \]
     \end{itemize}
 \end{answer}
@@ -775,12 +788,12 @@
 \end{used}
 \begin{theorem}[Необходимое и достаточное условие существования наклонной асимптоты]
     График функции $y = f(x)$ имеет при  $x \to \pm\infty$ наклонную ассимптоту тогда и только тогда, когда существуют два конечных предела:
-    \begin{align*}
+    \begin{gather*}
         \begin{cases}
-            &\lim_{x \to \pm\infty} \frac{f(x)}{x} \\
-            &\lim_{x \to \pm\infty} (f(x) - kx)
+            \lim_{x \to \pm\infty} \frac{f(x)}{x} \\
+            \lim_{x \to \pm\infty} (f(x) - kx)
         \end{cases} \tag{*} 
-    \end{align*}
+    \end{gather*}
 \end{theorem}
 \begin{necessity}
     Дано $y = kx + b$ наклонная ассимптота. \\
@@ -817,7 +830,7 @@
     Сформулируйте и докажите необходимое и достаточное условие дифференцируемости функции в точке.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:61}, №\ref{def:64}.
+    Используются определения №\ref{def:61}, №\ref{def:64}, теорема ``О связи функции, её предела и некоторой бесконечно малой функции''.
 \end{used}
 \begin{theorem}[Необходимое и достаточное условие дифференцируемости функции в точке]
     Функция $y = f(x)$ в точке  $x_0$ тогда и только тогда, когда она имеет в этой точке конечную производную.
@@ -881,7 +894,7 @@
     Сформулируйте и докажите теорему о производной произведения двух дифференцируемых функций.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:61}, №\ref{def:64}.
+    Используются определения №\ref{def:61}, №\ref{def:64}, теорема ``О связи дифференцируемости и непрерывности функции''.
 \end{used}
 \begin{theorem}[О производной произведения двух дифференцируемых функций]
     Если функции $u(x)$ и $v(x)$ дифференцируемы в точке $x_0$, то функция $u(x) \cdot v(x)$ также дифференцируема в точке $x_0$: \[
@@ -891,9 +904,9 @@
 \begin{proof}
     Пусть $y = uv$, тогда:
     \begin{gather*}
-        \Delta  y = y(x + \Delta x) - y(x) = u(x + \Delta x) v(x + \Delta x) - u(x) v(x) = \\
-        = (\Delta u + u(x))(\Delta v + v(x)) - u(x) v(x) = \Delta u \Delta v + \Delta u v(x) + \\
-        + \Delta v u(x) + u(x) v (x) = \\
+        \Delta  y = y(x + \Delta x) - y(x) = u(x + \Delta x) v(x + \Delta x) - u(x) v(x) - y(x) = \\
+        = (\Delta u + u(x))(\Delta v + v(x)) - u(x) v(x) - y(x) = \Delta u \Delta v + \Delta u v(x) + \\
+        + \Delta v u(x) + y(x) - y(x) = \\
         \Delta u \Delta v + \Delta u v(x) + \Delta v u(x).
     \end{gather*}
     Вычислим предел:
@@ -903,14 +916,15 @@
           &= \lim_{\Delta x \to 0} \left( \Delta u \frac{\Delta v}{\Delta x} + v(x) \frac{\Delta u}{\Delta x} + u(x) \frac{\Delta v}{\Delta x} \right) = \\
           &= \underbrace{\lim_{\Delta x \to 0} \Delta u}_{0} \underbrace{\lim_{\Delta x \to 0} \frac{\Delta v}{\Delta x}}_{v'(x)} + v(x) \underbrace{\lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x}}_{u'(x)} + u(x)\underbrace{\lim_{\Delta x \to 0} \frac{\Delta v}{\Delta x}}_{v'(x)} = \\
           &= v(x) u'(x) + v'(x) u(x) + v'(x) \cdot 0 = \\
-          &= \boxed{v(x) u'(x) + u(x) v('x)}
+          &= \boxed{u'(x) v(x) + u(x) v'(x)}
     \end{align*}
-    Т.к. функции $u = u(x)$, $v = v(x)$ дифференцируемы в точке $x$, то по теореме о связи дифференцируемости и непрерывности функции  $\implies u = u(x)$ и $v = v(x)$ непрерывны в точке  $x \implies$ по определению непрерывности функции: \[
+    Т.к. функции $u = u(x)$, $v = v(x)$ дифференцируемы в точке $x$, то по теореме о связи дифференцируемости и непрерывности функции  $\implies u = u(x)$ и $v = v(x)$ непрерывны в точке  $x \implies$ по определению непрерывности функции:
+    \begin{gather*}
         \begin{cases}
             \lim_{\Delta x \to 0} \Delta u = 0 \\
-            \lim_{\Delta x \to 0} \Delta v = 0 \\
+            \lim_{\Delta x \to 0} \Delta v = 0
         \end{cases}
-    \] 
+    \end{gather*}
 \end{proof}
 \pagebreak
 
@@ -940,10 +954,10 @@
     Вычислим предел:
     \begin{align*}
         y'(x) &= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \\
-              &= \lim_{\Delta x \to 0} \frac{\frac{\Delta u v(x) - \Delta v u(x)}{v^2(x) + v(x) \Delta v}}{\Delta x} = \\
-              &= \lim_{\Delta x \to 0} \frac{v(x) \frac{\Delta u}{\Delta x} - v(x_0) \frac{\Delta v}{\Delta x}}{v^2(x) + v(x) \Delta v} = \\
-              &= \frac{v(x) \lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x} - u(x) \lim_{\Delta x \to 0}  \frac{\Delta v}{\Delta x}}{v^2(x) - v(x) \lim_{\Delta x \to 0} \Delta v} = \\
-              &= \boxed{\frac{v(x) u'(x) - u(x) v'(x)}{v^2(x)}}
+              &= \lim_{\Delta x \to 0} \cfrac{\cfrac{\Delta u v(x) - \Delta v u(x)}{v^2(x) + v(x) \Delta v}}{\Delta x} = \\
+              &= \lim_{\Delta x \to 0} \cfrac{v(x) \cfrac{\Delta u}{\Delta x} - v(x_0) \cfrac{\Delta v}{\Delta x}}{v^2(x) + v(x) \Delta v} = \\
+              &= \cfrac{v(x) \lim_{\Delta x \to 0} \cfrac{\Delta u}{\Delta x} - u(x) \lim_{\Delta x \to 0}  \cfrac{\Delta v}{\Delta x}}{v^2(x) - v(x) \lim_{\Delta x \to 0} \Delta v} = \\
+              &= \boxed{\frac{u'(x) v(x) - u(x) v'(x)}{v^2(x)}}
     \end{align*}
 \end{proof}
 \pagebreak
@@ -976,13 +990,18 @@
         \Delta y = f'(b) \cdot \left( g'(a) \Delta x + \alpha(\Delta x) \Delta x \right) + \beta(\Delta u)\left( g'(a) \Delta x + \alpha(\Delta x) \Delta x \right) = \\
         = f'(b) \cdot  g'(a) \Delta x + \Delta x\left(f'(b) \alpha(\Delta x) + g'(a) \beta(\Delta u) + \beta(\Delta u) \alpha(\Delta x)\right) = \Delta F
     \end{gather*}
-    Обозначим: $\gamma(\Delta x) = f'(b) \alpha(\Delta x) + g'(a) \beta(\Delta u) + \beta(\Delta u) \alpha(x)$. В итоге получаем $\Delta F = f'(b)g'(a)\Delta x + \gamma(\Delta x)\Delta x$. \\
+    Обозначим: \[
+        \gamma(\Delta x) = f'(b) \alpha(\Delta x) + g'(a) \beta(\Delta u) + \beta(\Delta u) \alpha(x)
+    \] 
+    В итоге получаем: \[
+        \Delta F = f'(b)g'(a)\Delta x + \gamma(\Delta x)\Delta x
+    \]
     $f(b) \alpha(\Delta x)$ -- б.м.ф при $\Delta x \to 0$ (как производная постоянной на б.м.ф.). 
     Т.к. $u = g(x)$ дифференцируема в точке $x = a$, то по теореме о связи дифференцируемости и непрерывности функции $u = g(x)$ непрерывна в точке $x = a$  $\implies$ по определению непрерывности $\lim_{\Delta x \to 0} \Delta u = 0$ или при $\Delta x \to 0$, $\Delta u \to 0$. $g'(a) \beta(\Delta u)$ -- б.м.ф при $\Delta x \to  0$ как производная на б.м.ф. $\beta(\Delta u) \alpha(\Delta x)$ -- б.м.ф при $\Delta x \to  0$ (как производная двую б.м.ф).
     Следовательно, $\gamma(x)$ -- б.м.ф при $x \to 0$ как сумма конечного числа б.м.ф. \\
     Вычислим предел:
     \begin{gather*}
-        \lim_{\Delta x \to 0} \frac{\Delta F}{\Delta x} = \lim_{\Delta x \to 0} \left( f'(b) g'(a) + \gamma(\Delta x) \right) = f(b)g'(a) + 0 = f'(b) g'(a).
+        \lim_{\Delta x \to 0} \frac{\Delta F}{\Delta x} = \lim_{\Delta x \to 0} \left( f'(b) \cdot g'(a) + \gamma(\Delta x) \right) = f'(b) \cdot g'(a) + 0 = f'(b) \cdot g'(a).
     \end{gather*}
 \end{proof}
 \pagebreak
@@ -993,7 +1012,7 @@
     Сформулируйте и докажите теорему о производной обратной функции.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:61}, №\ref{def:61}.
+    Используются определения №\ref{def:51}, №\ref{def:61}.
 \end{used}
 \begin{theorem}[О производной обратной функции]
     Пусть функция $y = f(x)$ в точке $x = 0$ имеет конечную и отличную от нуля производную  $f'(a)$ и пусть для неё существует однозначная обратная функция $x = g(y)$, непрерывная в соответствующей точке $b = f(a)$.
@@ -1027,17 +1046,16 @@
         F(t) = y = f(\varphi(t))
     \] 
     По определению дифференциала функции: \[
-        dy = F'(t)dt \tag{6}
+        dy = F'(t)dt \tag{1}
     \] 
     По теореме о производной сложной функции: \[
-        F'(t) = f'(x) \cdot \varphi'(t) \tag{7}
+        F'(t) = f'(x) \cdot \varphi'(t) \tag{2}
     \] 
-    Подставим (7) в (6): \[
-        dy = f'(x) \varphi'(t) dt \tag{8} 
+    Подставим (2) в (1): \[
+        dy = f'(x) \varphi'(t) dt \tag{3} 
     \] 
 
-    По определению дифференциала функции $dx = \varphi'(t)dt$ \quad (9).
-    Подставим (9) в (8): \[
+    По определению дифференциала функции $dx = \varphi'(t)dt$ (4). Подставим (4) в (3): \[
         \boxed{dy = f'(x) dx}
     \] 
 \end{proof}
@@ -1049,7 +1067,7 @@
     Сформулируйте и докажите теорему Ферма.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:61}, №\ref{def:62}, №\ref{def:63}, №\ref{def:64}, №\ref{def:75}, теорема ``О существовании производной функции в точке''.
+    Используются определения №\ref{def:61}, №\ref{def:62}, №\ref{def:63}, №\ref{def:64}, №\ref{def:74} №\ref{def:75}, теорема ``О существовании производной функции в точке''.
 \end{used}
 \begin{theorem}[Теорема Ферма о нулях производной функции]
     Пусть функция $y = f(x)$ определена на промежутке $X$ и во внутренней точке $C$ этого промежутка достигает наибольшего или наименьшего значения. Если в этой точке существует $f'(c)$, то $f'(c) = 0$.
@@ -1066,8 +1084,9 @@
         &f'_-(c) = \lim_{\Delta x \to 0-} \frac{y(c + \Delta x) - y(c)}{\Delta x} = \left( \frac{-}{-} \right) \ge 0
     \end{align*}
     По теореме о существовании производной функции в точке: \[
-        f'_+(c) = -f'_-(c) = 0
+        f'_+(c) = -f'_-(c)
     \] 
+    Это возможно только в том случае, когда оно равняется $0$. Теорема доказана. 
 \end{proof}
 \pagebreak
 
@@ -1077,7 +1096,7 @@
     Сформулируйте и докажите теорему Ролля.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:55}, №\ref{def:64}, №\ref{def:75}, №\ref{def:75}, теорема Ферма.
+    Используются определения №\ref{def:55}, №\ref{def:64}, №\ref{def:74}, №\ref{def:75}, теорема Ферма.
 \end{used}
 \begin{theorem}[Теорема Ролля]
     Пусть функция $y = f(x)$:
@@ -1103,7 +1122,7 @@
     Сформулируйте и докажите теорему Лагранжа.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:55}, №\ref{def:64}, теорема Ролля.
+    Используются определения №\ref{def:55}, №\ref{def:64}, теорема Ролля, ``Необходимое и достаточное условие дифференцируемости функции''.
 \end{used}
 \begin{theorem}[Теорема Лагранжа]
     Пусть функция $y = f(x)$:
@@ -1183,10 +1202,10 @@
 
 
 \begin{question}
-    Сформулируйте и докажите теорему Лопиталя – Бернулли для предела отношения двух бесконечно малых функций.
+    Сформулируйте и докажите теорему Лопиталя-Бернулли для предела отношения двух бесконечно малых функций.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:35}, №\ref{def:36}, №\ref{def:64}, теорема ``О связи дифференцируемости и непрерывности'', теорема Коши.
+    Используются определения №\ref{def:35}, №\ref{def:64}, теорема ``О связи дифференцируемости и непрерывности'', теорема Коши.
 \end{used}
 \begin{theorem}[Теорема Лопиталя-Бернулли]
     Пусть $f(x)$ и  $\varphi(x)$ удовлетворяют условиям:
@@ -1209,7 +1228,7 @@
     \end{align*}
   
     $f(x)$ и  $\varphi(x)$ непрерывны в точке $x_0$.\\
-    По условию функция $f(x)$ и  $\varphi(x)$ дифференцируемы в точке $\mathring{s}(x_0)$ $\implies$ по теореме о связи дифференцируемости и непрерывности $\implies f(x)$ и $\varphi(x)$ непрерывны в $\mathring{s}(x_0)$. Таким образом $f(x)$ и  $\varphi(x)$ непрерывны в $S(x_0)$.
+    По условию функция $f(x)$ и  $\varphi(x)$ дифференцируемы в точке $\mathring{S}(x_0)$ $\implies$ по теореме о связи дифференцируемости и непрерывности $\implies f(x)$ и $\varphi(x)$ непрерывны в $\mathring{s}(x_0)$. Таким образом $f(x)$ и  $\varphi(x)$ непрерывны в $S(x_0)$.
 
     Функции $f(x)$ и  $\varphi(x)$ удовлетворяют условию т.Коши на $[x_0, x]$. Тогда по теореме Коши $\implies$ 
     \begin{gather*}
@@ -1260,7 +1279,7 @@
 
     Найдём предел при стремлении к бесконечности:
     \begin{align*}
-        \lim_{x \to +\infty} \frac{h(x)}{f(x)} = \lim_{x \to +\infty} \frac{\ln x}{x^n} = \left( \frac{\infty}{\infty} \right) \\
+        \lim_{x \to +\infty} \frac{h(x)}{f(x)} &= \lim_{x \to +\infty} \frac{\ln x}{x^n} = \left( \frac{\infty}{\infty} \right) \\
             &= \lim_{x \to +\infty}  \frac{\frac{1}{x}}{n \cdot x^{n-1}} = \frac{1}{n} \lim_{x \to +\infty} \frac{1}{x^n} = \frac{1}{n} \cdot 0 = 0
     \end{align*}
 
@@ -1268,8 +1287,8 @@
 
     Вывод: на бесконечности функции расположены в таком порядке:
     \begin{enumerate}
-        \item $g(x) = a^x$ -- самая быстрорастущая функция \\
-        \item $f(x) = x^n$ \\
+        \item $g(x) = a^x$ -- самая быстрорастущая функция
+        \item $f(x) = x^n$
         \item $h(x) = \ln x$
     \end{enumerate}
 \end{answer}
@@ -1335,7 +1354,7 @@
         &f''''(x) = \sin(x) = \sin(x + 4 \cdot \frac{\pi}{2}) \\
         &\ldots \\
         &f ^{(2n+1)}(x) = (-1) ^{n} \cos(x) \\
-        &f ^{(2n+1)}(x) = (-1) ^{n+1} \sin(x)
+        &f ^{(2n+2)}(x) = (-1) ^{n+1} \sin(x)
     \end{align*}
     Подставим $x = 0$:
     \begin{align*}
@@ -1364,9 +1383,9 @@
 \begin{answer}
     Найдём производные для функции $y = \cos(x)$ до $2n + 1$-ого порядка:
     \begin{align*}
-        &f'(x) = -\sin(x) = \cos(x + 2 \cdot \frac{\pi}{2}) \\
-        &f''(x) = -\cos(x) = \cos(x + 3 \cdot \frac{\pi}{2}) \\
-        &f'''(x) = \sin(x) = \cos(x + 4 \cdot \frac{\pi}{2}) \\
+        &f'(x) = -\sin(x) = \cos(x + 1 \cdot \frac{\pi}{2}) \\
+        &f''(x) = -\cos(x) = \cos(x + 2 \cdot \frac{\pi}{2}) \\
+        &f'''(x) = \sin(x) = \cos(x + 3 \cdot \frac{\pi}{2}) \\
         &f''''(x) = \cos(x) = \cos(x + 4 \cdot \frac{\pi}{2}) \\
         &\ldots \\
         &f ^{(2n)}(x) = (-1) ^{n} \cos(x) \\
@@ -1464,36 +1483,26 @@
     Сформулируйте и докажите необходимое и достаточное условие неубывания дифференцируемой функции.
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:64}, №\ref{def:71}.
+    Используются определения №\ref{def:64}, №\ref{def:71}, теорема ``О связи дифференцируемости и непрерывности функции'', теорема Лагранжа.
 \end{used}
 \begin{theorem}[Необходимое и достаточное условие неубывания дифференцируемой функции]
     Дифференцируемая на интервале $(a, b)$ не убывает на этом интервале тогда и только тогда, когда  $f'(x) \ge 0$ $\forall x \in (a, b)$.
 \end{theorem}
 \begin{necessity}
     Дано: $y=f(x)$ не убывает на $(a, b)$. \\
-    Доказать:  $\forall x \in (a, b) \quad f'(x) \ge 0$. \[
-        \forall x \in (a, b)
+    Доказать:  \[ 
+        \forall x \in (a, b) \quad f'(x) \ge 0
     \] 
-    $\Delta x$ -- приращение аргумента
+    В точке $x \in (a, b)$, в которой функция $f(x)$ дифференцируема, имеем:
     \begin{gather*}
-        x \to  x + \Delta x \\
-        \Delta  y = y(x + \Delta x) - y(x)
-    \end{gather*}
-    -- приращение функции.
-
-    $\Delta  x < 0$: 
-    т.к. $y = f(x)$ не убывает на  $a, b$.
+        \Delta x > 0 \implies f(x + \Delta x) \ge f(x) \\
+        \implies f'(x) = f_+(x) = \lim_{\Delta x \to 0+} \frac{f(x + \Delta x) - f(x)}{\Delta x} \ge 0
+    \end{gather*} 
     \begin{gather*}
-        y(x + \Delta x) \ge y(x)
-        \Delta  y = y(x + \Delta x) - y(x) \ge 0.
+        \Delta x < 0 \implies f(x) \ge f(x + \Delta x) \\
+        \implies f'(x) = f_-(x) = \lim_{\Delta x \to 0-} \frac{f(x + \Delta x) - f(x)}{\Delta x} \ge 0
     \end{gather*}
-    Тогда $\frac{\Delta y}{\Delta x} = \left( \frac{+}{-} \right) \le 0$. \\
-
-    По теореме о предельном перехорде в неравенстве: 
-    \begin{gather*}
-        \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \le 0 
-    \end{gather*}
-    По определению производной $f'(x) \ge 0$
+    Таким образом, $\forall x \in (a, b) \implies f'(x) \ge 0$ 
 \end{necessity}
 \begin{sufficiency}
     Дано: $\forall x \in (a, b) \quad f'(x) \ge 0$. \\
@@ -1534,28 +1543,19 @@
 \end{theorem}
 \begin{necessity}
     Дано: $y=f(x)$ не возрастает на $(a, b)$. \\
-    Доказать:  $\forall x \in (a, b) \quad f'(x) \le 0$. \[
-        \forall x \in (a, b)
+    Доказать:  \[ 
+        \forall x \in (a, b) \quad f'(x) \le 0
     \] 
-    $\Delta x$ -- приращение аргумента
+    В точке $x \in (a, b)$, в которой функция $f(x)$ дифференцируема, имеем:
     \begin{gather*}
-        x \to  x + \Delta x \\
-        \Delta  y = y(x + \Delta x) - y(x)
-    \end{gather*}
-    -- приращение функции.
-
-    $\Delta x > 0$: \\
-    т.к. $y = f(x)$ не возрастает на  $a, b$.
+        \Delta x > 0 \implies f(x + \Delta x) \le f(x) \\
+        \implies f'(x) = f_+(x) = \lim_{\Delta x \to 0+} \frac{f(x + \Delta x) - f(x)}{\Delta x} \le 0
+    \end{gather*} 
     \begin{gather*}
-        y(x + \Delta x) \le  y(x)
-        \Delta  y = y(x + \Delta x) - y(x) \le 0.
+        \Delta x < 0 \implies f(x) \le f(x + \Delta x) \\
+        \implies f'(x) = f_-(x) = \lim_{\Delta x \to 0-} \frac{f(x + \Delta x) - f(x)}{\Delta x} \le 0
     \end{gather*}
-    Тогда $\frac{\Delta y}{\Delta x} = \left( \frac{+}{-} \right) \le 0$. \\
-    По теореме о предельном перехорде в неравенстве: 
-    \begin{gather*}
-        \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \le 0 
-    \end{gather*}
-    По определению производной $f'(x) \le 0$
+    Таким образом, $\forall x \in (a, b) \implies f'(x) \le 0$ 
 \end{necessity}
 \begin{sufficiency}
     Дано: $\forall x \in (a, b) \quad f'(x) \le 0$. \\
@@ -1589,7 +1589,7 @@
     Сформулируйте и докажите первое достаточное условие экстремума (по первой производной).
 \end{question}
 \begin{used}
-    Используются определения №\ref{def:54}, №\ref{def:64}, №\ref{def:76}, №\ref{def:77}, теорема Лагранжа.
+    Используются определения №\ref{def:54}, №\ref{def:64}, №\ref{def:76}, №\ref{def:77}, №\ref{def:80}, теорема Лагранжа.
 \end{used}
 \begin{theorem}[Первое достаточное условие экстремума]
     Пусть функция $y=f(x)$ непрерывна в $S(x_0)$, где $x_0$ -- критическая точка первого порядка; функция дифференцируема в $\mathring{S}(x_0)$. Тогда если производная функции меняет свой знак при переходе черех точку $x_0$, то эта точка $x_0$ -- точка экстремума. Причём:
@@ -1634,8 +1634,8 @@
 \begin{theorem}[Второе достаточное условие экстремума]
     Пусть функция $y = f(x)$ дважды дифференцируема в точке $x_0$, и $f'(x_0) = 0$. Тогда:
     \begin{enumerate}
-        \item Если $f''(x_0) < 0$, то $x_0$ -- точка строго максимума. 
-        \item Если $f''(x_0) > 0$, то $x_0$ -- точка строго минимума. 
+        \item Если $f''(x_0) < 0$, то $x_0$ -- точка строгого максимума. 
+        \item Если $f''(x_0) > 0$, то $x_0$ -- точка строгого минимума. 
     \end{enumerate}
 \end{theorem}
 \begin{sufficiency}
@@ -1649,10 +1649,11 @@
         f(x) - f(x_0) = \frac{f''(x_0)}{2!}(x - x_0)^2 + o((x - x_0)^2)
     \end{align*}
     Знак $f(x) - f(x_0)$ определяет $f''(x_0)$, т.к. $o((x - x_0)^2)$ -- б.м.ф. при $x \to  x_0$. 
-    Если $f(x) - f(x_0) < 0$ то $f(x) < f(x_0), \quad \forall x \in  S(x_0)$
+
+    Если $f(x) - f(x_0) < 0$ то $f(x) < f(x_0)$, $\forall x \in  S(x_0)$.
     По определению $x_0$ -- точка локального максимума.
 
-    Если $f(x) - f(x_0) > 0$ то $f(x) < f(x_0), \quad \forall x \in  S(x_0)$
+    Если $f(x) - f(x_0) > 0$ то $f(x) > f(x_0)$, $\forall x \in  S(x_0)$.
     По определению $x_0$ -- точка локального минимума.
 \end{sufficiency}
 \pagebreak
@@ -1665,7 +1666,7 @@
 \begin{used}
     Используются определения №\ref{def:64}, №\ref{def:86}, №\ref{def:87}.
 \end{used}
-\begin{theorem}[достаточное условие выпуклости функции]
+\begin{theorem}[Достаточное условие выпуклости функции]
     Пусть функция $y = f(x)$ дважды дифференцируема на интервале  $(a, b)$. 
     Тогда: 
     \begin{enumerate}
@@ -1683,7 +1684,7 @@
     \end{gather*}
     Преобразуем:
     \begin{gather*}
-        y_k = f(x_0) + f'(x_0)(x - x_0) \tag{0} 
+        y_k = f(x_0) + f'(x_0)(x - x_0) \tag{1} 
     \end{gather*}
     Представим функцию $y=f(x)$ по формуле Тейлора с остаточным членом в форме Лагранжа.
     \begin{gather*}
@@ -1695,8 +1696,10 @@
              - f(x_0) - f'(x_0)(x - x_0)^2 \\
         f(x) - y_k = \frac{f''(c)}{2!}(x - x_0)^2
     \end{gather*}
-    1) По условию $f''(x) < 0 \forall x \in (a, b)$, то $f''(c) < 0 \implies f(x) - y_0 < 0 \implies f(x) < y_k$, а значит по определению выпуклой функции $\implies$ график функции $y = f(x)$ выпуклый вверх.
-    2) По условию $f''(x) > 0 \forall x \in (a, b)$, то $f''(c) > 0 \implies f(x) - y_0 > 0 \implies f(x) > y_k$, а значит по определению выпуклой функции $\implies$ график функции $y = f(x)$ выпуклый вниз.
+    \begin{enumerate}
+        \item По условию $f''(x) < 0 \nobreakspace \forall x \in (a, b)$, то $f''(c) < 0 \implies f(x) - y_0 < 0 \implies f(x) < y_k$, а значит по определению выпуклой функции $\implies$ график функции $y = f(x)$ выпуклый вверх.
+        \item По условию $f''(x) > 0 \nobreakspace \forall x \in (a, b)$, то $f''(c) > 0 \implies f(x) - y_0 > 0 \implies f(x) > y_k$, а значит по определению выпуклой функции $\implies$ график функции $y = f(x)$ выпуклый вниз.
+    \end{enumerate}
 \end{sufficiency}
 \pagebreak
 
@@ -1714,7 +1717,7 @@
 \begin{necessity}
     Докажем методом от противного. 
     Предположим, что $f''(x_0) > 0$. В силу непрерывности второй производной функции  $y = f(x)$ $\exists  S(x_0) \forall  x \in S(x_0) : f''(x) > 0$. Это противоречит тому, что $M_0(x_0, y_0)$ -- точка перегиба.
-    Предположим, что $f''(x_0) < 0$. В силу непрерывности второй производной функции  $y = f(x)$ $\exists  S(x_0) \forall  x \in S(x_0) : f''(x) < 0$. Это противоречит тому, что $M_0(x_0, y_0)$ -- точка перегиба.
+    Предположим, что $f''(x_0) < 0$. В силу непрерывности второй производной функции  $y = f(x) \nobreakspace \exists S(x_0) \nobreakspace \forall  x \in S(x_0) : f''(x) < 0$. Это противоречит тому, что $M_0(x_0, y_0)$ -- точка перегиба.
 \end{necessity}
 \pagebreak
 

@@ -40,5 +40,11 @@
 			"№\\ref{$1}"
 		],
 	},
-	
+
+	"Space in math mode": {
+		"prefix": "space",
+		"body": [
+			"\\nobreakspace"
+		],
+	},
 }

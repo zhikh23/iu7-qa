@@ -97,7 +97,7 @@
 	"Limit": {
 		"prefix": "lim",
 		"body": [
-			"\\lim_{${1:x} \\to ${2|\\infty,0,+\\infty,-\\infty,0+,0-|}} $0"
+			"\\lim_{${1:x} \\to ${2|x_0,\\infty,0,+\\infty,-\\infty,0+,0-|}} $0"
 		],
 	},
 

@@ -1,5 +1,0 @@
-\babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Теоретические вопросы}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Определения}{3}{}%
-\contentsline {definition}{Определение первообразной}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Теоремы}{4}{}%

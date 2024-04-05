@@ -4,6 +4,7 @@
 *.log
 *.synctex.gz
 *.out
+*.loe
 
 .vscode/settings.json
 

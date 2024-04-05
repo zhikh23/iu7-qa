@@ -1,0 +1,103 @@
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+% IGNORE USELESS WARNINGS ===========================================
+\usepackage{silence}
+\WarningFilter{mdframed}{You got a bad break}
+
+% HEADER AND FOOTER =================================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{22.54279pt}
+
+\fancyhead[R]{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[L]{}
+
+\makeatother
+
+% THEOREMS ==========================================================
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{thmtools}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ForestGreen!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=ForestGreen, 
+    }
+]{thmgreenbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=RawSienna, 
+    }
+]{thmredbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue, 
+    }
+]{thmbluebox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue, 
+    },
+    qed=\qedsymbol
+]{thmproofbox}
+
+\theoremstyle{plain}
+
+\declaretheorem[style=thmgreenbox, name=Определение]{definition}
+
+\declaretheorem[style=thmgreenbox, name=Ссылки, numbered=no]{_used}
+\newenvironment{used}{\vspace{-15pt}\begin{_used}}{\end{_used}}
+
+\declaretheorem[style=thmbluebox, name=Теорема, numbered=no]{_theorem}
+\newenvironment{theorem}{\vspace{-15pt}\begin{_theorem}}{\end{_theorem}}
+
+\declaretheorem[style=thmproofbox, name=Доказательство, numbered=no]{_proof}
+\renewenvironment{proof}{\vspace{-15pt}\begin{_proof}}{\end{_proof}}
+
+\declaretheorem[style=thmproofbox, name=Необходимость, numbered=no]{_necessity}
+\newenvironment{necessity}{\vspace{-15pt}\begin{_necessity}}{\end{_necessity}}
+
+
+\declaretheorem[style=thmproofbox, name=Достаточность, numbered=no]{_sufficiency}
+\newenvironment{sufficiency}{\vspace{-15pt}\begin{_sufficiency}}{\end{_sufficiency}}
+
+
+\declaretheorem[style=thmredbox, name=Вопрос]{question}
+
+\declaretheorem[style=thmbluebox, name=Ответ, numbered=no]{_answer}
+\newenvironment{answer}{\vspace{-15pt}\begin{_answer}}{\end{_answer}}
+
+% MATH SYMBOLS ======================================================
+\newcommand\N{\mathbb{N}}
+\newcommand\R{\mathbb{R}}
+\newcommand\Z{\mathbb{Z}}
+\renewcommand\O{\emptyset}
+\newcommand\Q{\mathbb{Q}}
+
+\renewcommand{\epsilon}{\varepsilon}
+
